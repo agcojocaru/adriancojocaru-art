@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#f9f8f6"/>
+
+  <!-- A: strokes 0,1,2 — centered, shifted left -->
+  <!-- A renders x:2.4–28.6, y:4.0–56.4, height 52.4px -->
+  <g transform="matrix(0.57,0,0,0.57,-4.44,-6.26)" stroke="#1a1916" fill="none" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- left leg: bottom to top -->
+    <path d="M 12,108 C 16,85 24,54 35,18"
+      stroke-width="4.6"
+      pathLength="100"
+      stroke-dasharray="100"
+      stroke-dashoffset="100">
+      <animate attributeName="stroke-dashoffset"
+        from="100" to="0"
+        dur="0.45s" begin="0.1s"
+        fill="freeze"
+        calcMode="spline" keySplines="0.2 0 0.45 1"/>
+    </path>
+
+    <!-- right leg: top to bottom -->
+    <path d="M 35,18 C 46,55 53,82 58,110"
+      stroke-width="4.4"
+      pathLength="100"
+      stroke-dasharray="100"
+      stroke-dashoffset="100">
+      <animate attributeName="stroke-dashoffset"
+        from="100" to="0"
+        dur="0.42s" begin="0.48s"
+        fill="freeze"
+        calcMode="spline" keySplines="0.2 0 0.45 1"/>
+    </path>
+
+    <!-- crossbar -->
+    <path d="M 20,73 C 27,70 43,69 52,72"
+      stroke-width="3.3"
+      pathLength="100"
+      stroke-dasharray="100"
+      stroke-dashoffset="100">
+      <animate attributeName="stroke-dashoffset"
+        from="100" to="0"
+        dur="0.22s" begin="0.84s"
+        fill="freeze"
+        calcMode="spline" keySplines="0.2 0 0.45 1"/>
+    </path>
+
+  </g>
+
+  <!-- C: stroke 16 — slightly larger scale (0.58 vs 0.57), so C is taller than A -->
+  <!-- C renders x:32.6–61.6, y:4.0–59.7, height 55.7px (vs A's 52.4px) -->
+  <!-- Starts top-right, sweeps left and down, ends bottom-right -->
+  <g transform="matrix(0.58,0,0,0.58,27.38,-72.56)" stroke="#1a1916" fill="none" stroke-linecap="round" stroke-linejoin="round">
+
+    <path d="M 54,148 C 46,136 33,132 22,141 C 10,153 9,175 13,197 C 17,215 28,228 41,226 C 50,224 57,215 59,204"
+      stroke-width="4.4"
+      pathLength="100"
+      stroke-dasharray="100"
+      stroke-dashoffset="100">
+      <animate attributeName="stroke-dashoffset"
+        from="100" to="0"
+        dur="0.75s" begin="1.12s"
+        fill="freeze"
+        calcMode="spline" keySplines="0.2 0 0.45 1"/>
+    </path>
+
+  </g>
+
+</svg>

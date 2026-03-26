@@ -1,0 +1,2417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adrian Cojocaru — Visual Artist, Romania</title>
+<meta name="description" content="Adrian Cojocaru — visual artist based in Romania. Painting, drawing, installation and printmaking exploring urban coexistence. Solo exhibitions at GAEP Gallery Bucharest, Aparte Gallery Iasi.">
+<meta name="author" content="Adrian Cojocaru">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://adriancojocaru.art">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Adrian Cojocaru — Visual Artist">
+<meta property="og:description" content="Painting, drawing, installation and printmaking exploring urban coexistence. Based in Romania.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://adriancojocaru.art">
+<meta property="og:image" content="https://adriancojocaru.art/works/agency-of-a-liminal-space-2024.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Adrian Cojocaru">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Adrian Cojocaru — Visual Artist">
+<meta name="twitter:description" content="Painting, drawing, installation and printmaking exploring urban coexistence. Based in Romania.">
+<meta name="twitter:image" content="https://adriancojocaru.art/works/agency-of-a-liminal-space-2024.jpg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+
+<!-- Security -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --bg: #f9f8f6;
+  --ink: #1a1916;
+  --mid: #8a867c;
+  --faint: #ddd9d0;
+  --paper: #ffffff;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --type: 'Courier New', Courier, monospace;
+  --nav-h: 48px;
+}
+.bg-0{--bg:#f9f8f6;--paper:#ffffff}
+.bg-1{--bg:#f7f8f5;--paper:#ffffff}
+.bg-2{--bg:#f8f6f5;--paper:#ffffff}
+.bg-3{--bg:#f5f5f8;--paper:#ffffff}
+.bg-4{--bg:#f7f6f2;--paper:#ffffff}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden}
+body{font-family:var(--type);font-size:0.75rem;background:var(--bg);color:var(--ink);letter-spacing:0.01em;cursor:crosshair;transition:background 0.8s ease}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{background:none;border:none;cursor:pointer;font:inherit;color:inherit}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;pointer-events:none;background:var(--bg);border-bottom:1px solid var(--faint)}
+nav>*{pointer-events:auto}
+.nav-name{font-family:var(--serif);font-size:1rem;font-weight:300;letter-spacing:0.05em;cursor:pointer;opacity:0.88;transition:opacity 0.2s}
+.nav-name:hover{opacity:1}
+.nav-right{display:flex;align-items:center;gap:1.8rem}
+.nav-link{font-size:0.64rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid);cursor:pointer;transition:color 0.2s}
+.nav-link:hover,.nav-link.active{color:var(--ink)}
+.nav-explore{font-family:var(--serif);font-style:italic;font-size:0.82rem;color:var(--mid);cursor:pointer;letter-spacing:0.04em;border-bottom:1px solid var(--faint);padding-bottom:1px;transition:all 0.2s}
+.nav-explore::before{content:'✦ ';font-size:0.58rem;vertical-align:middle}
+.nav-explore:hover{color:var(--ink);border-bottom-color:var(--ink)}
+
+/* EXPLORE PANEL */
+.explore-panel{position:fixed;bottom:0;left:0;right:0;z-index:290;display:none;background:var(--ink);color:var(--paper);padding:1.2rem 2rem;align-items:center;justify-content:space-between;gap:2rem;animation:slideUp 0.3s ease}
+@keyframes slideUp{from{transform:translateY(100%);opacity:0}to{transform:translateY(0);opacity:1}}
+.explore-panel.open{display:flex}
+.explore-panel-title{font-family:var(--serif);font-style:italic;font-size:0.86rem;color:rgba(255,255,255,0.45);white-space:nowrap}
+.explore-links{display:flex;gap:0.5rem;flex-wrap:wrap}
+.explore-link{font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.15);padding:0.45rem 0.9rem;cursor:pointer;transition:all 0.2s;white-space:nowrap}
+.explore-link:hover{color:var(--ink);background:var(--paper);border-color:var(--paper)}
+.explore-close{font-size:0.6rem;letter-spacing:0.12em;color:rgba(255,255,255,0.3);cursor:pointer;padding:0.2rem 0.4rem;transition:color 0.2s}
+.explore-close:hover{color:rgba(255,255,255,0.7)}
+
+/* PAGES — fixed, fill viewport, scroll internally */
+.page{display:none;position:fixed;inset:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;background:var(--bg)}
+.page.active{display:block}
+
+/* HOME */
+#page-home{overflow:hidden;height:100vh}
+.home-layout{display:grid;grid-template-columns:1fr 65%;height:100vh}
+.home-text-col{display:flex;flex-direction:column;justify-content:space-between;padding:5.5rem 3rem 3rem 2.5rem;position:relative}
+.home-year-stamp{display:none}
+.home-mark{width:44px;height:44px;margin-bottom:2rem;opacity:0.18;flex-shrink:0}
+.home-name{font-family:var(--serif);font-size:clamp(2.8rem,5.5vw,5rem);font-weight:300;line-height:0.9;letter-spacing:-0.02em;margin-bottom:2rem}
+.home-name em{display:block;font-style:italic}
+.home-tags{display:flex;flex-direction:column;gap:0.12rem;margin-bottom:2.5rem}
+.home-tag{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--mid)}
+.home-current{border-top:1px solid var(--faint);padding-top:1rem;margin-bottom:1.4rem}
+.home-underpaint{font-family:var(--serif);font-style:italic;font-size:0.88rem;color:var(--mid);margin-bottom:2rem;line-height:1.5;letter-spacing:0.01em}
+.home-newsletter-hint{margin-top:1.6rem;border-top:1px solid var(--faint);padding-top:1rem}
+.home-newsletter-text{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--ink);margin-bottom:0.5rem;line-height:1.3}
+.home-newsletter-link{font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);cursor:pointer;border-bottom:1px solid var(--faint);padding-bottom:1px;transition:all 0.2s}
+.home-newsletter-link:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.mood-updated{font-size:0.58rem;letter-spacing:0.12em;color:var(--faint);font-family:var(--courier);font-style:normal}
+.home-current-label{font-size:0.56rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--mid);margin-bottom:0.3rem}
+.home-current-title{font-family:var(--serif);font-size:0.9rem;font-style:italic;line-height:1.4}
+.home-nav-items{display:flex;gap:1.4rem;flex-wrap:wrap}
+.home-nav-item{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);cursor:pointer;transition:color 0.2s;border-bottom:1px solid transparent;padding-bottom:1px}
+.home-nav-item:hover{color:var(--ink);border-bottom-color:var(--faint)}
+.home-img-col{position:relative;overflow:hidden;background:var(--faint)}
+.home-img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* grid overlay removed */
+.home-img-caption{position:absolute;bottom:2rem;left:1.2rem;font-size:0.56rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.45);writing-mode:vertical-rl}
+
+/* PAGE HEADER */
+.page-head{padding:calc(var(--nav-h) + 1.6rem) 2rem 0.8rem;display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--faint);position:sticky;top:0;background:var(--bg);z-index:10}
+.page-label{font-size:0.58rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--mid)}
+
+/* WORKS */
+/* WORKS — single view */
+.works-single{position:relative;height:calc(100vh - var(--nav-h) - 44px);display:grid;grid-template-columns:1fr 280px}
+.wsv-img-col{background:var(--faint);display:flex;align-items:center;justify-content:center;padding:2.5rem;overflow:hidden;position:relative;cursor:pointer}
+.wsv-img{max-height:100%;max-width:100%;object-fit:contain;transition:opacity 0.35s ease}
+.wsv-img.fading{opacity:0}
+.wsv-info-col{border-left:1px solid var(--faint);padding:2rem 1.8rem;display:flex;flex-direction:column;gap:1.6rem;overflow-y:auto}
+.wsv-counter{font-size:0.56rem;letter-spacing:0.2em;color:var(--mid)}
+.wsv-title{font-family:var(--serif);font-size:1.5rem;font-style:italic;font-weight:300;line-height:1.15}
+.wsv-details{font-size:0.66rem;letter-spacing:0.06em;line-height:2.4;color:var(--mid);border-top:1px solid var(--faint);padding-top:1rem}
+.wsv-details span{display:block}
+.wsv-desc{font-size:0.7rem;line-height:1.85;color:var(--mid)}
+.wsv-enquire{margin-top:auto;font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;border:1px solid var(--faint);padding:0.7rem 1rem;transition:all 0.2s;cursor:pointer;text-align:center}
+.wsv-enquire:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.wsv-nav{display:flex;align-items:center;gap:0.8rem;margin-top:auto}
+.wsv-arrow{font-size:0.64rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);cursor:pointer;transition:color 0.2s;padding:0.3rem 0;user-select:none}
+.wsv-arrow:hover{color:var(--ink)}
+.wsv-arrow.disabled{color:var(--faint);pointer-events:none}
+/* works bar */
+.works-bar{height:44px;overflow:hidden;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;border-bottom:1px solid var(--faint);position:sticky;top:var(--nav-h);background:var(--bg);z-index:10;transition:height 0.3s ease,opacity 0.3s ease,border-color 0.3s ease}
+.works-bar.hidden{height:0;opacity:0;pointer-events:none;border-color:transparent}
+.works-view-toggle{display:flex;gap:0.3rem}
+.wvt-btn{font-size:0.54rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--mid);border:1px solid transparent;padding:0.28rem 0.6rem;cursor:pointer;transition:all 0.15s}
+.wvt-btn.on{border-color:var(--ink);color:var(--ink)}
+/* works grid view */
+.works-grid-view{display:none;grid-template-columns:repeat(3,1fr);gap:16px;padding:3rem 2rem 5rem}
+.works-grid-view.on{display:grid}
+.wg-cell{background:var(--bg);cursor:pointer;overflow:hidden}
+.wg-cell:hover{background:var(--paper)}
+.wg-thumb-wrap{overflow:hidden;background:var(--faint)}
+.wg-thumb{width:100%;height:auto;display:block}
+
+.wg-meta{padding:0.8rem 1rem 1.1rem;border-top:1px solid var(--faint)}
+.wg-title{font-family:var(--serif);font-size:0.92rem;font-style:italic;margin-bottom:0.2rem}
+.wg-year{font-size:0.54rem;letter-spacing:0.14em;color:var(--mid)}
+.wsv-status-private{font-size:0.56rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--mid)}
+.wsv-exhibited{font-size:0.66rem;line-height:1.8;color:var(--mid);border-top:1px solid var(--faint);padding-top:0.8rem}
+.wsv-exhibited-label{font-size:0.52rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);display:block;margin-bottom:0.4rem}
+.wsv-exhibited span+span{margin-top:0.4rem;display:block;padding-top:0.4rem;border-top:1px solid var(--faint)}
+/* artwork detail */
+.artwork-back{display:flex;align-items:center;height:var(--nav-h);padding:0 2rem;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid);cursor:pointer;transition:color 0.2s;border-bottom:1px solid var(--faint);position:sticky;top:0;background:var(--bg);z-index:10}
+.artwork-back:hover{color:var(--ink)}
+.artwork-layout{display:grid;grid-template-columns:1fr 260px;min-height:calc(100vh - var(--nav-h))}
+.artwork-img-col{background:var(--faint);display:flex;align-items:center;justify-content:center;padding:3rem;min-height:80vh}
+.artwork-img-large{max-height:80vh;max-width:100%;object-fit:contain}
+.artwork-info-col{border-left:1px solid var(--faint);padding:2rem 1.6rem;display:flex;flex-direction:column;gap:1.8rem}
+.artwork-title-large{font-family:var(--serif);font-size:1.5rem;font-style:italic;font-weight:300;line-height:1.15}
+.artwork-details{font-size:0.66rem;letter-spacing:0.06em;line-height:2.4;color:var(--mid);border-top:1px solid var(--faint);padding-top:1rem}
+.artwork-details span{display:block}
+.artwork-enquire{margin-top:auto;font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;border:1px solid var(--faint);padding:0.7rem 1rem;transition:all 0.2s;cursor:pointer;text-align:center}
+.artwork-enquire:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* ARTWORK DETAIL */
+.artwork-back{display:flex;align-items:center;height:var(--nav-h);padding:0 2rem;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid);cursor:pointer;transition:color 0.2s;border-bottom:1px solid var(--faint);position:sticky;top:0;background:var(--bg);z-index:10}
+.artwork-back:hover{color:var(--ink)}
+.artwork-layout{display:grid;grid-template-columns:1fr 260px;min-height:calc(100vh - var(--nav-h))}
+.artwork-img-col{background:var(--faint);display:flex;align-items:center;justify-content:center;padding:3rem;min-height:80vh}
+.artwork-img-large{max-height:80vh;max-width:100%;object-fit:contain}
+.artwork-info-col{border-left:1px solid var(--faint);padding:2rem 1.6rem;display:flex;flex-direction:column;gap:1.8rem}
+.artwork-title-large{font-family:var(--serif);font-size:1.5rem;font-style:italic;font-weight:300;line-height:1.15}
+.artwork-details{font-size:0.66rem;letter-spacing:0.06em;line-height:2.4;color:var(--mid);border-top:1px solid var(--faint);padding-top:1rem}
+.artwork-details span{display:block}
+.artwork-enquire{margin-top:auto;font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;border:1px solid var(--faint);padding:0.7rem 1rem;transition:all 0.2s;cursor:pointer;text-align:center}
+.artwork-enquire:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* PROJECTS */
+.projects-wrap{padding:0 2rem 4rem;max-width:900px}
+.project-row{display:grid;grid-template-columns:320px 1fr;gap:3rem;padding:2.5rem 0;border-bottom:1px solid var(--faint);cursor:pointer}
+.project-thumb-wrap{overflow:hidden;background:var(--faint)}
+.project-thumb{width:100%;height:auto;display:block}
+
+.project-index{font-size:0.56rem;letter-spacing:0.22em;color:var(--mid);margin-bottom:0.7rem}
+.project-title{font-family:var(--serif);font-size:1.4rem;font-style:italic;font-weight:300;margin-bottom:0.5rem}
+.project-year{font-size:0.58rem;letter-spacing:0.16em;color:var(--mid);margin-bottom:1rem}
+.project-desc{font-size:0.72rem;line-height:1.85;color:var(--mid);max-width:36ch}
+.project-link{display:inline-block;margin-top:1.4rem;font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;border-bottom:1px solid var(--faint);padding-bottom:2px;transition:border-color 0.2s}
+
+/* exhibition text block inside project grid view */
+.proj-extext-wrap{padding:3rem 2rem 4rem;max-width:720px}
+.proj-extext-toggle{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.56rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--mid);cursor:pointer;border-bottom:1px solid var(--faint);padding-bottom:2px;transition:all 0.2s;user-select:none}
+.proj-extext-toggle:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.proj-extext-toggle::before{content:'+ ';transition:content 0.2s}
+.proj-extext-toggle.open::before{content:'− '}
+.proj-extext-body{display:none;margin-top:2rem;border-top:1px solid var(--faint);padding-top:2rem}
+.proj-extext-body.open{display:block}
+.proj-extext-body p{font-family:var(--serif);font-size:1rem;font-weight:300;line-height:1.9;color:#3a3833;margin-bottom:1.1rem}
+.proj-extext-body p:last-child{margin-bottom:0}
+.proj-extext-author{display:block;margin-top:1.5rem;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid)}
+.project-link:hover{border-color:var(--ink)}
+
+/* ABOUT */
+.about-wrap{display:grid;grid-template-columns:260px 1fr;min-height:100vh;gap:0; align-items: start; /*align columns to the top */}
+.about-img-col{padding:calc(var(--nav-h) + 2rem) 2rem 2rem;display:flex;flex-direction:column;gap:1.5rem;background:transparent;height:auto;position:relative;overflow:visible}
+.about-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block}
+.about-bio-left{font-family:var(--serif);font-size:0.92rem;font-weight:300;line-height:1.75;color:#3a3833}
+.about-bio-left p{margin-bottom:0.9rem}
+.about-text-col{padding:calc(var(--nav-h) + 2rem) 3rem 4rem;border-left:1px solid var(--faint)}
+.about-name{font-family:var(--serif);font-size:2.2rem;font-weight:300;margin-bottom:0.25rem}
+.about-location{font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--mid);margin-bottom:2.5rem}
+.about-bio p{font-family:var(--serif);font-size:1rem;font-weight:300;line-height:1.8;color:#3a3833;margin-bottom:1.1rem}
+.cv-block{margin-top:2.5rem;padding-top:1.8rem;border-top:1px solid var(--faint)}
+.cv-block-title{font-size:0.56rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--mid);margin-bottom:1rem}
+.cv-line{display:grid;grid-template-columns:44px 1fr;gap:1rem;font-size:0.7rem;line-height:1.6;padding:0.4rem 0;border-bottom:1px solid var(--faint)}
+.cv-year{color:var(--mid);font-size:0.62rem;padding-top:0.1rem}
+
+/* ABOUT — single column */
+.about-single-col{max-width:680px;margin:0 auto;padding:calc(var(--nav-h) + 2.5rem) 2rem 5rem}
+.about-photo-single{width:100%;max-width:420px;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block;margin-bottom:2.5rem}
+.about-name-single{font-family:var(--serif);font-size:2rem;font-weight:300;margin-bottom:0.25rem}
+.about-location-single{font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--mid);margin-bottom:2rem}
+.about-bio-single{margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--faint)}
+.about-bio-single p{font-family:var(--serif);font-size:1rem;font-weight:300;line-height:1.8;color:#3a3833;margin-bottom:1rem}
+.about-bio-single p:last-child{margin-bottom:0}
+
+/* NEWS */
+.news-wrap{padding:0 2rem 4rem;max-width:860px}
+.news-item{display:grid;grid-template-columns:220px 1fr;gap:2.5rem;padding:2rem 0;border-bottom:1px solid var(--faint);cursor:pointer;align-items:start}
+.news-item:hover{}
+.news-thumb-wrap{overflow:hidden;aspect-ratio:4/3;background:var(--faint)}
+.news-thumb{width:100%;height:100%;object-fit:cover}
+
+.news-date{font-size:0.56rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid);margin-bottom:0.3rem}
+.news-title{font-family:var(--serif);font-size:0.92rem;font-style:italic;line-height:1.35;margin-bottom:0.3rem}
+.news-excerpt{font-size:0.68rem;color:var(--mid);line-height:1.65}
+.news-pdf-link{display:inline-flex;align-items:center;gap:0.35rem;margin-top:0.7rem;font-size:0.54rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);border-bottom:1px solid var(--faint);padding-bottom:1px;transition:all 0.2s}
+.news-pdf-link:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.news-pdf-link::before{content:'↗';font-size:0.7rem}
+
+/* CONTACT */
+.contact-wrap{padding:3rem 2rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;max-width:860px}
+.contact-form-col{order:0}
+.contact-info-col{order:1}
+.contact-intro{font-family:var(--serif);font-size:1.5rem;font-weight:300;line-height:1.3;margin-bottom:0.8rem;font-style:normal}
+.contact-detail{font-size:0.7rem;line-height:2.6;color:var(--mid)}
+.contact-detail a:hover{color:var(--ink)}
+.newsletter-block{margin-top:2.5rem;border-top:1px solid var(--faint);padding-top:2rem}
+.newsletter-label{font-size:0.56rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--mid);margin-bottom:0.5rem}
+.newsletter-desc{font-size:0.72rem;color:var(--mid);margin-bottom:1rem;line-height:1.75}
+.newsletter-form{display:flex;border-bottom:1px solid var(--ink)}
+.newsletter-input{flex:1;background:transparent;border:none;font-size:0.72rem;color:var(--ink);padding:0.5rem 0;outline:none}
+.newsletter-input::placeholder{color:var(--mid)}
+.newsletter-btn{font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);cursor:pointer;padding:0.5rem 0 0.5rem 1rem;transition:color 0.2s}
+.newsletter-btn:hover{color:var(--ink)}
+.newsletter-note{font-size:0.58rem;color:var(--mid);margin-top:0.6rem;letter-spacing:0.06em}
+.form-field{margin-bottom:1.5rem}
+.form-label{display:block;font-size:0.56rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--mid);margin-bottom:0.4rem}
+.form-input,.form-textarea{width:100%;background:transparent;border:none;border-bottom:1px solid var(--faint);font-size:0.74rem;color:var(--ink);padding:0.5rem 0;outline:none;transition:border-color 0.2s}
+.form-input:focus,.form-textarea:focus{border-bottom-color:var(--ink)}
+.form-textarea{resize:none;height:88px}
+.form-submit{font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;border:1px solid var(--ink);padding:0.7rem 2rem;cursor:pointer;transition:all 0.25s;margin-top:0.5rem}
+.form-submit:hover{background:var(--ink);color:var(--bg)}
+
+/* SKETCHBOOK */
+/* SKETCHBOOK */
+#page-sketch.active{display:grid;grid-template-columns:1fr 300px;height:100vh;overflow:hidden}
+.sketch-canvas-col{position:relative;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding-top:var(--nav-h);padding-bottom:80px}
+.sketch-paper{position:relative;background:#fdfbf7;box-shadow:0 1px 4px rgba(0,0,0,0.07),0 0 0 1px rgba(0,0,0,0.05)}
+.sketch-paper::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(transparent,transparent 27px,rgba(180,175,165,0.15) 27px,rgba(180,175,165,0.15) 28px);pointer-events:none;z-index:0}
+#sketchCanvas{display:block;position:relative;z-index:1;touch-action:none}
+.sketch-tool-rail{display:none}
+.sketch-toolbar-wrap{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0;z-index:10;max-width:calc(100% - 2rem);cursor:move;user-select:none}
+.sketch-toolbar{display:flex;align-items:center;gap:0.4rem;background:rgba(253,251,247,0.97);border:1px solid var(--faint);padding:0.4rem 0.65rem;white-space:nowrap;flex-wrap:wrap;justify-content:center}
+.sketch-subtoolbar{display:none;align-items:center;gap:0.4rem;background:rgba(248,245,240,0.97);border:1px solid var(--faint);border-top:none;padding:0.35rem 0.65rem;white-space:nowrap;width:100%;justify-content:center;flex-wrap:wrap}
+.sketch-subtoolbar.open{display:flex}
+.sketch-subtoolbar{display:none;align-items:center;gap:0.5rem;background:rgba(248,245,240,0.97);border:1px solid var(--faint);border-top:none;padding:0.4rem 0.75rem;white-space:nowrap;width:100%;justify-content:center}
+.sketch-subtoolbar.open{display:flex}
+.tool-wrap{display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer}
+.tool-btn{width:30px;height:30px;border-radius:1px;border:1px solid transparent;display:flex;align-items:center;justify-content:center;font-size:0.72rem;color:var(--mid);transition:all 0.15s}
+.tool-btn:hover,.tool-btn.active{border-color:var(--faint);color:var(--ink);background:var(--bg)}
+.tool-label{font-size:0.5rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);line-height:1}
+.tool-sep{width:1px;height:22px;background:var(--faint);margin:0 0.15rem}
+.sub-opt{display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;padding:0 0.2rem}
+.sub-opt-btn{font-size:0.56rem;letter-spacing:0.06em;color:var(--mid);border:1px solid transparent;padding:0.2rem 0.4rem;transition:all 0.15s;white-space:nowrap}
+.sub-opt-btn:hover,.sub-opt-btn.active{border-color:var(--faint);color:var(--ink);background:var(--bg)}
+.sub-label{font-size:0.46rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);line-height:1}
+.cswatch{width:14px;height:14px;border-radius:50%;cursor:pointer;border:1.5px solid transparent;transition:border-color 0.15s,transform 0.15s;flex-shrink:0}
+.cswatch:hover{transform:scale(1.18)}
+.cswatch.active{border-color:var(--ink)}
+.sub-size{display:flex;align-items:center;gap:3px}
+.sub-size-dot{border-radius:50%;background:var(--ink);cursor:pointer;transition:transform 0.15s;flex-shrink:0}
+.sub-size-dot:hover{transform:scale(1.2)}
+.sub-size-dot.active{outline:1.5px solid var(--ink);outline-offset:2px}
+.clr-btn{font-size:0.54rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--mid);cursor:pointer;padding:0 0.3rem;transition:color 0.2s}
+.clr-btn:hover{color:var(--ink)}
+.sketch-info-col{border-left:1px solid var(--faint);padding:calc(var(--nav-h) + 2rem) 1.8rem 2rem;display:flex;flex-direction:column;gap:2rem;overflow-y:auto;background:var(--bg)}
+.sketch-title{font-family:var(--serif);font-size:1.35rem;font-style:italic;font-weight:300;line-height:1.2}
+.sketch-desc{font-size:0.7rem;line-height:1.85;color:var(--mid)}
+.sketch-sec{font-size:0.54rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--mid);margin-bottom:0.6rem}
+.sketch-lnk{display:inline-block;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;border-bottom:1px solid var(--faint);padding-bottom:2px;cursor:pointer;transition:border-color 0.2s}
+.sketch-lnk:hover{border-color:var(--ink)}
+.sketch-note{margin-top:auto;font-size:0.62rem;line-height:1.75;color:var(--faint);font-style:italic;font-family:var(--serif);border-top:1px solid var(--faint);padding-top:1.2rem}
+
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* RESEARCH MAP — shared */
+#page-research.active{display:block;height:100vh;overflow:hidden}
+.research-bar{position:fixed;top:var(--nav-h);left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0.5rem 1rem;background:var(--bg);border-bottom:1px solid var(--faint);flex-wrap:wrap;gap:0.4rem}
+.research-bar-left{display:flex;align-items:center;gap:0.4rem}
+.research-bar-right{display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;max-width:100%}
+.map-btn{font-size:0.56rem;letter-spacing:0.18em;text-transform:uppercase;border:1px solid var(--faint);background:transparent;padding:0.42rem 0.9rem;cursor:pointer;color:var(--mid);transition:all 0.2s}
+.map-type-btn{padding:0.3rem 0.7rem;font-size:0.52rem}
+.map-type-btn.active-type{background:var(--paper);color:var(--ink)}
+.map-btn:hover{border-color:var(--ink);color:var(--ink)}
+.map-btn.active-view{border-color:var(--ink);color:var(--ink);background:var(--ink);color:var(--bg)}
+.map-filter-btn{font-size:0.54rem;letter-spacing:0.14em;text-transform:uppercase;border:1px solid var(--faint);padding:0.35rem 0.7rem;cursor:pointer;color:var(--mid);transition:all 0.2s;border-radius:0}
+.map-filter-btn:hover{color:var(--ink)}
+.map-filter-btn.on{border-color:var(--mid);color:var(--ink)}
+/* constellation view */
+#researchCanvas{position:absolute;top:0;left:0;width:100%;height:100%;cursor:grab;display:block}
+#researchCanvas:active{cursor:grabbing}
+.map-tooltip{position:fixed;background:var(--paper);border:1px solid var(--faint);padding:0.8rem 1rem;max-width:220px;min-width:160px;pointer-events:none;z-index:500;opacity:0;transition:opacity 0.2s;box-shadow:0 2px 12px rgba(0,0,0,0.08)}
+.map-tooltip.visible{opacity:1}
+.map-tt-title{font-family:var(--serif);font-style:italic;font-size:0.9rem;margin-bottom:0.15rem}
+.map-tt-type{font-size:0.54rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid);margin-bottom:0.3rem}
+.map-tt-desc{font-size:0.68rem;line-height:1.6;color:var(--mid)}
+.map-tt-link{display:none;margin-top:0.5rem;font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--faint);padding-bottom:1px;transition:border-color 0.2s}
+.map-tt-link.has-url{display:inline-block}
+.map-tt-link:hover{border-color:var(--ink)}
+/* list view */
+#researchList{position:absolute;top:0;left:0;right:0;bottom:0;overflow-y:auto;display:none;padding:0 0 4rem}
+#researchList.visible{display:block}
+.list-letter-group{border-top:1px solid var(--faint)}
+.list-letter{font-family:var(--serif);font-size:3rem;font-weight:300;font-style:italic;color:var(--faint);padding:1.2rem 2rem 0.4rem;line-height:1;user-select:none}
+.list-entry{display:grid;grid-template-columns:200px 1fr auto;align-items:baseline;gap:2rem;padding:0.7rem 2rem;border-bottom:1px solid var(--faint);cursor:pointer;transition:background 0.15s}
+.alpha-nav-btn{font-size:0.62rem;letter-spacing:0.14em;font-family:var(--courier);border:none;background:transparent;padding:0.3rem 0.5rem;cursor:pointer;color:var(--mid);transition:color 0.15s;text-transform:uppercase}
+.alpha-nav-btn:hover{color:#6fff00}
+.alpha-nav-btn.has-entries{color:var(--ink)}
+.alpha-nav-btn.has-entries:hover{color:#6fff00}
+.alpha-heading{display:flex;align-items:baseline;justify-content:space-between;padding:1.4rem 2rem 0.6rem;cursor:pointer;border-top:1px solid var(--faint);user-select:none;transition:background 0.15s}
+.alpha-heading:hover{background:var(--paper)}
+.alpha-letter{font-family:var(--serif);font-size:2.2rem;font-style:italic;font-weight:300;color:var(--ink);line-height:1}
+.alpha-count{font-size:0.54rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--faint)}
+.alpha-toggle{font-size:0.7rem;color:var(--mid);transition:transform 0.25s}
+.alpha-section.closed .alpha-toggle{transform:rotate(-90deg)}
+.alpha-items{overflow:hidden;transition:max-height 0.35s cubic-bezier(0.4,0,0.2,1)}
+.alpha-section.closed .alpha-items{max-height:0!important}
+.list-entry:hover{background:var(--paper)}
+.list-entry-name{font-family:var(--serif);font-style:italic;font-size:1rem;line-height:1.3}
+.list-entry-desc{font-size:0.7rem;line-height:1.6;color:var(--mid)}
+.list-entry-type{font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--faint);white-space:nowrap}
+.list-entry-type-dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:0.4rem;vertical-align:middle;flex-shrink:0}
+@media(max-width:600px){.list-entry{grid-template-columns:1fr auto;gap:1rem}.list-entry-desc{display:none}}
+
+/* MOODBOARD */
+#page-moodboard{background:var(--bg)}
+#page-moodboard .page-head{background:var(--bg)}
+.moodboard-journal-page{
+  position:relative;
+  margin:0 2rem 0;
+  background:#fdfbf7;
+  border:1px solid rgba(180,175,165,0.25);
+  box-shadow:0 1px 6px rgba(0,0,0,0.05);
+  background-image:radial-gradient(circle,rgba(160,155,145,0.22) 1px,transparent 1px);
+  background-size:24px 24px;
+  background-position:28px 20px;
+}
+.moodboard-wrap{
+  position:relative;
+  z-index:1;
+  padding:2rem 2rem 3rem 4rem;
+  columns:5;
+  column-gap:16px;
+}
+.mood-item{break-inside:avoid;margin-bottom:20px;cursor:default;position:relative;background:transparent;border-radius:0;z-index:1}
+.mood-img-wrap{overflow:hidden;background:var(--faint)}
+.mood-img{width:100%;display:block}
+.mood-cap{display:block;font-family:var(--serif);font-style:italic;font-size:0.7rem;color:var(--mid);padding:0.4rem 0.2rem 0;line-height:1.4}
+
+/* DRAWN GALLERY */
+.drawn-wrap{padding:calc(var(--nav-h) + 2rem) 3rem 5rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:3rem;background:transparent}
+.drawn-item{background:transparent;position:relative}
+.drawn-img{width:100%;height:auto;display:block;object-fit:contain}
+.drawn-lbl{display:block;margin-top:0.6rem;font-size:0.56rem;letter-spacing:0.12em;color:var(--mid);font-style:italic;font-family:var(--serif);position:static}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  /* -- NAV -- */
+  nav{padding:0 1.2rem;background:var(--bg)}
+  .nav-right{gap:0}
+  .nav-link{display:none}
+  .nav-explore{font-size:0.78rem;border:1px solid var(--faint);padding:0.28rem 0.7rem}
+  .nav-explore::before{content:''}
+
+  /* mobile nav drawer */
+  .mob-nav-drawer{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--bg);border-bottom:1px solid var(--faint);z-index:250;flex-direction:column;padding:0.5rem 0}
+  .mob-nav-drawer.open{display:flex}
+  .mob-nav-item{padding:0.85rem 1.4rem;font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--mid);cursor:pointer;border-bottom:1px solid var(--faint)}
+  .mob-nav-item:last-child{border-bottom:none}
+  .mob-nav-item:hover{color:var(--ink)}
+  .mob-nav-sep{padding:0.6rem 1.4rem 0.2rem;font-size:0.52rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--faint)}
+
+  /* -- HOME — painting top, ALL text content below, no justify-between -- */
+  .home-layout{display:flex;flex-direction:column-reverse;height:100vh}
+  .home-img-col{flex:1;min-height:0}
+  .home-text-col{
+    padding:1rem 1.4rem 1.4rem;
+    flex-shrink:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    gap:0;
+    overflow-y:auto;
+    max-height:52vh
+  }
+  .home-year-stamp{display:none}
+  #homeSig{max-width:180px !important;margin-bottom:0.5rem !important}
+  .home-underpaint{font-size:0.74rem;margin-bottom:0.7rem}
+  .home-current{border-top:1px solid var(--faint);padding-top:0.6rem;margin-bottom:0.6rem}
+  .home-newsletter-hint{margin-top:0;border-top:1px solid var(--faint);padding-top:0.7rem}
+  .home-newsletter-text{font-size:0.84rem;margin-bottom:0.3rem}
+
+  /* -- SKETCHBOOK mobile -- */
+  #page-sketch.active{display:block;height:100vh;overflow:hidden}
+  .sketch-canvas-col{position:relative;width:100%;height:100%;padding-top:var(--nav-h);padding-bottom:80px;display:flex;align-items:flex-start;justify-content:center}
+  .sketch-toolbar-wrap{position:fixed;bottom:0;left:0;right:0;width:100%;z-index:50;background:rgba(253,251,247,0.98);border-top:1px solid var(--faint);padding:0.4rem 0.5rem;max-width:100%;transform:none}
+  .sketch-toolbar{display:flex;flex-wrap:wrap;white-space:normal;justify-content:center;gap:0.3rem;border:none;background:transparent;padding:0.2rem;width:100%}
+  .sketch-subtoolbar{flex-wrap:wrap;white-space:normal;justify-content:center;gap:0.3rem;background:transparent;border:none;border-top:1px solid var(--faint);padding:0.3rem;width:100%}
+  .sketch-paper{margin:0.5rem;width:calc(100% - 1rem)}
+  .sketch-info-col{display:none}
+
+  /* -- WORKS -- */
+  .works-grid-view{grid-template-columns:1fr 1fr;gap:10px;padding:1rem}
+  .works-single{grid-template-columns:1fr;height:auto}
+  .wsv-img-col{min-height:55vw;padding:1rem;cursor:pointer}
+  .wsv-info-col{border-left:none;border-top:1px solid var(--faint);padding:1.2rem}
+  .wsv-nav{display:none}
+
+  /* -- OTHER -- */
+  .about-wrap{grid-template-columns:1fr}
+  .about-img-col{position:relative;height:auto;padding:calc(var(--nav-h) + 1rem) 1.5rem 1.5rem}
+  .about-text-col{padding:2rem 1.5rem 3rem}
+  .project-row{grid-template-columns:1fr;gap:1.2rem}
+  .contact-wrap{grid-template-columns:1fr;gap:2rem;padding:1.5rem 1.2rem 3rem}
+  .contact-form-col{order:0}
+  .contact-info-col{order:1}
+  .contact-intro{font-size:1.2rem;margin-bottom:0.5rem}
+  .newsletter-block{margin-top:2rem;padding-top:1.5rem}
+  .moodboard-wrap{columns:3;column-gap:10px;padding:1.2rem 1rem 2rem 1rem}
+  .moodboard-journal-page{margin:0 0.5rem}
+}
+@media(max-width:480px){.works-grid-view{grid-template-columns:1fr}.moodboard-wrap{columns:2;padding-left:1rem}}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name" onclick="showPage('home')" title="right-click to explore">Adrian Cojocaru</span>
+  <div class="nav-right">
+    <span class="nav-link" id="nl-works"    onclick="showPage('works')">Works</span>
+    <span class="nav-link" id="nl-projects" onclick="showPage('projects')">Projects</span>
+    <span class="nav-link" id="nl-about"    onclick="showPage('about')">About</span>
+    <span class="nav-link" id="nl-news"     onclick="showPage('news')">News</span>
+    <span class="nav-link" id="nl-contact"  onclick="showPage('contact')">Contact</span>
+    <span class="nav-explore" onclick="toggleExplore()">explore</span>
+  </div>
+</nav>
+
+<div class="explore-panel" id="explorePanel">
+  <span class="explore-panel-title">deeper layers —</span>
+  <div class="explore-links">
+    <span class="explore-link" onclick="go('sketch')">✏ Sketchbook</span>
+    <span class="explore-link" onclick="go('research')">◎ Research map</span>
+    <span class="explore-link" onclick="go('moodboard')">⊞ Diary / Moodboard</span>
+    <span class="explore-link" onclick="go('drawn')">◻ Drawn works</span>
+  </div>
+  <span class="explore-close" onclick="closeExplore()">close ×</span>
+</div>
+
+<!-- HOME -->
+<!-- MOBILE NAV DRAWER -->
+<div class="mob-nav-drawer" id="mobNavDrawer">
+  <div class="mob-nav-sep">Navigate</div>
+  <div class="mob-nav-item" onclick="mobileGo('works')">Works</div>
+  <div class="mob-nav-item" onclick="mobileGo('projects')">Projects</div>
+  <div class="mob-nav-item" onclick="mobileGo('about')">About</div>
+  <div class="mob-nav-item" onclick="mobileGo('news')">News</div>
+  <div class="mob-nav-item" onclick="mobileGo('contact')">Contact</div>
+  <div class="mob-nav-sep">Explore</div>
+  <div class="mob-nav-item" onclick="mobileGo('sketch')">Sketchbook</div>
+  <div class="mob-nav-item" onclick="mobileGo('research')">Research map</div>
+  <div class="mob-nav-item" onclick="mobileGo('moodboard')">Diary</div>
+  <div class="mob-nav-item" onclick="mobileGo('drawn')">Drawn works</div>
+</div>
+
+<div id="page-home" class="page active">
+  <div class="home-layout">
+    <div class="home-text-col">
+      <span class="home-year-stamp">b. 1993 · Romania</span>
+
+      <div>
+        <!-- Animated signature — draws on page load, click to replay -->
+        <svg id="homeSig" viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg"
+          style="width:100%;max-width:320px;overflow:visible;cursor:pointer;margin-bottom:2rem;display:block">
+        </svg>
+        <p class="home-underpaint">I like to paint over the underpaint</p>
+      </div>
+
+      <div>
+        <div class="home-current">
+          <p class="home-current-label">Lately</p>
+          <p class="home-current-title">I am working on a new series and learning to play the ukulele for my daughter.</p>
+        </div>
+        <div class="home-newsletter-hint">
+          <p class="home-newsletter-text">Letters from the studio</p>
+          <span class="home-newsletter-link" onclick="showPage('contact')">Subscribe →</span>
+        </div>
+      </div>
+    </div>
+    <div class="home-img-col" onclick="go('works');setWorksView('grid')" style="cursor:pointer" title="View selected works">
+      <!-- Replace with your hero painting -->
+      <img class="home-img" src="works/agency-of-a-liminal-space-2024.jpg" alt="Adrian Cojocaru">
+      <span class="home-img-caption">Agency of a liminal space, 2024, charcoal on canvas and oil on linen, 140 x 90 cm and 45 x 60 cm</span>
+    </div>
+  </div>
+</div>
+
+<!-- WORKS -->
+<div id="page-works" class="page" onscroll="if(this.scrollTop>80){scheduleHideBar(200)}else{showWorksBar()}">
+  <div style="height:var(--nav-h);flex-shrink:0"></div>
+
+  <!-- top bar -->
+  <div class="works-bar">
+    <span class="page-label">Selected Works</span>
+    <div class="works-view-toggle">
+      <button class="wvt-btn on" id="wvt-single" onclick="setWorksView('single')">Single</button>
+      <button class="wvt-btn" id="wvt-grid" onclick="setWorksView('grid')">Grid</button>
+    </div>
+  </div>
+
+  <!-- single view -->
+  <div class="works-single" id="worksSingle">
+    <div class="wsv-img-col">
+      <img class="wsv-img" id="wsv-img" src="" alt="">
+    </div>
+    <div class="wsv-info-col">
+      <p class="wsv-counter" id="wsv-counter"></p>
+      <h2 class="wsv-title" id="wsv-title"></h2>
+      <div class="wsv-details" id="wsv-details"></div>
+      <p class="wsv-desc" id="wsv-desc"></p>
+      <div class="wsv-enquire" onclick="showPage('contact')">Enquire about this work</div>
+      <div class="wsv-nav">
+        <span class="wsv-arrow" id="wsv-prev" onclick="worksStep(-1)">← Prev</span>
+        <span class="wsv-arrow" id="wsv-next" onclick="worksStep(1)">Next →</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- grid view -->
+  <div class="works-grid-view" id="worksGrid">
+    <!-- populated by JS -->
+  </div>
+
+</div>
+
+<!-- ARTWORK DETAIL -->
+<div id="page-artwork" class="page">
+  <div class="artwork-back" onclick="goBack()">← back</div>
+  <div class="artwork-layout">
+    <div class="artwork-img-col"><img class="artwork-img-large" id="aw-img" src="" alt=""></div>
+    <div class="artwork-info-col">
+      <h2 class="artwork-title-large" id="aw-title"></h2>
+      <div class="artwork-details" id="aw-details"></div>
+      <p id="aw-desc" style="font-size:0.7rem;line-height:1.85;color:var(--mid)"></p>
+      <div class="artwork-enquire" onclick="showPage('contact')">Enquire about this work</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div id="page-projects" class="page">
+
+  <!-- top bar -->
+  <div class="works-bar" id="projBar">
+    <span class="page-label" id="projBarLabel">Projects</span>
+    <span class="wsv-arrow" id="projBackBtn" onclick="closeProjGrid()" style="display:none">← Back to projects</span>
+  </div>
+
+  <!-- list view (overview of projects) — default -->
+  <div id="projList" style="padding:0 2rem 4rem;max-width:900px;margin-top:44px">
+    <!-- populated by JS -->
+  </div>
+
+  <!-- grid view (works within selected project) — hidden until project clicked -->
+  <div class="works-grid-view" id="projGrid" style="display:none">
+    <!-- populated by JS -->
+  </div>
+
+  <!-- single work detail -->
+  <div id="projDetail" style="display:none">
+    <div class="artwork-back" onclick="closeProjDetail()">← back to project</div>
+    <div class="works-single" style="height:calc(100vh - var(--nav-h) - 44px)">
+      <div class="wsv-img-col" onclick="projDetailStep(1)" style="cursor:pointer"><img class="wsv-img" id="pd-img" src="" alt=""></div>
+      <div class="wsv-info-col">
+        <p class="wsv-counter" id="pd-counter"></p>
+        <h2 class="wsv-title" id="pd-title"></h2>
+        <div class="wsv-details" id="pd-details"></div>
+        <p id="pd-desc" style="font-size:0.7rem;line-height:1.85;color:var(--mid)"></p>
+        <p id="pd-status" class="wsv-status-private" style="display:none"></p>
+        <div id="pd-exhibited" class="wsv-exhibited" style="display:none"></div>
+        <div class="wsv-enquire" id="pd-enquire" onclick="showPage('contact')">Enquire about this work</div>
+        <div class="wsv-nav">
+          <span class="wsv-arrow" id="pd-prev" onclick="projDetailStep(-1)">← Prev</span>
+          <span class="wsv-arrow" id="pd-next" onclick="projDetailStep(1)">Next →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ABOUT -->
+<div id="page-about" class="page">
+  <div class="about-single-col">
+    <img class="about-photo-single" src="images/bio.jpg" alt="Adrian Cojocaru">
+
+    <h1 class="about-name-single">Adrian Cojocaru</h1>
+    <p class="about-location-single">b. 1993 in Romania · Lives and works in Romania</p>
+    
+    <div class="about-bio-single">
+      <p>Adrian Cojocaru paints what he wants to see. Working from a personal archive built through years of walking, he moves between art history and the textures of daily life — absorbing, recombining, pushing existing imagery somewhere it hasn't been yet. Raised between Eastern and Western Europe, he brings a double perspective to the canvas: playful and deliberate, familiar and displaced. His paintings attend to what repetition, labor, and the unremarkable corners of experience can hold.</p>
+      <p>He has exhibited at MARe Museum of Recent Art, Bucharest, and the Museum of Art Brașov, and presented a solo exhibition at GAEP Gallery, Bucharest, in 2024.</p>
+    </div>
+
+    <div class="cv-block">
+      <p class="cv-block-title">Solo exhibitions</p>
+      <div class="cv-line"><span class="cv-year">2024</span><span>Gaep Presents: ADRIAN COJOCARU | Acts of in-between, Gaep Gallery, Bucharest, RO</span></div>
+      <div class="cv-line"><span class="cv-year">2022</span><span>Il Pane è la Vita, Aparte Gallery, Iasi, RO</span></div>
+    </div>
+    <div class="cv-block">
+      <p class="cv-block-title">Selected group exhibitions</p>
+      <div class="cv-line"><span class="cv-year">2024</span><span>On the Threshold of Dreams, MAD-Gallery, Hasselt, BE</span></div>
+      <div class="cv-line"><span class="cv-year">2024</span><span>Graduate Curated, MARe Museum, Bucharest, RO</span></div>
+      <div class="cv-line"><span class="cv-year">2023</span><span>Fabulating About a Gelato Machine, curated by Georgia Tidorescu, The Art Museum of Brasov, Brasov, RO</span></div>
+      <div class="cv-line"><span class="cv-year">2023</span><span>National Biannale of Painting, The Art Museum of Constanta, Constanta, RO</span></div>
+      <div class="cv-line"><span class="cv-year">2022</span><span>DIPLOMA SHOW 2022, Combinatul Fondului Plastic, Bucharest, RO</span></div>
+      <div class="cv-line"><span class="cv-year">2022</span><span>Graduation Highlights 2022, Borderline Art Space, Iasi, RO</span></div>
+      <div class="cv-line"><span class="cv-year">2021</span><span>Connecting..., Aparte Gallery, Iasi, RO</span></div>
+    </div>
+    <div class="cv-block">
+      <p class="cv-block-title">Education</p>
+      <div class="cv-line"><span class="cv-year">2024</span><span>MA Painting, National University of Arts 'George Enescu', Iasi, RO</span></div>
+      <div class="cv-line"><span class="cv-year">2024</span><span>MA Erasmus+, PXL-MAD School of Arts, Hasselt, BE</span></div>
+      <div class="cv-line"><span class="cv-year">2022</span><span>BA Painting, National University of Arts 'George Enescu', Iasi, RO</span></div>
+    </div>
+    <div class="cv-block">
+      <p class="cv-block-title">Press</p>
+      <div class="cv-line"><span class="cv-year">2024</span><span>«Article title», Publication</span></div>
+    </div>
+    <div class="cv-block" style="display:none">
+      <p class="cv-block-title">Collections</p>
+      <div class="cv-line"><span class="cv-year"></span><span>Institution or private collection, City</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS -->
+<div id="page-news" class="page">
+  <div class="page-head"><span class="page-label">News</span></div>
+
+  <!-- TV NEWS TICKER -->
+  <div style="background:#00c800;overflow:hidden;white-space:nowrap;height:28px;display:flex;align-items:center;border-bottom:2px solid #009400;flex-shrink:0">
+    <div style="display:inline-block;animation:ticker 28s linear infinite;padding-left:100%">
+      <span style="font-family:'Courier New',monospace;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;color:#001a00;text-transform:uppercase">
+        MENDING NEWS &nbsp;|||| &nbsp;MENDING NEWS &nbsp;(((( &nbsp;MENDING NEWS &nbsp;)))) &nbsp;MENDING NEWS &nbsp;\\ &nbsp;MENDING NEWS &nbsp;//// &nbsp;MENDING NEWS &nbsp;^^^^ &nbsp;MENDING NEWS &nbsp;{{{{ &nbsp;MENDING NEWS }}}} &nbsp;MENDING NEWS &nbsp;++++ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MENDING NEWS &nbsp;|||| &nbsp;MENDING NEWS &nbsp;(((( &nbsp;MENDING NEWS &nbsp;)))) &nbsp;MENDING NEWS &nbsp;\\ &nbsp;MENDING NEWS &nbsp;//// &nbsp;MENDING NEWS &nbsp;^^^^ &nbsp;MENDING NEWS &nbsp;{{{{ &nbsp;MENDING NEWS }}}} &nbsp;MENDING NEWS &nbsp;++++
+      </span>
+    </div>
+  </div>
+
+  <div class="news-wrap">
+    <div class="news-item"> 
+      <div class="news-thumb-wrap"><img class="news-thumb" src="news/birth-of-my-daughter-2025.jpg" alt="">     
+</div>
+      <div><p class="news-date">2025</p><p class="news-title">Birth of my daughter</p>
+      <p class="news-excerpt">This year I'm fully dedicated to taking care of my family 🍼</p></div>
+    </div>
+    <div class="news-item"> 
+      <div class="news-thumb-wrap"><img class="news-thumb" src="https://curatorial.ro/wp-content/uploads/2024/08/Gaep-Presents-Adrian-Cojocaru-2024-foto-AlexandruPaul.jpg" alt=""></div>
+      <div><p class="news-date">2024</p><p class="news-title">INTERVIU – Adrian Cojocaru și practica artistică precum o bucătărie profesională</p>
+      <p class="news-excerpt">Artistul Adrian Cojocaru vorbește într-un interviu acordat curatorial.ro despre cel mai amplu proiect artistic al său care se află în prim-plan la galeria bucureșteană Gaep. Pornind de la experiențele culinare, ca gurmand și lucrător în bucătărie, el a creat un proiect artistic și expozițional asemănător unui tasting menu dintr-un restaurant fine dining.</p>
+      <a class="news-pdf-link" href="archive/name.pdf" target="_blank" rel="noopener noreferrer">Read article / PDF</a></div>
+    </div>
+    <div class="news-item">
+      <div class="news-thumb-wrap"><img class="news-thumb" src="news/first-solo-gaep-2024.jpg" alt=""></div>
+      <div><p class="news-date">2024</p><p class="news-title">Acts of In-Between (Solo Show)</p><p class="news-excerpt">GAEP Gallery, Bucharest, Romania 
+<br/> 19 July - 16 August 2024
+<br/><br/>I am pleased to announce my first solo exhibition with GAEP in Bucharest. I will showcase a new body of work that I have been developing over the past year and a half, inspired by extensive research conducted in professional kitchens. This series embodies my commitment to artistic investigation, offering an immersive look into culinary environments and exploring the intersection between art and culinary experiences. I look forward to welcoming you on for the reception on Friday, 19 July | 6:00 – 10:00 PM, 8 Giuseppe Garibaldi Street, Bucharest.
+<br/> PS: we'll be serving ice cream to keep things cool 🍧</div>
+    </div>
+    <div class="news-item">
+      <div class="news-thumb-wrap"><img class="news-thumb" src="news/installation-treshold-of-dreams-2024.jpg" alt=""></div>
+      <div><p class="news-date">2024</p><p class="news-title">On the Threshold of Dreams (Group Show)</p><p class="news-excerpt">MAD-Gallery / PXL-MAD School, Hasselt, Belgium
+</br>13 - 17 May 2024
+</br></br>I will be presenting an artwork from a new series at the exhibition On the Threshold of Dreams, curated by Patrick Vanden Eynde, at the MAD-Gallery in Hasselt, Belgium. Join us for the opening on Thursday, 16 May, at 6 PM.</p></div>
+    </div>
+    <div class="news-item">
+      <div class="news-thumb-wrap"><img class="news-thumb" src="news/opening-graduate-curated-2024.jpg" alt=""></div>
+      <div><p class="news-date">2024</p><p class="news-title">Graduate Curated (Group Show)</p><p class="news-excerpt">MARe - Museum of Recent Art, Bucharest, Romania
+</br>9 February 2024 - 20 May 2024
+</br></br>'Cei Noi / Graduate Curated is also a first for MARe/Museum of Recent Art, which, in its first five years since its founding, systematically showcased dozens upon dozens of established names in post-war Romanian art. Previous thematic exhibitions, covering topics significant to visual culture and national history (ranging from the image of the feminine ideal to the representation of sports, the city, or agriculture in Romanian art), never considered generational criteria.'
+Excerpt from the press release</p></div>
+    </div>
+    <div class="news-item">
+      <div class="news-thumb-wrap"><img class="news-thumb" src="news/interview-iqads-2023.jpg" alt="Photo credits: MARe / Museum of Rcent Art"></div>
+      <div><p class="news-date">2023</p><p class="news-title">Interview for IqAds</p><p class="news-excerpt">I have talked with Elena Dobre about the process behind creating the artwork presented in the Accelerator Mentorat exhibition. The interview is here, in romanian.</p></div>
+    </div>
+    <div class="news-item">
+      <div class="news-thumb-wrap"><img class="news-thumb" src="news/mediation-fabulating-about-a-gelato-machine-2024.jpg" alt="Photo credits: Alexandra Ilnitchi-Ardelean / The Art Museum Brasov"></div>
+      <div><p class="news-date">2023</p><p class="news-title">Fabulating About a Gelato Machine (Group Show)</p>
+      <p class="news-excerpt">The Art Museum Brasov, Romania
+</br>10 November 2023 - 3 March 2024
+
+</br></br>'We started the exhibition by keeping in mind the book Slices of Life by Elia Romanelli, Piero Vereni, and Ottavia Castellina. All the exhibiting artists described a personal preference or a detail of their lives that had an impact on their artistic practice, either in its development or in the choice of the studied subjects. The works vary from a statistical viewpoint on living to a particular understanding of life and how one is perceived.'
+Excerpt from the Fabulating About a Gelato Machine exhibition text, written by Georgia Tidorescu
+
+</br>Read the mediation text for And it's really not her fault, written by Ioana Chira</p></div>
+    </div>
+    <div class="news-item">
+      <div class="news-thumb-wrap"><img class="news-thumb" src="news/opening-il-pane-e-la-vita-2022.jpg" alt=""></div>
+      <div><p class="news-date">2022</p><p class="news-title">Il Pane è la Vita (Solo Show)</p><p class="news-excerpt">Aparte Gallery, Iasi, Romania
+</br>16 December 2022 - 5 January 2023
+
+</br></br>La cosa che mi piace di più nella vita è il mangiare. Con queste scene voglio far vedere che esistono luoghi speciali per i misfits che vivono per il cibo.
+</br>Read the exhibition text written by Maria Manaila</p></div>
+    </div>
+    <div class="news-item">
+      <div class="news-thumb-wrap"><img class="news-thumb" src="news/Opening-Diploma-Show-2022.jpg" alt=""></div>
+      <div><p class="news-date">2022</p><p class="news-title">DIPLOMA SHOW 2022 (Group Show)</p><p class="news-excerpt">Combinatul Fondului Plastic, Bucharest, Romania
+</br>7 - 16 October 2022
+
+</br></br>The paintings that compose this artistic project represent imaginary scenes generated by my urban wanderings. The proposed universe supports alternative scenarios projected by the artist on the idea of the city as a palimpsestic entity and invites endless participatory commentary.</p></div>
+    </div>
+    <div class="news-item">
+      <div class="news-thumb-wrap"><img class="news-thumb" src="news/opening-graduationhighlights-2022.jpg" alt=""></div>
+      <div><p class="news-date">2022</p><p class="news-title">Graduation Highlights 2022 (Group Show)</p><p class="news-excerpt">Borderline Art Space, Iasi, Romania
+</br>14 July - 25 August 2022
+
+</br></br>'Adrian Cojocaru, a painting graduate under the guidance of Prof. Dr. Mihai Tarași, has depicted individuals and places that captured his attention during his wanderings. Personal experiences, a keen sense of observation, and the artist's imagination are the tools that forge urban landscapes brought together in this project.'
+Ioana Soreanu, Radio Romania Iasi</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="page-contact" class="page">
+  <div class="page-head"><span class="page-label">Contact</span></div>
+  <div class="contact-wrap">
+    <div class="contact-form-col">
+      <p class="contact-intro">Get in touch</p>
+      <p style="font-size:0.72rem;line-height:1.8;color:var(--mid);margin-bottom:1.4rem">For all further inquiries,<br>please use the contact form.</p>
+      <a href="https://www.instagram.com/adriancojocaruu" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--mid);border-bottom:1px solid var(--faint);padding-bottom:2px;transition:all 0.2s;margin-bottom:2rem">
+        Instagram ↗
+      </a>
+      <div class="newsletter-block">
+        <p class="newsletter-label">Mailing List</p>
+        <p class="newsletter-desc">To receive studio notes and updates for upcoming exhibitions, please write your email down below.</p>
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+          <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="nl-time" id="nl-time">
+          <input class="newsletter-input" type="email" placeholder="your@email.com" required>
+          <button type="submit" class="newsletter-btn">Subscribe →</button>
+        </form>
+        <p class="newsletter-note">No spam. Unsubscribe anytime.</p>
+      </div>
+    </div>
+    <div class="contact-info-col">
+      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="return handleSubmit(event)">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div class="form-field"><label class="form-label">Name</label><input class="form-input" type="text" name="name" required></div>
+        <div class="form-field"><label class="form-label">Email</label><input class="form-input" type="email" name="email" required></div>
+        <div class="form-field"><label class="form-label">Message</label><textarea class="form-textarea" name="message" required></textarea></div>
+        <button type="submit" class="form-submit">Send message</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- DIARY / MOODBOARD -->
+<div id="page-moodboard" class="page">
+  <div class="page-head">
+    <span class="page-label">Diary</span>
+    <span class="mood-updated" id="moodUpdated"></span>
+  </div>
+  <div class="moodboard-journal-page">
+    <div class="moodboard-wrap">
+      <!--DIARY_START-->
+      <div style="padding:3rem 2rem;font-family:'Cormorant Garamond',serif;font-style:italic;color:#8a867c;font-size:0.9rem">
+        No entries yet — add images to the diary/ folder.
+      </div>
+      <!--DIARY_END-->
+    </div>
+  </div>
+</div>
+
+<!-- DRAWN WORKS GALLERY -->
+<div id="page-drawn" class="page">
+  <div class="page-head">
+    <span class="page-label">Drawn Works</span>
+    <span class="mood-updated" id="drawnUpdated"></span>
+  </div>
+  <div class="drawn-wrap">
+    <!--DRAWN_START-->
+    <div style="padding:3rem 2rem;font-family:'Cormorant Garamond',serif;font-style:italic;color:#8a867c;font-size:0.9rem">
+      No entries yet — add images to the drawn/ folder.
+    </div>
+    <!--DRAWN_END-->
+  </div>
+</div>
+
+<!-- SKETCHBOOK -->
+<div id="page-sketch" class="page">
+  <div class="sketch-canvas-col">
+    <div class="sketch-paper" id="sketchPaper">
+      <canvas id="sketchCanvas"></canvas>
+    </div>
+    <div class="sketch-toolbar-wrap">
+
+      <!-- Main tool row -->
+      <div class="sketch-toolbar" id="sketchToolbar">
+        <span style="font-size:0.5rem;color:var(--faint);cursor:move;padding:0 0.2rem;letter-spacing:0.05em" title="Drag to move">⠿</span>
+        <div class="tool-wrap" onclick="setTool('pencil')"><div class="tool-btn active" id="tool-pencil">✏</div><span class="tool-label">Pencil</span></div>
+        <div class="tool-wrap" onclick="setTool('ink')"><div class="tool-btn" id="tool-ink">|</div><span class="tool-label">Liner</span></div>
+        <div class="tool-wrap" onclick="setTool('charcoal')"><div class="tool-btn" id="tool-charcoal">▓</div><span class="tool-label">Charcoal</span></div>
+        <div class="tool-wrap" onclick="setTool('brush')"><div class="tool-btn" id="tool-brush">◎</div><span class="tool-label">Brush</span></div>
+        <div class="tool-wrap" onclick="setTool('eraser')"><div class="tool-btn" id="tool-eraser">◻</div><span class="tool-label">Eraser</span></div>
+        <div class="tool-sep"></div>
+        <span class="clr-btn" onclick="clearCanvas()">Clear</span>
+        <div class="tool-sep"></div>
+        <span class="clr-btn" onclick="downloadCanvas()">Save</span>
+      </div>
+
+      <!-- Pencil sub-toolbar: HB → 6B, black only -->
+      <div class="sketch-subtoolbar" id="sub-pencil">
+        <span style="font-size:0.52rem;letter-spacing:0.12em;color:var(--mid);margin-right:0.3rem">Grade</span>
+        <div class="sub-opt" onclick="setPencilGrade('HB')"><div class="sub-opt-btn active" id="pg-HB">HB</div></div>
+        <div class="sub-opt" onclick="setPencilGrade('2B')"><div class="sub-opt-btn" id="pg-2B">2B</div></div>
+        <div class="sub-opt" onclick="setPencilGrade('4B')"><div class="sub-opt-btn" id="pg-4B">4B</div></div>
+        <div class="sub-opt" onclick="setPencilGrade('6B')"><div class="sub-opt-btn" id="pg-6B">6B</div></div>
+        <div class="tool-sep"></div>
+        <span style="font-size:0.5rem;letter-spacing:0.1em;color:var(--mid);margin-right:0.3rem">Size</span>
+        <div class="sub-size" id="pencil-sizes"></div>
+      </div>
+
+      <!-- Liner sub-toolbar -->
+      <div class="sketch-subtoolbar" id="sub-ink">
+        <span style="font-size:0.52rem;letter-spacing:0.12em;color:var(--mid);margin-right:0.3rem">Nib</span>
+        <div class="sub-opt" onclick="setLinerNib('0.1')"><div class="sub-opt-btn active" id="ln-01">0.1</div></div>
+        <div class="sub-opt" onclick="setLinerNib('0.3')"><div class="sub-opt-btn" id="ln-03">0.3</div></div>
+        <div class="sub-opt" onclick="setLinerNib('0.5')"><div class="sub-opt-btn" id="ln-05">0.5</div></div>
+        <div class="sub-opt" onclick="setLinerNib('0.8')"><div class="sub-opt-btn" id="ln-08">0.8</div></div>
+        <div class="sub-opt" onclick="setLinerNib('1.0')"><div class="sub-opt-btn" id="ln-10">1.0</div></div>
+        <div class="tool-sep"></div>
+        <span style="font-size:0.5rem;letter-spacing:0.1em;color:var(--mid);margin-right:0.3rem">Colour</span>
+        <div class="cswatch active" style="background:#1a1916" onclick="setColor('#1a1916')" data-c="#1a1916" title="Ink black"></div>
+        <div class="cswatch" style="background:#2a3050" onclick="setColor('#2a3050')" data-c="#2a3050" title="Indigo"></div>
+        <div class="cswatch" style="background:#3a2a18" onclick="setColor('#3a2a18')" data-c="#3a2a18" title="Sepia"></div>
+        <div class="cswatch" style="background:#1a3a28" onclick="setColor('#1a3a28')" data-c="#1a3a28" title="Forest"></div>
+        <div class="cswatch" style="background:#6a1a1a" onclick="setColor('#6a1a1a')" data-c="#6a1a1a" title="Bordeaux"></div>
+        <div class="cswatch" style="background:#2a4a5a" onclick="setColor('#2a4a5a')" data-c="#2a4a5a" title="Slate blue"></div>
+      </div>
+
+      <!-- Charcoal sub-toolbar -->
+      <div class="sketch-subtoolbar" id="sub-charcoal">
+        <span style="font-size:0.52rem;letter-spacing:0.12em;color:var(--mid);margin-right:0.3rem">Type</span>
+        <div class="sub-opt" onclick="setCharcoalType('willow')"><div class="sub-opt-btn active" id="ct-willow">Willow</div></div>
+        <div class="sub-opt" onclick="setCharcoalType('compressed')"><div class="sub-opt-btn" id="ct-compressed">Compressed</div></div>
+        <div class="sub-opt" onclick="setCharcoalType('powdered')"><div class="sub-opt-btn" id="ct-powdered">Powdered</div></div>
+        <div class="sub-opt" onclick="setCharcoalType('conte')"><div class="sub-opt-btn" id="ct-conte">Conté</div></div>
+        <div class="tool-sep"></div>
+        <span style="font-size:0.5rem;letter-spacing:0.1em;color:var(--mid);margin-right:0.3rem">Size</span>
+        <div class="sub-size" id="charcoal-sizes"></div>
+      </div>
+
+      <!-- Brush sub-toolbar -->
+      <div class="sketch-subtoolbar" id="sub-brush">
+        <span style="font-size:0.52rem;letter-spacing:0.12em;color:var(--mid);margin-right:0.3rem">Tip</span>
+        <div class="sub-opt" onclick="setBrushType('round')"><div class="sub-opt-btn active" id="bt-round">Round</div></div>
+        <div class="sub-opt" onclick="setBrushType('flat')"><div class="sub-opt-btn" id="bt-flat">Flat</div></div>
+        <div class="sub-opt" onclick="setBrushType('dry')"><div class="sub-opt-btn" id="bt-dry">Dry</div></div>
+        <div class="sub-opt" onclick="setBrushType('wash')"><div class="sub-opt-btn" id="bt-wash">Wash</div></div>
+        <div class="tool-sep"></div>
+        <span style="font-size:0.5rem;letter-spacing:0.1em;color:var(--mid);margin-right:0.3rem">Size</span>
+        <div class="sub-size" id="brush-sizes"></div>
+        <div class="tool-sep"></div>
+        <span style="font-size:0.5rem;letter-spacing:0.1em;color:var(--mid);margin-right:0.3rem">Colour</span>
+        <div class="cswatch active" style="background:#1a1916" onclick="setColor('#1a1916')" data-c="#1a1916"></div>
+        <div class="cswatch" style="background:#4a3f35" onclick="setColor('#4a3f35')" data-c="#4a3f35"></div>
+        <div class="cswatch" style="background:#8a6a4a" onclick="setColor('#8a6a4a')" data-c="#8a6a4a"></div>
+        <div class="cswatch" style="background:#a09080" onclick="setColor('#a09080')" data-c="#a09080"></div>
+        <div class="cswatch" style="background:#c03828" onclick="setColor('#c03828')" data-c="#c03828"></div>
+        <div class="cswatch" style="background:#3a5070" onclick="setColor('#3a5070')" data-c="#3a5070"></div>
+        <div class="cswatch" style="background:#3a5a3a" onclick="setColor('#3a5a3a')" data-c="#3a5a3a"></div>
+        <div class="cswatch" style="background:#6a3a5a" onclick="setColor('#6a3a5a')" data-c="#6a3a5a"></div>
+      </div>
+
+      <!-- Eraser sub-toolbar -->
+      <div class="sketch-subtoolbar" id="sub-eraser">
+        <span style="font-size:0.52rem;letter-spacing:0.12em;color:var(--mid);margin-right:0.3rem">Size</span>
+        <div class="sub-size" id="eraser-sizes"></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="sketch-info-col">
+    <div><p class="sketch-title">Leave a mark.</p><p class="sketch-desc">I invite you to take a moment for yourself, and draw something here — a thought, a gesture, a line. Each visit is a blank page.</p></div>
+    <div><p class="sketch-sec">Tools</p><p class="sketch-desc">Pencil · Liner · Charcoal · Brush · Eraser</p></div>
+    <div><p class="sketch-sec">Curated drawings</p><p class="sketch-desc" style="margin-bottom:0.8rem">Selected marks — mine and sometimes from friends — live here.</p><span class="sketch-lnk" onclick="showPage('drawn')">View the gallery →</span></div>
+    <div><p class="sketch-sec">Research map</p><p class="sketch-desc" style="margin-bottom:0.8rem">An atlas of influences — artists, books, places, ideas.</p><span class="sketch-lnk" onclick="showPage('research')">Explore the map →</span></div>
+    <p class="sketch-note">Drawing resets on each visit. Nothing is saved — only the gesture remains.</p>
+  </div>
+</div>
+
+<!-- RESEARCH MAP -->
+<div id="page-research" class="page">
+
+  <!-- top bar: view toggle + type filters + actions -->
+  <div class="research-bar">
+    <div class="research-bar-left">
+      <button class="map-btn active-view" id="btn-constellation" onclick="setResView('constellation')">Constellation</button>
+      <button class="map-btn" id="btn-list" onclick="setResView('list')">A–Z List</button>
+      <button class="map-btn" onclick="resetMap()" style="margin-left:0.5rem">Reset view</button>
+      <button class="map-btn" id="btn-copy" onclick="copyPositions()" style="margin-left:0.2rem">Copy positions</button>
+    </div>
+    <div class="research-bar-right" id="typeFilters">
+      <!-- populated by JS -->
+    </div>
+  </div>
+
+  <!-- copy toast -->
+  <div id="copyToast" style="position:fixed;bottom:2rem;right:2rem;background:var(--ink);color:var(--paper);padding:0.7rem 1.2rem;font-size:0.64rem;letter-spacing:0.12em;z-index:400;opacity:0;transition:opacity 0.3s;pointer-events:none">
+    Positions copied to clipboard
+  </div>
+
+  <!-- constellation canvas -->
+  <div id="res-constellation"><canvas id="researchCanvas" style="margin-top:calc(var(--nav-h) + 44px)"></canvas></div>
+
+  <!-- A–Z list -->
+  <div id="res-list" style="padding-top:calc(var(--nav-h) + 44px);display:none;padding-bottom:4rem">
+    <!-- sticky alphabet nav -->
+    <div id="resAlphaNav" style="position:sticky;top:calc(var(--nav-h) + 44px);background:var(--bg);border-bottom:1px solid var(--faint);padding:0.7rem 1.5rem;z-index:20;display:flex;flex-wrap:wrap;justify-content:center;gap:0.1rem"></div>
+    <div id="resListItems"></div>
+  </div>
+
+  <!-- tooltip (constellation only) -->
+  <div class="map-tooltip" id="mapTooltip">
+    <p class="map-tt-title" id="tt-label"></p>
+    <p class="map-tt-type" id="tt-type"></p>
+    <p class="map-tt-desc" id="tt-desc"></p>
+    <a class="map-tt-link" id="tt-link" href="#" target="_blank" rel="noopener">Open link →</a>
+  </div>
+
+</div>
+
+<script>
+
+/* BG PALETTE */
+document.body.classList.add(['bg-0','bg-1','bg-2','bg-3','bg-4'][Math.floor(Math.random()*5)]);
+
+/* ---- ROUTING ------------------------------------------------ */
+var prev = 'home';
+
+function showPage(id) {
+  var cur = document.querySelector('.page.active');
+  if (cur) { prev = cur.id.replace('page-',''); cur.classList.remove('active'); }
+  document.querySelectorAll('.nav-link').forEach(function(l){ l.classList.remove('active'); });
+  var p = document.getElementById('page-'+id);
+  if (!p) return;
+  p.classList.add('active');
+  p.scrollTop = 0;
+  var nl = document.getElementById('nl-'+id);
+  if (nl) nl.classList.add('active');
+  if (id === 'works')    { initWorks(); showWorksBar(); initWorksBar(); }
+  if (id === 'projects') { projActive=null; document.querySelector('#projBar .page-label').textContent='Projects'; initProjects(); }
+  if (id === 'sketch')   { initSketch(); }
+  if (id === 'research') { initResearch(); populateFilters(); renderResList(); setResView('constellation'); var tf=document.getElementById('typeFilters'); if(tf) tf.style.display='flex'; }
+  if (id === 'moodboard'){ updateMoodTimestamp(); }
+  if (id === 'drawn')    { updateDrawnTimestamp(); }
+  var footer = document.getElementById('siteFooter');
+  if (footer) footer.style.display = id === 'home' ? 'none' : 'block';
+}
+
+function go(id) { showPage(id); closeExplore(); }
+function goBack() { showPage(prev || 'works'); }
+
+/* ---- EXPLORE PANEL ------------------------------------------ */
+function toggleExplore() {
+  if (window.innerWidth <= 768) {
+    var d = document.getElementById('mobNavDrawer');
+    if (d) d.classList.toggle('open');
+  } else {
+    document.getElementById('explorePanel').classList.toggle('open');
+  }
+}
+function closeExplore() {
+  document.getElementById('explorePanel').classList.remove('open');
+  var d = document.getElementById('mobNavDrawer');
+  if (d) d.classList.remove('open');
+}
+function mobileGo(id) {
+  var d = document.getElementById('mobNavDrawer');
+  if (d) d.classList.remove('open');
+  showPage(id);
+}
+
+document.querySelector('.nav-name').addEventListener('contextmenu', function(e) {
+  e.preventDefault(); toggleExplore();
+});
+document.addEventListener('click', function(e) {
+  var d = document.getElementById('mobNavDrawer');
+  if (!d || !d.classList.contains('open')) return;
+  if (!d.contains(e.target) && !e.target.closest('.nav-explore')) d.classList.remove('open');
+});
+
+/* ---- SECRET PAGES (type draw / map / diary) ----------------- */
+var kb = '';
+document.addEventListener('keypress', function(e) {
+  kb = (kb + e.key.toLowerCase()).slice(-6);
+  if (kb.includes('draw'))  showPage('sketch');
+  if (kb.includes('map'))   showPage('research');
+  if (kb.includes('diary')) showPage('moodboard');
+});
+
+/* ---- PROJECTS DATA ------------------------------------------ */
+/*
+  Each project:
+    id, title, year, medium, cover (URL)
+    desc      - short text shown in list view
+    descFull  - expanded text on "Read more"
+    exhibitionText       - string or array of strings (paragraphs) shown as
+                           a collapsible "Exhibition text" block at the bottom
+                           of the works grid. Omit if not needed.
+    exhibitionTextAuthor - optional string, e.g. 'Maria Manaila'
+    works[]   - array of individual works:
+      title, img, year, medium, dims
+      status: 'available' → shows Enquire button
+              'private'   → shows Private collection label
+              omit        → nothing shown
+      exhibited: ['Gallery Name, City, Year'] → shown as "Exhibited at"
+      installationView: true → labels the thumbnail as "Installation view" in grid
+*/
+var PROJECTS = [
+  {
+    id: 'acts',
+    title: 'Acts of in-between',
+    year: '2024',
+    medium: 'Charcoal on canvas and oil on linen',
+    cover: 'works/all-worked-as-a-team-so-im-safe-detail.jpg',
+    desc: 'A body of work exploring the unnoticed spaces between urban activities - the pause, the threshold, the in-between moment.',
+    descFull: 'Add your full project description here. This text unfolds when the visitor clicks "Read more". Write as many paragraphs as you need - about the research, the context, the questions the work asks, what you discovered in the process.',
+    exhibitionText: [
+      'A story of food and art — and of the rituals and environments for their creation —, Adrian Cojocaru’s first exhibition at Gaep features six large-scale works that blend charcoal drawing on canvas with richly textural painting. Informed by the distinctly modern experience of fine dining, this new body of work arises from two main gestures. One is the analogy that the artist draws between the precise choreography of a professional kitchen, in which every second counts, and his own movements, similarly exact, in the studio. The other is an act of double reveal. Cojocaru takes us behind the scenes, both in a restaurant and in his studio, to look at what diners and viewers don’t usually see: the cluttered office next to the kitchen; the communal solitude of chefs who cleave tightly to their duties; the drawings that, at most times, precede painting in a painter’s practice.',
+      'Adrian Cojocaru’s work begins outside the studio itself. Convinced that walking is a form of knowledge, he strolls through cities in a state that most dedicated urban walkers know: “an observer’s state, cool, withdrawn, with senses sharpened, a good state for anybody who needs to reflect or create.”[Rebecca Solnit, Wanderlust. A History of Walking, Granta Books, 2022]. Spontaneously, he photographs some of the places which he stumbles upon, particularly cafés, bakeries, ice cream shops, and restaurants. Such records of unpredictable encounters add to the planned photographs he takes inside professional kitchens (including the high-end kitchen in the US where he had a summer job as a student) and to the direct experience of dining at various restaurants that he researches beforehand. Compositions start to be derived by drawing from the images and observations thus collected. This M.O. allows him to clarify the emotionally resonant moments and to engage with the legacy of figurative painting, skillfully connecting historic references with contemporary representations.', 'Across the works on view in the exhibition is a preoccupation with ritualized patterns of behaviour — of those who make the food and of those who eat it. Instead of the popular focus on chefs turned superstars, Cojocaru is fascinated by the orchestrated sequence of actions and processes, by the work ethic that makes a dining experience memorable. The presentation in the gallery echoes the script of such an experience — from anticipating it (Agency of a liminal space) and starting to appreciate the expertise of its makers (The Italians were marvellous), to having a different disposition at the end of the meal (Going anywhere, we were vulnerable). With each work, Cojocaru highlights competing surface qualities as he overlays the drawn canvas with painted details; there is equal power, he suggests, in both forms of mark making. Acts of In-Between shows a young artist reflecting on the nature of his work while attuning us to the realities of another professional environment and inviting us to think about the value of respect and care — for ourselves and for the others.', '—', '”Gaep Presents” is a new programme of exhibitions that focuses on work by emerging artists and by established collaborators of the gallery other than the artists it represents. The programme builds upon the four iterations of ACCELERATOR, the mentoring projects for emerging artists in which Gaep has been a partner since 2022, and on diverse collaborations with artists in the gallery’s 10-year history. Adrian Cojocaru: Acts of In-Between is the first exhibition in this series.', '—', 'Adrian Cojocaru (b. 1993) works to celebrate the richness of contemporary human experience through the medium of painting. By integrating walking into his artistic practice and photographing his immediate surroundings, he has accumulated a large number of images that serve as source material alongside pop culture and art history. A sense of displacement and longing caused by his dual upbringing in Eastern and Western Europe is a silent undercurrent running through his paintings, which often feature activities, jobs, and experiences that tend to be overlooked. Cojocaru has been an Erasmus+ student at PXL-MAD School of Arts in Hasselt, Belgium, and has just completed an MA in Painting at the National University of Arts ‘George Enescu’ in Iași. In 2023, he was one of the ten participating artists in ACCELERATOR Brașov, a mentoring project organized by Asociația Culturală Eastwards Prospectus in partnership with Gaep and The Art Museum of Brașov.'
+    ],
+    exhibitionTextAuthor: 'Ioana Chira, 2024',
+    works: [
+      { title:'Agency of a liminal space',   img:'works/agency-of-a-liminal-space-gaep-2024.jpg', year:'2024', medium:'charcoal on canvas and oil on linen attached', dims:'140 x 90 cm and 45 x 60 cm'},
+      { title:'The Italians were marvellous',  img:'works/the-italians-were-marvellous-2024.jpg', year:'2024', medium:'charcoal on canvas and oil on linen attached', dims:'132 x 198 cm and 60 x 45 cm', status:'available' },
+      { title:'Do you know about the golden rule',   img:'works/do-you-know-about-te-golden-rule-2024.jpg', year:'2024', medium:'charcoal on canvas and oil on linen attached', dims:'140 x 100 cm and 40 x 30 cm', status:'available'},
+      { title:'Many memories from, but this one is also fixed in a photograph',  img:'works/Many-memories-from-2024.jpg', year:'2024', medium:'charcoal on canvas and oil on canvas attached', dims:'124 x 200 cm and 40 x 30 cm', 	status:'private' },
+      { title:'All worked as a team, so I’m safe',   img:'works/all-worked-as-a-team-so-im-safe-2024.jpg', year:'2024', medium:'charcoal and oil on canvas and oil on linen attached', dims:'135 x 180 cm and 60 x 45 cm', 		status:'private' },
+      { title:'Going anywhere, we were vulnerable',  img:'works/going-anywhere-we-were-vulnerable-2024.jpg', year:'2024', medium:'charcoal and oil on canvas and oil on linen attached', dims:'138 x 180 cm and 45 x 60 cm' },
+      { title:'Exhibition view', img:'works/acts-of-in-between-installation-view-1-2024.jpg', year:'2024', medium:'Installation view', dims:'', exhibited:['Gaep Gallery, Bucharest, 19 July – 16 August 2024'], installationView:true },
+      { title:'Exhibition view', img:'works/acts-of-in-between-installation-view-2-2024.jpg', year:'2024', medium:'Installation view', dims:'', exhibited:['Gaep Gallery, Bucharest, 19 July – 16 August 2024'], installationView:true },
+      { title:'Installation view detail', img:'works/acts-of-in-between-installation-view-detail-2024.jpg', year:'2024', medium:'Installation view', dims:'', exhibited:['Gaep Gallery, Bucharest, 19 July – 16 August 2024'], installationView:true },
+      { title:'It is literally a feeling',  img:'works/it-is-literally-a-feeling-2024.jpg', year:'2024', medium:'Oil on linen', dims:'30 x 30 cm', 	status:'private' },
+      { title:'Signature boudoir',   img:'works/signature-boudoir-2024.jpg', year:'2024', medium:'Oil on linen', dims:'40 x 30 cm', 	status:'private' },
+      { title:'Everybody knows about that spot',  img:'works/everybody-knows-about-that-spot-2024.jpg', year:'2024', medium:'Oil on linen', dims:'40 x 30 cm', 	status:'private' },
+      { title:'Three times a day',   img:'works/three-times-a-day-2024.jpg', year:'2024', medium:'Oil on linen', dims:'30 x 30 cm', 	status:'private' },
+      { title:'Second reason is even more important',  img:'works/second-reason-is-even-more-important-2024.jpg', year:'2024', medium:'Oil on canvas', dims:'30 x 30 cm', 	status:'private' },
+      { title:'It just felt right', img:'works/it-just-felt-right-2024.jpg', year:'2024', medium:'Oil on linen', dims:'27 x 24 cm', 	status:'private' },
+      { title:'Meal Variation - except spinach', img:'works/meal-variation-except-spinach-2024.jpg', year:'2024', medium:'Oil on canvas', dims:'40 x 30 cm',	status:'private' },
+      { title:'Where everything popped off', img:'works/where-everything-popped-off-2024.jpg', year:'2024', medium:'Oil on linen', dims:'27 x 24 cm', 	status:'private' },
+      { title:'Installation view', img:'works/acts-of-in-between-installation-view-5-2024.jpg', year:'2024', medium:'Installation view', dims:'', exhibited:['Gaep Gallery, Bucharest, 19 July – 16 August 2024'], installationView:true },
+    ]
+  },
+  {
+    id: 'pane',
+    title: 'Il Pane è la Vita',
+    year: '2022-2023',
+    medium: 'Oil on linen',
+    cover: 'works/forsi-d-2022.jpg',
+    desc: 'An exploration of bread as a symbol of daily life, labour and coexistence in the city.',
+    descFull: 'Add your full description here. This is the expanded version visible after "Read more".',
+    exhibitionText: [
+      'Carved from stone in three-dimensional form during the first decade of the third century A.D., The Severan Marble Plan of Rome remains to this day one of the most enigmatic and intricate maps of an ancient city. Since the first fragments were rediscovered in the 16th century, the city plan has been keeping archaeologists, residents and tourists perpetually enthralled. At first glance, the celebrated sporadic discoveries of new pieces (only 10-15% are known to survive to present day) may point towards the fact that humans have a particular enthusiasm when it comes to solving a good jigsaw puzzle. On further thought, there is no running away from the realization that we have an intrinsic connection with the concept of maps, as markers of movement.',
+      'Mental mapmaking was a quotidian necessity in our ancestors’ lives long before urban spaces were established. Nowadays we have the luxury of elaborate maps as we navigate a space for the first time, yet it is ultimately our own choice of motion through the extensive network of pathways that ingrains the experience into our core. We set our own landmarks and even proceed to label our surroundings based on the interactions we have with the inhabitants, creating our own cognitive maps in the process.', 'In the exhibition Il Pane è la Vita, Adrian Cojocaru thematizes this type of mental and affective mapping. The artist continues the personalized examination of urban identity and coexistence. This time, it’s about the visit in the Italian capital. By employing walking as part of his artistic practice, the paintings generated simultaneously capture the social realm and the complex circuitry of connections between the historical dimensions and the contemporary infrastructure of Rome.', 'Rome brings a discernible shift in focus from the artist’s earlier works depicting the urban space of contemporary Romania. The flâneur spirit is ubiquitous, yet elements such as lacunae in the pavement or deteriorated facades of buildings become secondary in this body of work. It can be regarded as the interwoven result of the fondness the artist carries towards Italy, having lived his formative years in the country and the compelling aspect of reading a city from a tourist’s perspective. As you glance at the warm tones and the saturated visual landscapes, it can be difficult to imagine the trip which is referenced in the paintings was taken in a cold December, with endless rain. Just as it’s suggested by the title of the show, the gastronomic experience also played a vital part in this vibrant and dynamic approach, in the position of a particular key to reading the city.', 'The manner in which Adrian Cojocaru meticulously constructs landscapes and interiors echoes the deep appreciation he has for architectural spaces. In La Rosticceria Piccola Cina, there is a reverence towards buildings as markers of sociality. The artist references Manet’s A Bar at the Folies-Bergère as he recollects the experience of finding a restaurant in the middle of a storm. Just as Manet chose to include particular symbols of the Parisian contemporary scene, such as the trapeze artist’s pair of feet, there is no escaping the presence of the ubiquitous gadget of this century, the smartphone, and the acknowledgment it birthed the mirror selfie phenomenon. The self-portrait of the artist on the left highlights his preoccupation as he encounters new spaces, always conducting a brief investigation into how surroundings can be comprehended.', 'The same inquisitory spirit characterizes the woman glancing over the cityscape of Rome. Qui, dal Rinascimento emphasizes the idea of the metropolis seen as a palimpsestic entity, employing loose brushwork in the background as a manner of representation of the ongoing metamorphosis of the urban space. The artist revers the buildings as complex structures which can only be created by cooperation and collective action.', 'Conversations take place between the works, as historic sights are placed in relation to urban transformations and the diaristic narrative reveals scenes of everyday human activity, of both residents and tourists inhabiting the public spaces. Il Pane è la Vita encompasses both our fascination on how inhabitants manage to make cities, constantly enhancing them and prompting new lines of inquiry and how there are significant moments in our lives when the cities make us.'
+    ],
+    exhibitionTextAuthor: 'Maria Mănăilă, 2022',
+    works: [
+      { title:'Ciao, Ciro!',  img:'works/ciao-ciro-2022.jpg', year:'2022', medium:'Oil on linen', dims:'65 x 40 cm', status: 'available'},
+      { title:'Qui, dal rinascimento',  img:'works/qui-dal-rinascimento-2022.jpg', year:'2022', medium:'Oil on linen', dims:'200 x 150 cm', status: 'available'},
+      { title:'Mantengo sempre il mio couture',  img:'works/mantengo-sempre-il-mio-couture-2022.jpg', year:'2022', medium:'Oil on linen', dims:'65 x 40 cm', status:'private' },
+      { title:'T.V.B.',  img:'works/tvb-2022.jpg', year:'2022', medium:'Oil on linen', dims:'140 x 90 cm', status: 'private' },
+      { title:'La rosticceria Piccola Cina',  img:'works/la-rosticceria-piccola-cina-2022.jpg', year:'2022', medium:'Oil on canvas', dims:'100 x 130 cm', status: 'private'},
+      { title:'Crema e cioccolato',  img:'works/crema-e-cioccolato-2022.jpg', year:'2022', medium:'Oil on canvas', dims:'65 x 40 cm', status: 'private' },
+      { title:'Forsi',  img:'works/forsi-2022.jpg', year:'2022', medium:'Oil on linen', dims:'200 x 150 cm', status: 'private' },
+      { title:'Installation view',  img:'works/il-pane-e-la-vita-installation-1.jpg', year:'2022-2023', medium:'installation view', dims:'', exhibited:['Aparte Gallery, Iasi, 15 December 2022 – 6 January 2023'], installationView:true },
+      { title:'Installation view',  img:'works/il-pane-e-la-vita-installation-view-2.jpg', year:'2022-2023', medium:'installation view', dims:'', exhibited:['Aparte Gallery, Iasi, 15 December 2022 – 6 January 2023'], installationView:true },
+      { title:'Installation view',  img:'works/il-pane-e-la-vita-installation-view-3.jpg', year:'2022-2023', medium:'installation view', dims:'', exhibited:['Aparte Gallery, Iasi, 15 December 2022 – 6 January 2023'], installationView:true },
+      { title:'Installation view',  img:'works/il-pane-e-la-vita-installation-view-4.jpg', year:'2022-2023', medium:'installation view', dims:'', exhibited:['Aparte Gallery, Iasi, 15 December 2022 – 6 January 2023'], installationView:true  },
+      { title:'Installation view',  img:'works/il-pane-e-la-vita-installation-view-5.jpg', year:'2022-2023', medium:'installation view', dims:'', exhibited:['Aparte Gallery, Iasi, 15 December 2022 – 6 January 2023'], installationView:true  },
+    ]
+  },
+  {
+    id: 'riding',
+    title: 'Riding Through The City',
+    year: '2021 - 2022',
+    medium: 'Oil on linen',
+    cover: 'works/like-an-undiscovered-illness-detail-2022.jpg',
+    desc: 'A series of works made while cycling through Bucharest, documenting the city as felt from within.',
+    descFull: 'Add your full description here.',
+    works: [
+      { title:'The Capital',  img:'works/the-capital-2022.jpg', year:'2022', medium:'Oil on linen', dims:'200 x 150 cm', status:'private', exhibited: ['Aparte Gallery, Iasi, 2022', 'Borderline Artspace, Iasi, 2022', 'Diploma Show, Bucharest, 2022'] },
+      { title:'like an undiscovered illness...',  img:'works/like-an-undiscovered-illness-2022.jpg', year:'2022', medium:'Oil on linen', dims:'200 x 150 cm', status:'private', exhibited: ['Aparte Gallery, Iasi, 2022', 'Borderline Artspace, Iasi, 2022', 'Diploma Show, Bucharest, 2022'] },
+      { title:'Sunday service',  img:'works/sunday-service-2022.jpg', year:'2022', medium:'Pastel on canvas', dims:'40 x 30 cm', status:'available' },
+      { title:'The situation is critical',  img:'works/the-situation-is-critical-2021.jpg', year:'2021', medium:'Mixed media on canvas', dims:'65 x 40 cm' },
+      { title:'Cheia marilor succese',  img:'works/cheia-marilor-succese-2022.jpg', year:'2022', medium:'Mixed media on canvas', dims:'101 x 203 cm', status:'available', exhibited: ['Aparte Gallery, Iasi, 2022', 'Borderline Artspace, Iasi, 2022', 'MARe - Museum of Recent Art, Bucharest, 2024'] },
+    ]
+  }
+];
+
+/* ---- PROJECTS VIEW ------------------------------------------ */
+var projView = 'grid';
+var projActive = null;
+var projDetailIdx = 0;
+
+function initProjects() {
+  renderProjList();
+  document.getElementById('projList').style.display = 'block';
+  document.getElementById('projGrid').style.display = 'none';
+  document.getElementById('projDetail').style.display = 'none';
+  document.getElementById('projBackBtn').style.display = 'none';
+  document.getElementById('projBarLabel').textContent = 'Projects';
+}
+
+function renderProjOverviewGrid() {
+  var grid = document.getElementById('projGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  PROJECTS.forEach(function(p) {
+    var cell = document.createElement('div');
+    cell.className = 'wg-cell';
+    cell.innerHTML =
+      '<div class="wg-thumb-wrap"><img class="wg-thumb" src="'+p.cover+'" alt="'+p.title+'" loading="lazy"></div>'+
+      '<div class="wg-meta"><p class="wg-title">'+p.title+'</p><p class="wg-year">'+p.year+'</p></div>';
+    cell.onclick = function() { openProject(p.id); };
+    grid.appendChild(cell);
+  });
+}
+
+function renderProjList() {
+  var list = document.getElementById('projList');
+  if (!list) return;
+  list.innerHTML = '';
+  PROJECTS.forEach(function(p) {
+    var row = document.createElement('div');
+    var isMob = window.innerWidth <= 768;
+    row.style.cssText = isMob
+      ? 'padding:1.2rem 0;border-bottom:1px solid var(--faint)'
+      : 'display:grid;grid-template-columns:320px 1fr;gap:3rem;padding:2.5rem 0;border-bottom:1px solid var(--faint)';
+    var coverHtml = isMob
+      ? '<div style="overflow:hidden;background:var(--faint);cursor:pointer;margin-bottom:0.8rem" onclick="openProject(\''+p.id+'\')" ><img src="'+p.cover+'" style="width:100%;height:auto;display:block" alt="'+p.title+'"></div>'
+      : '<div style="overflow:hidden;background:var(--faint);cursor:pointer" onclick="openProject(\''+p.id+'\')"><img src="'+p.cover+'" style="width:100%;height:auto;display:block" alt="'+p.title+'"></div>';
+    row.innerHTML = coverHtml +
+      '<div>'+
+        '<h2 style="font-family:var(--serif);font-size:1.4rem;font-style:italic;font-weight:300;margin-bottom:0.5rem">'+p.title+'</h2>'+
+        '<p style="font-size:0.6rem;letter-spacing:0.14em;color:var(--mid);margin-bottom:1rem">'+p.medium+' - '+p.year+'</p>'+
+        '<p class="proj-short-'+p.id+'" style="font-size:0.72rem;line-height:1.85;color:var(--mid)">'+p.desc+'</p>'+
+        '<div class="proj-full-'+p.id+'" style="display:none;font-size:0.72rem;line-height:1.85;color:var(--mid);margin-top:0.5rem">'+p.descFull+'</div>'+
+        '<span onclick="toggleProjDesc(\''+p.id+'\')" style="display:inline-block;margin-top:0.8rem;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;border-bottom:1px solid var(--faint);padding-bottom:2px;color:var(--mid)" id="readmore-'+p.id+'">Read more</span>'+
+        '<br><span onclick="openProject(\''+p.id+'\')" style="display:inline-block;margin-top:1rem;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;border-bottom:1px solid var(--faint);padding-bottom:2px;color:var(--mid);cursor:pointer">View works</span>'+
+      '</div>';
+    list.appendChild(row);
+  });
+}
+
+function toggleProjDesc(id) {
+  var s = document.querySelector('.proj-short-'+id);
+  var f = document.querySelector('.proj-full-'+id);
+  var btn = document.getElementById('readmore-'+id);
+  if (!s || !f || !btn) return;
+  if (f.style.display === 'none') {
+    f.style.display = 'block'; s.style.display = 'none'; btn.textContent = 'Read less';
+  } else {
+    f.style.display = 'none'; s.style.display = 'block'; btn.textContent = 'Read more';
+  }
+}
+
+function setProjView(v) {
+  projView = v;
+  if (projActive) return;
+  document.getElementById('projGrid').style.display = v === 'grid' ? 'grid' : 'none';
+  document.getElementById('projList').style.display = v === 'list' ? 'block' : 'none';
+  document.getElementById('pvt-grid').classList.toggle('on', v === 'grid');
+  document.getElementById('pvt-list').classList.toggle('on', v === 'list');
+}
+
+function openProject(id) {
+  var p = null;
+  for (var i = 0; i < PROJECTS.length; i++) { if (PROJECTS[i].id === id) { p = PROJECTS[i]; break; } }
+  if (!p) return;
+  projActive = p;
+  projDetailIdx = 0;
+  var grid = document.getElementById('projGrid');
+  grid.style.display = 'grid';
+  grid.innerHTML = '';
+  document.getElementById('projList').style.display = 'none';
+  document.getElementById('projDetail').style.display = 'none';
+  document.getElementById('projBackBtn').style.display = 'inline';
+  document.getElementById('projBarLabel').textContent = p.title;
+  p.works.forEach(function(w, i) {
+    var cell = document.createElement('div');
+    cell.className = 'wg-cell';
+    cell.innerHTML =
+      '<div class="wg-thumb-wrap"><img class="wg-thumb" src="'+w.img+'" alt="'+w.title+'" loading="lazy"></div>'+
+      '<div class="wg-meta"><p class="wg-title">'+w.title+'</p><p class="wg-year">'+w.year+'</p></div>';
+    (function(idx){ cell.onclick = function() { openProjWork(idx); }; })(i);
+    grid.appendChild(cell);
+  });
+
+  /* exhibition text block — appended after the grid cells, spans full width */
+  var existingText = document.getElementById('proj-extext');
+  if (existingText) existingText.remove();
+  if (p.exhibitionText) {
+    var wrap = document.createElement('div');
+    wrap.id = 'proj-extext';
+    wrap.style.cssText = 'grid-column:1/-1'; /* span all grid columns */
+    var paragraphs = (Array.isArray(p.exhibitionText) ? p.exhibitionText : [p.exhibitionText])
+      .map(function(t){ return '<p>'+t+'</p>'; }).join('');
+    var author = p.exhibitionTextAuthor
+      ? '<span class="proj-extext-author">— '+p.exhibitionTextAuthor+'</span>' : '';
+    wrap.innerHTML =
+      '<div class="proj-extext-wrap">'+
+        '<span class="proj-extext-toggle" id="proj-extext-btn" onclick="toggleExText()">Exhibition text</span>'+
+        '<div class="proj-extext-body" id="proj-extext-body">'+paragraphs+author+'</div>'+
+      '</div>';
+    grid.appendChild(wrap);
+  }
+
+  document.getElementById('pvt-grid').classList.add('on');
+  document.getElementById('pvt-list').classList.remove('on');
+}
+
+function toggleExText() {
+  var btn  = document.getElementById('proj-extext-btn');
+  var body = document.getElementById('proj-extext-body');
+  if (!btn || !body) return;
+  var open = body.classList.toggle('open');
+  btn.classList.toggle('open', open);
+}
+
+function openProjWork(i) {
+  if (!projActive) return;
+  projDetailIdx = i;
+  var w = projActive.works[i];
+  document.getElementById('pd-img').src = w.img;
+  document.getElementById('pd-title').textContent = w.title;
+  document.getElementById('pd-details').innerHTML = '<span>'+w.medium+'</span>'+(w.dims?'<span>'+w.dims+'</span>':'')+'<span>'+w.year+'</span>';
+  document.getElementById('pd-desc').textContent = w.desc || '';
+  document.getElementById('pd-counter').textContent = (i+1) + ' — ' + projActive.works.length;
+  document.getElementById('pd-prev').classList.toggle('disabled', i === 0);
+  document.getElementById('pd-next').classList.toggle('disabled', i === projActive.works.length - 1);
+
+  /* status */
+  var statusEl = document.getElementById('pd-status');
+  var enquireEl = document.getElementById('pd-enquire');
+  if (w.status === 'private') {
+    statusEl.textContent = 'Private collection';
+    statusEl.style.display = 'block';
+    enquireEl.style.display = 'none';
+  } else if (w.status === 'available') {
+    statusEl.style.display = 'none';
+    enquireEl.style.display = 'block';
+  } else {
+    statusEl.style.display = 'none';
+    enquireEl.style.display = 'none';
+  }
+
+  /* exhibited / installation view */
+  var exEl = document.getElementById('pd-exhibited');
+  if (w.exhibited && w.exhibited.length) {
+    exEl.style.display = 'block';
+    exEl.innerHTML = '<span class="wsv-exhibited-label">Exhibited at</span>' +
+      w.exhibited.map(function(e){ return '<span style="display:block">'+e+'</span>'; }).join('');
+  } else {
+    exEl.style.display = 'none';
+  }
+
+  document.getElementById('projGrid').style.display = 'none';
+  document.getElementById('projDetail').style.display = 'block';
+}
+
+function projDetailStep(d) {
+  if (!projActive) return;
+  var next = projDetailIdx + d;
+  if (next >= 0 && next < projActive.works.length) openProjWork(next);
+}
+
+function closeProjDetail() {
+  document.getElementById('projDetail').style.display = 'none';
+  document.getElementById('projGrid').style.display = 'grid';
+  document.getElementById('projBarLabel').textContent = projActive ? projActive.title : 'Projects';
+}
+function closeProjGrid() {
+  projActive = null;
+  document.getElementById('projGrid').style.display = 'none';
+  document.getElementById('projDetail').style.display = 'none';
+  document.getElementById('projList').style.display = 'block';
+  document.getElementById('projBackBtn').style.display = 'none';
+  document.getElementById('projBarLabel').textContent = 'Projects';
+}
+
+/* ---- SELECTED WORKS DATA ------------------------------------ */
+/*
+  status: 'available' shows Enquire button
+          'private'   shows Private collection label
+          omit        nothing shown
+  exhibited: array of strings e.g. ['Gallery Name, City, 2024'
+  desc:'Write your description' For a description to appear]
+*/
+var WORKS = [
+  { title:'A living map of variable time',  img:'works/a-living-map-of-variable-time-2025.jpg', year:'2025', medium:'Oil on linen',         dims:'138 x 180 cm', status:'available' },
+  { title:'Everybody knows about that spot', img:'works/everybody-knows-about-that-spot-2024.jpg', year:'2024', medium:'Oil on linen',         dims:'30 x 30 cm', status:'private'},
+  { title:'Tasted forbidden fruit and everything that followed', img:'works/tasted-forbidden-fruit-and-everything-that-followed-2025.jpg', year:'2025', medium:'Oil on linen',    dims:'135 x 180 cm',  status:'available'},  
+  { title:'Where everything popped off',  img:'works/where-everything-popped-off-2024.jpg', year:'2024', medium:'Oil on linen',        dims:'27 x 24 cm', status:'private',   exhibited:['Gaep Presents: Adrian Cojocaru | Acts of In-Between, Gaep Gallery, Bucharest, 2024'] },
+  { title:'The Milkmaid',   img:'works/the-milkmaid-2025.jpg',   year:'2025', medium:'Oil on linen',         dims:'70 x 50 cm', status:'available' },
+  { title:'À la fois apparence et partie de la réalité',  img:'works/a-la-fois-apparence-et-partie-de-la-realite-2025.jpg', year:'2025', medium:'oil on linen', dims:'40 x 40 cm',   status:'available' },
+  { title:'All worked as a team, so I’m safe',  img:'works/all-worked-as-a-team-so-im-safe-2024.jpg', year:'2024', medium:'Charcoal and oil on canvas and oil on linen attached',        dims:'135 x 180 cm and 60 x 45 cm', status:'private',   exhibited:['Gaep Presents: Adrian Cojocaru | Acts of In-Between, Gaep Gallery, Bucharest, 2024'] },
+  { title:'Meal Variation - except spinach',  img:'works/meal-variation-except-spinach-2024.jpg', year:'2024', medium:'Oil on canvas',        dims:'40 x 30 cm', status:'private',   exhibited:['Gaep Presents: Adrian Cojocaru | Acts of In-Between, Gaep Gallery, Bucharest, 2024'] },
+  { title:'And it’s really not her fault',  img:'works/and-its-really-not-her-fault-2023.jpg', year:'2023', medium:'Oil on linen',        dims:'132 x 198 cm', status:'private',   exhibited:['Fabulating About a Gelato Machine, The Art Museum of Brasov, RO, 2023-2024'] },
+  { title:'Crema e cioccolato',  img:'works/crema-e-cioccolato-2022.jpg', year:'2022', medium:'Oil on canvas',        dims:'65 x 40 cm', status:'private',   exhibited:['Il Pane è la Vita, Aparte Gallery, Iasi, RO, 2022-2023'] },
+  { title:'Agency of a liminal space',   img:'works/agency-of-a-liminal-space-2024.jpg', year:'2024', medium:'Charcoal on canvas and oil on linen',         dims:'180 x 140 cm', exhibited:['On the Threshold of Dreams, MAD-Gallery, Hasselt, BE, 2024 and Gaep Presents: Adrian Cojocaru | Acts of In-Between, Gaep Gallery, Bucharest, 2024']},
+  { title:'Forsi',  img:'works/forsi-2022.jpg', year:'2022', medium:'Oil on linen',        dims:'200 x 150 cm', status:'private',   exhibited:['Il Pane è la Vita, Aparte Gallery, Iasi, RO, 2022-2023']},
+
+
+];
+
+/* ---- WORKS VIEW STATE --------------------------------------- */
+var worksIdx = 0;
+var worksView = 'single';
+
+function initWorks() {
+  renderWorksGrid();
+  showWorkAt(0);
+}
+
+function showWorkAt(i) {
+  var w = WORKS[i];
+  if (!w) return;
+  worksIdx = i;
+  var img = document.getElementById('wsv-img');
+  img.classList.add('fading');
+  setTimeout(function() {
+    img.src = w.img;
+    img.alt = w.title;
+    img.classList.remove('fading');
+  }, 320);
+  document.getElementById('wsv-title').textContent = w.title;
+  document.getElementById('wsv-counter').textContent = (i+1) + ' - ' + WORKS.length;
+  document.getElementById('wsv-details').innerHTML =
+    '<span>'+w.medium+'</span><span>'+w.dims+'</span><span>'+w.year+'</span>';
+  document.getElementById('wsv-desc').textContent = w.desc || '';
+
+  /* status */
+  var eq = document.querySelector('.wsv-enquire');
+  var statusEl = document.getElementById('wsv-status');
+  if (!statusEl) {
+    statusEl = document.createElement('p');
+    statusEl.id = 'wsv-status';
+    eq.parentNode.insertBefore(statusEl, eq);
+  }
+  if (w.status === 'available') {
+    statusEl.textContent = '';
+    eq.style.display = 'block';
+  } else if (w.status === 'private') {
+    statusEl.className = 'wsv-status-private';
+    statusEl.textContent = 'Private collection';
+    eq.style.display = 'none';
+  } else {
+    statusEl.textContent = '';
+    eq.style.display = 'none';
+  }
+
+  /* exhibited */
+  var exEl = document.getElementById('wsv-exhibited');
+  if (!exEl) {
+    exEl = document.createElement('div');
+    exEl.id = 'wsv-exhibited';
+    exEl.className = 'wsv-exhibited';
+    eq.parentNode.insertBefore(exEl, eq);
+  }
+  if (w.exhibited && w.exhibited.length) {
+    exEl.style.display = 'block';
+    exEl.innerHTML = '<span class="wsv-exhibited-label">Exhibited at</span>' +
+      w.exhibited.map(function(e){ return '<span style="display:block">'+e+'</span>'; }).join('');
+  } else {
+    exEl.style.display = 'none';
+  }
+
+  document.getElementById('wsv-prev').classList.toggle('disabled', i === 0);
+  document.getElementById('wsv-next').classList.toggle('disabled', i === WORKS.length-1);
+}
+
+function worksStep(d) {
+  var next = worksIdx + d;
+  if (next >= 0 && next < WORKS.length) showWorkAt(next);
+}
+
+document.addEventListener('keydown', function(e) {
+  if (!document.getElementById('page-works').classList.contains('active')) return;
+  if (worksView !== 'single') return;
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') worksStep(1);
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   worksStep(-1);
+});
+
+document.addEventListener('keydown', function(e) {
+  if (!document.getElementById('page-projects').classList.contains('active')) return;
+  if (!projActive || document.getElementById('projDetail').style.display === 'none') return;
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') projDetailStep(1);
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   projDetailStep(-1);
+});
+
+/* tap image = next; swipe left = next, right = prev */
+(function() {
+  var imgCol = document.querySelector('.wsv-img-col');
+  if (!imgCol) return;
+  imgCol.addEventListener('click', function() {
+    if (worksView === 'single') worksStep(1);
+  });
+  var tx = 0;
+  imgCol.addEventListener('touchstart', function(e) { tx = e.touches[0].clientX; }, { passive:true });
+  imgCol.addEventListener('touchend',   function(e) {
+    var dx = e.changedTouches[0].clientX - tx;
+    if (Math.abs(dx) > 40) worksStep(dx < 0 ? 1 : -1);
+  }, { passive:true });
+})();
+
+function renderWorksGrid() {
+  var grid = document.getElementById('worksGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  WORKS.forEach(function(w, i) {
+    var cell = document.createElement('div');
+    cell.className = 'wg-cell';
+    cell.innerHTML =
+      '<div class="wg-thumb-wrap"><img class="wg-thumb" src="'+w.img+'" alt="'+w.title+'" loading="lazy"></div>'+
+      '<div class="wg-meta"><p class="wg-title">'+w.title+'</p><p class="wg-year">'+w.year+'</p></div>';
+    (function(idx){ cell.onclick = function() { setWorksView('single'); showWorkAt(idx); }; })(i);
+    grid.appendChild(cell);
+  });
+}
+
+function setWorksView(v) {
+  worksView = v;
+  document.getElementById('worksSingle').style.display = v === 'single' ? 'grid' : 'none';
+  document.getElementById('worksGrid').classList.toggle('on', v === 'grid');
+  document.getElementById('wvt-single').classList.toggle('on', v === 'single');
+  document.getElementById('wvt-grid').classList.toggle('on', v === 'grid');
+  showWorksBar();
+  if (v === 'single') scheduleHideBar(2400);
+}
+
+/* ---- WORKS BAR HIDE/SHOW ------------------------------------ */
+var worksBarReady = false;
+var _wbTimer = null;
+var _wbLastY = 0;
+
+function hideWorksBar() {
+  var b = document.querySelector('.works-bar');
+  if (b) { b.style.transform = 'translateY(-100%)'; b.style.opacity = '0'; b.style.pointerEvents = 'none'; }
+}
+function showWorksBar() {
+  clearTimeout(_wbTimer);
+  var b = document.querySelector('.works-bar');
+  if (b) { b.style.transform = ''; b.style.opacity = ''; b.style.pointerEvents = ''; }
+}
+function scheduleHideBar(ms) {
+  clearTimeout(_wbTimer);
+  _wbTimer = setTimeout(hideWorksBar, ms || 200);
+}
+
+function initWorksBar() {
+  if (worksBarReady) return; worksBarReady = true;
+  var page = document.getElementById('page-works');
+  if (!page) return;
+  _wbLastY = 0;
+  page.onscroll = function() {
+    var y = page.scrollTop;
+    if (y > _wbLastY && y > 60) { scheduleHideBar(200); }
+    else if (y < _wbLastY) { showWorksBar(); }
+    _wbLastY = y;
+  };
+  document.addEventListener('mousemove', function(e) {
+    if (!document.getElementById('page-works').classList.contains('active')) return;
+    var navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 48;
+    if (e.clientY < navH + 80) showWorksBar();
+  });
+  scheduleHideBar(2000);
+}
+
+/* ---- ARTWORK DETAIL (from old AW object, kept for compat) --- */
+var AW = {
+  acts:   { title:'Acts of in-between', img:'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=1200&q=80', year:'2022-2024', medium:'Oil on linen',            dims:'Various', desc:'Add description.' },
+  pane:   { title:'Il Pane e la Vita',  img:'https://images.unsplash.com/photo-1578926288207-32356f5d4357?w=1200&q=80', year:'2021-2023', medium:'Oil on canvas',           dims:'Various', desc:'Add description.' },
+  riding: { title:'Riding Through City',img:'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1200&q=80', year:'2020-2022', medium:'Charcoal and oil on canvas',dims:'Various', desc:'Add description.' }
+};
+function showArtwork(id) {
+  var d = AW[id]; if (!d) return;
+  document.getElementById('aw-img').src = d.img;
+  document.getElementById('aw-title').textContent = d.title;
+  document.getElementById('aw-details').innerHTML = '<span>'+d.medium+'</span><span>'+d.dims+'</span><span>'+d.year+'</span>';
+  document.getElementById('aw-desc').textContent = d.desc;
+  showPage('artwork');
+}
+
+/* ---- FORMS -------------------------------------------------- */
+function handleSubmit(e) { e.preventDefault(); alert('Message sent. Thank you.'); e.target.reset(); return false; }
+/* stamp the time when contact page loads so we can check submission speed */
+document.addEventListener('DOMContentLoaded', function() {
+  var t = document.getElementById('nl-time');
+  if (t) t.value = Date.now();
+});
+/* also stamp when the page becomes visible */
+document.addEventListener('visibilitychange', function() {
+  var t = document.getElementById('nl-time');
+  if (t && !t.value) t.value = Date.now();
+});
+(function(){ var t = document.getElementById('nl-time'); if (t) t.value = Date.now(); })();
+
+function handleNewsletter(e) {
+  e.preventDefault();
+  /* honeypot: hidden field should be empty */
+  var honeypot = e.target.querySelector('input[name="website"]');
+  if (honeypot && honeypot.value) return; /* bot filled it in — silently drop */
+  /* timing: real humans take at least 2 seconds */
+  var stamp = parseInt(e.target.querySelector('#nl-time') && e.target.querySelector('#nl-time').value, 10);
+  if (stamp && (Date.now() - stamp) < 2000) return; /* too fast — bot */
+  var btn = e.target.querySelector('.newsletter-btn');
+  btn.textContent = 'Subscribed';
+  e.target.querySelector('input[type="email"]').disabled = true;
+  btn.disabled = true;
+}
+
+/* ---- DRAWN WORKS TIMESTAMP ---------------------------------- */
+function updateDrawnTimestamp() {
+  var first = document.querySelector('#page-drawn .drawn-item');
+  var el = document.getElementById('drawnUpdated');
+  if (!el) return;
+  if (!first || !first.dataset.date) { el.textContent = ''; return; }
+  var d = new Date(first.dataset.date + 'T12:00:00');
+  if (isNaN(d)) { el.textContent = ''; return; }
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  el.textContent = 'last updated - ' + d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+}
+
+/* ---- MOODBOARD TIMESTAMP ------------------------------------ */
+function updateMoodTimestamp() {
+  var first = document.querySelector('#page-moodboard .mood-item');
+  var el = document.getElementById('moodUpdated');
+  if (!el) return;
+  if (!first || !first.dataset.date) { el.textContent = ''; return; }
+  var d = new Date(first.dataset.date + 'T12:00:00');
+  if (isNaN(d)) { el.textContent = ''; return; }
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  el.textContent = 'last updated - ' + d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+}
+
+/* ---- SKETCHBOOK --------------------------------------------- */
+var skReady = false, ctx, canvas, painting = false;
+var tool = 'pencil', color = '#1a1916', size = 3;
+var lx = 0, ly = 0;
+
+var toolState = {
+  pencil:   { grade:'HB',      size:3  },
+  ink:      { nib:'0.1',       size:1  },
+  charcoal: { type:'willow',   size:8  },
+  brush:    { brushType:'round',size:6 },
+  eraser:   {                  size:12 }
+};
+
+var pencilGrades = {
+  HB:  { alpha:0.20, wMul:0.8 },
+  '2B':{ alpha:0.35, wMul:0.9 },
+  '4B':{ alpha:0.70, wMul:1.0 },
+  '6B':{ alpha:1.00, wMul:1.1 }
+};
+
+var linerNibs = { '0.1':0.8, '0.3':1.6, '0.5':2.6, '0.8':4.0, '1.0':5.2 };
+
+var charcoalTypes = {
+  willow:     { wMul:5, alpha:0.07, blur:3 },
+  compressed: { wMul:3, alpha:0.12, blur:1 },
+  powdered:   { wMul:8, alpha:0.04, blur:6 },
+  conte:      { wMul:2, alpha:0.22, blur:0 }
+};
+
+var brushTypes = {
+  round: { wMul:2.5, alpha:0.35, blur:1.2 },
+  flat:  { wMul:4.0, alpha:0.30, blur:0.5 },
+  dry:   { wMul:3.0, alpha:0.18, blur:2.5 },
+  wash:  { wMul:6.0, alpha:0.12, blur:4.0 }
+};
+
+var sizeSets = {
+  pencil:   [2,4,6,9],
+  charcoal: [6,10,16,24],
+  brush:    [4,8,14,22],
+  eraser:   [8,16,28,44]
+};
+
+function initSketch() {
+  if (skReady) return; skReady = true;
+  canvas = document.getElementById('sketchCanvas');
+  function resize() {
+    var col = document.querySelector('.sketch-canvas-col');
+    var paper = document.getElementById('sketchPaper');
+    var availW = col.offsetWidth - 24;
+    var availH = col.offsetHeight - 24;
+    var W, H;
+    if (availW / availH > 1 / 1.294) {
+      H = availH; W = Math.round(H / 1.294);
+    } else {
+      W = availW; H = Math.round(W * 1.294);
+    }
+    canvas.width = W; canvas.height = H;
+    paper.style.width = W+'px'; paper.style.height = H+'px';
+  }
+  resize();
+  window.addEventListener('resize', function() {
+    if (document.getElementById('page-sketch').classList.contains('active')) resize();
+  });
+  ctx = canvas.getContext('2d');
+  ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+  buildSizeDots();
+
+  function pos(e) {
+    var r = canvas.getBoundingClientRect();
+    var s = e.touches ? e.touches[0] : e;
+    return { x:(s.clientX-r.left)*(canvas.width/r.width), y:(s.clientY-r.top)*(canvas.height/r.height) };
+  }
+  function startDraw(e) { painting=true; var p=pos(e); lx=p.x; ly=p.y; dot(p); }
+  function moveDraw(e) { if (!painting) return; e.preventDefault(); var p=pos(e); drawStroke(p); lx=p.x; ly=p.y; }
+  function stopDraw() { painting = false; }
+
+  canvas.addEventListener('mousedown', startDraw);
+  canvas.addEventListener('mousemove', moveDraw);
+  canvas.addEventListener('mouseup', stopDraw);
+  canvas.addEventListener('mouseleave', stopDraw);
+  canvas.addEventListener('touchstart', startDraw, { passive:false });
+  canvas.addEventListener('touchmove',  moveDraw,  { passive:false });
+  canvas.addEventListener('touchend',   stopDraw);
+}
+
+function buildSizeDots() {
+  var sets = Object.keys(sizeSets);
+  sets.forEach(function(toolName) {
+    var wrap = document.getElementById(toolName+'-sizes');
+    if (!wrap) return;
+    wrap.innerHTML = '';
+    sizeSets[toolName].forEach(function(s, i) {
+      var dotEl = document.createElement('div');
+      dotEl.className = 'sub-size-dot' + (i === 0 ? ' active' : '');
+      dotEl.style.width  = Math.round(4 + s*0.9)+'px';
+      dotEl.style.height = Math.round(4 + s*0.9)+'px';
+      dotEl.title = s+'px';
+      (function(sz, tn, d){ dotEl.onclick = function() {
+        toolState[tn].size = sz; size = sz;
+        wrap.querySelectorAll('.sub-size-dot').forEach(function(x){ x.classList.remove('active'); });
+        d.classList.add('active');
+      }; })(s, toolName, dotEl);
+      wrap.appendChild(dotEl);
+    });
+  });
+}
+
+function applyStyle() {
+  ctx.globalCompositeOperation = 'source-over';
+  ctx.globalAlpha = 1;
+  ctx.shadowBlur = 0;
+  ctx.shadowColor = 'transparent';
+  if (tool === 'pencil') {
+    var g = pencilGrades[toolState.pencil.grade] || pencilGrades.HB;
+    ctx.lineWidth = size * g.wMul; ctx.strokeStyle = color; ctx.globalAlpha = g.alpha;
+  } else if (tool === 'ink') {
+    ctx.lineWidth = linerNibs[toolState.ink.nib] || 1; ctx.strokeStyle = color; ctx.globalAlpha = 0.97;
+  } else if (tool === 'charcoal') {
+    var c = charcoalTypes[toolState.charcoal.type] || charcoalTypes.willow;
+    ctx.lineWidth = size*c.wMul; ctx.strokeStyle = '#1a1916'; ctx.globalAlpha = c.alpha;
+    ctx.shadowBlur = size*c.blur; ctx.shadowColor = '#1a1916';
+  } else if (tool === 'brush') {
+    var b = brushTypes[toolState.brush.brushType] || brushTypes.round;
+    ctx.lineWidth = size*b.wMul; ctx.strokeStyle = color; ctx.globalAlpha = b.alpha;
+    ctx.shadowBlur = size*b.blur; ctx.shadowColor = color;
+  } else if (tool === 'eraser') {
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.lineWidth = (toolState.eraser && toolState.eraser.size ? toolState.eraser.size : size) * 2;
+    ctx.strokeStyle = 'rgba(0,0,0,1)'; ctx.globalAlpha = 1;
+  }
+}
+
+function dot(p) {
+  if (!ctx) return;
+  ctx.save(); applyStyle();
+  ctx.beginPath();
+  var r = tool==='eraser'?size*4 : tool==='charcoal'?size*3 : tool==='brush'?size*1.8 : size*0.5;
+  ctx.arc(p.x, p.y, r, 0, Math.PI*2);
+  if (tool === 'eraser') { ctx.globalCompositeOperation='destination-out'; ctx.fillStyle='rgba(0,0,0,1)'; }
+  else if (tool === 'charcoal') ctx.fillStyle = '#1a1916';
+  else ctx.fillStyle = color;
+  ctx.fill(); ctx.restore();
+}
+
+function drawStroke(p) {
+  if (!ctx) return;
+  if (tool === 'brush' && toolState.brush.brushType === 'dry') {
+    for (var i = 0; i < 3; i++) {
+      ctx.save(); applyStyle();
+      var jx = (Math.random()-0.5)*size*0.8;
+      var jy = (Math.random()-0.5)*size*0.8;
+      ctx.beginPath(); ctx.moveTo(lx+jx,ly+jy); ctx.lineTo(p.x+jx,p.y+jy); ctx.stroke(); ctx.restore();
+    }
+  } else {
+    ctx.save(); applyStyle();
+    ctx.beginPath(); ctx.moveTo(lx,ly); ctx.lineTo(p.x,p.y); ctx.stroke(); ctx.restore();
+  }
+}
+
+function setTool(t) {
+  tool = t;
+  if (toolState[t] && toolState[t].size) size = toolState[t].size;
+  if (t === 'charcoal') color = '#1a1916';
+  document.querySelectorAll('.tool-btn').forEach(function(b){ b.classList.remove('active'); });
+  var b = document.getElementById('tool-'+t); if (b) b.classList.add('active');
+  document.querySelectorAll('.sketch-subtoolbar').forEach(function(s){ s.classList.remove('open'); });
+  var sub = document.getElementById('sub-'+t); if (sub) sub.classList.add('open');
+}
+
+function setPencilGrade(g) {
+  toolState.pencil.grade = g;
+  /* grade only changes opacity, NOT size — use size dots for size */
+  document.querySelectorAll('[id^="pg-"]').forEach(function(b){ b.classList.remove('active'); });
+  var el = document.getElementById('pg-'+g); if (el) el.classList.add('active');
+}
+
+function setLinerNib(n) {
+  toolState.ink.nib = n;
+  document.querySelectorAll('[id^="ln-"]').forEach(function(b){ b.classList.remove('active'); });
+  var id = 'ln-' + n.replace('.','');
+  var el = document.getElementById(id); if (el) el.classList.add('active');
+}
+
+function setCharcoalType(t) {
+  toolState.charcoal.type = t;
+  var sMap = { willow:8, compressed:6, powdered:14, conte:4 };
+  size = sMap[t] || 8; toolState.charcoal.size = size;
+  document.querySelectorAll('[id^="ct-"]').forEach(function(b){ b.classList.remove('active'); });
+  var el = document.getElementById('ct-'+t); if (el) el.classList.add('active');
+}
+
+function setBrushType(t) {
+  toolState.brush.brushType = t;
+  document.querySelectorAll('[id^="bt-"]').forEach(function(b){ b.classList.remove('active'); });
+  var el = document.getElementById('bt-'+t); if (el) el.classList.add('active');
+}
+
+function setColor(c) {
+  color = c;
+  if (tool === 'charcoal') return;
+  if (tool === 'eraser') setTool('brush');
+  document.querySelectorAll('.cswatch').forEach(function(s){ s.classList.toggle('active', s.dataset.c === c); });
+}
+
+function clearCanvas() { if (ctx && canvas) ctx.clearRect(0,0,canvas.width,canvas.height); }
+
+function downloadCanvas() {
+  if (!canvas) return;
+  /* flatten onto white background then save as JPG */
+  var flat = document.createElement('canvas');
+  flat.width = canvas.width; flat.height = canvas.height;
+  var fc = flat.getContext('2d');
+  fc.fillStyle = '#fdfbf7'; /* paper colour */
+  fc.fillRect(0, 0, flat.width, flat.height);
+  fc.drawImage(canvas, 0, 0);
+  var link = document.createElement('a');
+  var today = new Date().toISOString().slice(0,10);
+  /* increment counter for this session date */
+  var key = 'sketchCount_' + today;
+  var count = parseInt(sessionStorage.getItem(key) || '0', 10) + 1;
+  sessionStorage.setItem(key, count);
+  var num = String(count).padStart(2,'0');
+  link.download = today + '-drawing' + num + '.jpg';
+  link.href = flat.toDataURL('image/jpeg', 0.92);
+  link.click();
+}
+
+
+/* ---- DRAGGABLE TOOLBAR (desktop only) ---- */
+(function(){
+  function initDragToolbar(){
+    var wrap = document.querySelector('.sketch-toolbar-wrap');
+    if(!wrap || window.innerWidth<=768) return;
+    var dragging=false, startX, startY, origLeft, origTop;
+
+    function toAbsolute(){
+      var col=document.querySelector('.sketch-canvas-col');
+      if(!col)return;
+      var wr=wrap.getBoundingClientRect(), cr=col.getBoundingClientRect();
+      wrap.style.transform='none';
+      wrap.style.left=(wr.left-cr.left)+'px';
+      wrap.style.top=(wr.top-cr.top)+'px';
+      wrap.style.bottom='auto';
+    }
+
+    wrap.addEventListener('mousedown',function(e){
+      var tag=e.target.tagName;
+      if(tag==='BUTTON'||tag==='INPUT'||tag==='SELECT') return;
+      if(!dragging && wrap.style.transform!=='none') toAbsolute();
+      dragging=true;
+      startX=e.clientX; startY=e.clientY;
+      origLeft=parseFloat(wrap.style.left)||0;
+      origTop=parseFloat(wrap.style.top)||0;
+      e.preventDefault();
+    });
+    document.addEventListener('mousemove',function(e){
+      if(!dragging)return;
+      wrap.style.left=(origLeft+e.clientX-startX)+'px';
+      wrap.style.top=(origTop+e.clientY-startY)+'px';
+    });
+    document.addEventListener('mouseup',function(){ dragging=false; });
+  }
+
+  var _orig=window.initSketch;
+  window.initSketch=function(){
+    if(_orig)_orig();
+    setTimeout(initDragToolbar,150);
+  };
+})();
+
+/* ---- RESEARCH MAP ------------------------------------------- */
+var resReady = false;
+var mc, mx;
+var mNodes = [], mScale = 1, mOx = 0, mOy = 0;
+var mDragging = false, mDragNode = null, mLastX = 0, mLastY = 0;
+var mHighlight = null;
+var mPanning = false, mPanStartX = 0, mPanStartY = 0, mPanOrigX = 0, mPanOrigY = 0;
+
+var tColors = {
+  concept:  '#c07830',
+  artist:   '#2a6a2a',
+  place:    '#1a4a8a',
+  book:     '#7a2a6a',
+  material: '#a03020',
+  film:     '#1a6a6a',
+  essay:    '#4a2a9a'
+};
+
+/* all types active by default */
+var activeTypes = {};
+Object.keys(tColors).forEach(function(t){ activeTypes[t] = true; });
+
+function populateFilters() {
+  var wrap = document.getElementById('typeFilters');
+  if (!wrap || wrap.children.length > 0) return; /* only build once */
+  Object.keys(tColors).forEach(function(type) {
+    var btn = document.createElement('button');
+    btn.className = 'map-btn map-type-btn active-type';
+    btn.style.borderLeftColor = tColors[type];
+    btn.style.borderLeftWidth = '3px';
+    btn.innerHTML =
+      '<span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:'+tColors[type]+';margin-right:0.4rem;vertical-align:middle"></span>'+
+      type;
+    btn.onclick = function() {
+      activeTypes[type] = !activeTypes[type];
+      btn.classList.toggle('active-type', activeTypes[type]);
+      btn.style.opacity = activeTypes[type] ? '1' : '0.35';
+      drawMap();
+    };
+    wrap.appendChild(btn);
+  });
+}
+
+var mNodeData = [
+  { id:'n1',  label:'Urban coexistence', type:'concept', x:0,   y:-80,  desc:'The central question of the practice - how bodies share space in the city.' },
+  { id:'n2',  label:'Bonnard',           type:'artist',  x:120, y:-40,  desc:'Pierre Bonnard. Colour, intimacy, the domestic interior as charged space.' },
+  { id:'n3',  label:'Bucharest',         type:'place',   x:-120,y:20,   desc:'The city as primary subject and studio.' },
+  { id:'n4',  label:'The Poetics of Space',type:'book',  x:60,  y:80,   desc:'Gaston Bachelard. On how we inhabit and imagine space.' },
+  { id:'n5',  label:'Linen',             type:'material',x:-60, y:-120, desc:'The primary support. Its texture becomes part of the underpaint.' },
+  { id:'n6',  label:'Bicycle',           type:'material',x:160, y:60,   desc:'The mode of navigation that generated the Riding series.' },
+  { id:'n7',  label:'Chantal Akerman',   type:'film',    x:-160,y:-60,  desc:'Jeanne Dielman. Duration, repetition, the labour of daily life.' },
+  { id:'n8',  label:'Underpaint',        type:'concept', x:30,  y:160,  desc:'The foundational layer. Always present even when invisible.' },
+  { id:'n9',  label:'Roland Barthes',    type:'essay',   x:-80, y:120,  desc:'Camera Lucida. The punctum. What a mark does to a viewer.' },
+  { id:'n10', label:'Hopper',            type:'artist',  x:200, y:-100, desc:'Edward Hopper. Light as psychological weight. The figure in urban space.' },
+  { id:'n11', label:'Istanbul',          type:'place',   x:-200,y:100,  desc:'A recurring reference for dense urban coexistence.' },
+  { id:'n12', label:'Oil stick',         type:'material',x:100, y:140,  desc:'Used for gestural marks directly on canvas.' },
+  { id:'n13', label:'Balthus',           type:'artist',  x:-100,y:-140, desc:'Stillness. Ambiguity. The charged quality of stopped time.' },
+  { id:'n14', label:'Bread',             type:'concept', x:240, y:20,   desc:'Central symbol in Il Pane e la Vita. Labour, daily life, shared nourishment.' },
+  { id:'n15', label:'Walter Benjamin',   type:'essay',   x:-240,y:-20,  desc:'The Arcades Project. The city as text to be read.' },
+  { id:'n16', label:'Naples',            type:'place',   x:140, y:-160, desc:'Density, colour, lives lived in public.' },
+  { id:'n17', label:'Velazquez',         type:'artist',  x:-140,y:160,  desc:'The body in space. How paint holds a presence.' },
+  { id:'n18', label:'Charcoal',          type:'material',x:280, y:-60,  desc:'Used for the drawn works. Immediate, erasable, gestural.' },
+  { id:'n19', label:'Threshold',         type:'concept', x:-280,y:60,   desc:'The in-between space. Doorways, windows, margins, pause points.' },
+  { id:'n20', label:'Cezanne',           type:'artist',  x:0,   y:-200, desc:'The structure beneath appearances. Multiple viewpoints in one plane.' }
+];
+
+/* ─── CONNECTIONS ──────────────────────────────────────────────
+   Add pairs of node IDs to draw a line between them.
+   Use the id values from mNodeData above (n1 … n20).
+   Example:  ['n1','n3']  draws a line from Urban coexistence → Bucharest
+─────────────────────────────────────────────────────────────── */
+var mEdges = [
+	['n1', 'n9'],
+  /* ['n1', 'n3'], */  /* uncomment and edit to add connections */
+];
+
+function initResearch() {
+  if (resReady) return; resReady = true;
+  mc = document.getElementById('researchCanvas');
+  if (!mc) return;
+  mx = mc.getContext('2d');
+  mNodes = mNodeData.map(function(n) { return Object.assign({}, n); });
+  populateFilters();
+
+  function rsz() {
+    var barH = document.querySelector('.research-bar') ? document.querySelector('.research-bar').offsetHeight : 44;
+    var topOff = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 48;
+    var dpr = window.devicePixelRatio || 1;
+    var cssW = window.innerWidth;
+    var cssH = window.innerHeight - (topOff + barH);
+    mc.width  = Math.round(cssW * dpr);
+    mc.height = Math.round(cssH * dpr);
+    mc.style.width  = cssW + 'px';
+    mc.style.height = cssH + 'px';
+    mOx = cssW / 2; mOy = cssH / 2;
+    drawMap();
+  }
+  rsz(); window.addEventListener('resize', rsz);
+
+  /* mouse events */
+  mc.addEventListener('mousedown', function(e) {
+    if (e.button !== 0) return;
+    var p = evPos(e);
+    var hit = hitNode(p);
+    if (hit) { mDragging=true; mDragNode=hit; mLastX=p.x; mLastY=p.y; mc.style.cursor='grabbing'; }
+    else { mPanning=true; mPanStartX=p.x; mPanStartY=p.y; mPanOrigX=mOx; mPanOrigY=mOy; mc.style.cursor='grabbing'; }
+  });
+  mc.addEventListener('mousemove', function(e) {
+    var p = evPos(e);
+    if (mDragging && mDragNode) {
+      mDragNode.x += (p.x - mLastX) / mScale;
+      mDragNode.y += (p.y - mLastY) / mScale;
+      mLastX=p.x; mLastY=p.y; drawMap();
+    } else if (mPanning) {
+      mOx = mPanOrigX + (p.x - mPanStartX);
+      mOy = mPanOrigY + (p.y - mPanStartY);
+      drawMap();
+    } else {
+      var hl = hitNode(p);
+      if (hl !== mHighlight) { mHighlight=hl; drawMap(); showTooltip(hl, e); }
+    }
+  });
+  mc.addEventListener('mouseup',    function() { mDragging=false; mDragNode=null; mPanning=false; mc.style.cursor='grab'; });
+  mc.addEventListener('mouseleave', function() { mDragging=false; mPanning=false; mHighlight=null; hideTooltip(); drawMap(); });
+  mc.addEventListener('wheel', function(e) {
+    e.preventDefault();
+    var factor = e.deltaY < 0 ? 1.1 : 0.91;
+    mScale = Math.max(0.3, Math.min(3, mScale * factor));
+    drawMap();
+  }, { passive:false });
+
+  /* touch */
+  var tDist = 0;
+  mc.addEventListener('touchstart', function(e) {
+    if (e.touches.length === 1) {
+      var p = evPos(e.touches[0]);
+      var hit = hitNode(p);
+      if (hit) { mDragging=true; mDragNode=hit; mLastX=p.x; mLastY=p.y; }
+      else { mPanning=true; mPanStartX=p.x; mPanStartY=p.y; mPanOrigX=mOx; mPanOrigY=mOy; }
+    } else if (e.touches.length === 2) {
+      tDist = Math.hypot(e.touches[0].clientX-e.touches[1].clientX, e.touches[0].clientY-e.touches[1].clientY);
+    }
+  }, { passive:true });
+  mc.addEventListener('touchmove', function(e) {
+    e.preventDefault();
+    if (e.touches.length === 1) {
+      var p = evPos(e.touches[0]);
+      if (mDragging && mDragNode) { mDragNode.x+=(p.x-mLastX)/mScale; mDragNode.y+=(p.y-mLastY)/mScale; mLastX=p.x; mLastY=p.y; }
+      else if (mPanning) { mOx=mPanOrigX+(p.x-mPanStartX); mOy=mPanOrigY+(p.y-mPanStartY); }
+      drawMap();
+    } else if (e.touches.length === 2) {
+      var d = Math.hypot(e.touches[0].clientX-e.touches[1].clientX, e.touches[0].clientY-e.touches[1].clientY);
+      mScale = Math.max(0.3, Math.min(3, mScale * (d/tDist))); tDist=d; drawMap();
+    }
+  }, { passive:false });
+  mc.addEventListener('touchend', function(e) {
+    mDragging=false; mPanning=false;
+    /* on tap (no pan) show tooltip */
+    if (e.changedTouches.length === 1) {
+      var t = e.changedTouches[0];
+      var p = evPos(t);
+      var hit = hitNode(p);
+      if (hit) showTooltipTouch(hit, t.clientX, t.clientY);
+      else hideTooltip();
+    }
+  });
+
+  drawMap();
+}
+
+function evPos(e) { var r=mc.getBoundingClientRect(); return { x:e.clientX-r.left, y:e.clientY-r.top }; }
+
+function worldToScreen(x, y) {
+  return { x: mOx + x*mScale, y: mOy + y*mScale };
+}
+
+function hitNode(p) {
+  for (var i = mNodes.length-1; i >= 0; i--) {
+    if (activeTypes[mNodes[i].type] === false) continue;
+    var s = worldToScreen(mNodes[i].x, mNodes[i].y);
+    var r = Math.max(14, 20*mScale);
+    if (Math.hypot(p.x-s.x, p.y-s.y) < r) return mNodes[i];
+  }
+  return null;
+}
+
+function drawMap() {
+  if (!mc || !mx) return;
+  var dpr = window.devicePixelRatio || 1;
+  var cssW = mc.width / dpr, cssH = mc.height / dpr;
+  mx.save();
+  mx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  mx.clearRect(0, 0, cssW, cssH);
+
+  /* edges - proximity-based automatic */
+  for (var i = 0; i < mNodes.length; i++) {
+    var visI = activeTypes[mNodes[i].type] !== false;
+    if (!visI) continue;
+    for (var j = i+1; j < mNodes.length; j++) {
+      var visJ = activeTypes[mNodes[j].type] !== false;
+      if (!visJ) continue;
+      var dist = Math.hypot(mNodes[i].x - mNodes[j].x, mNodes[i].y - mNodes[j].y);
+      if (dist < 220) {
+        var a = worldToScreen(mNodes[i].x, mNodes[i].y);
+        var b2 = worldToScreen(mNodes[j].x, mNodes[j].y);
+        var alpha = Math.max(0, (1 - dist/220) * 0.55);
+        mx.beginPath(); mx.moveTo(a.x, a.y); mx.lineTo(b2.x, b2.y);
+        mx.strokeStyle = 'rgba(160,154,144,' + alpha + ')';
+        mx.lineWidth = 0.8; mx.stroke();
+      }
+    }
+  }
+
+  /* manual edges — defined in mEdges array above */
+  mEdges.forEach(function(ed) {
+    var na = mNodes.find(function(n){ return n.id===ed[0]; });
+    var nb = mNodes.find(function(n){ return n.id===ed[1]; });
+    if (!na||!nb) return;
+    if (activeTypes[na.type]===false||activeTypes[nb.type]===false) return;
+    var a = worldToScreen(na.x,na.y), b2 = worldToScreen(nb.x,nb.y);
+    mx.beginPath(); mx.moveTo(a.x,a.y); mx.lineTo(b2.x,b2.y);
+    mx.strokeStyle = 'rgba(160,154,144,' + alpha + ')';
+    mx.lineWidth = 0.8; mx.stroke(); 
+  });
+	
+  /* nodes - respect activeTypes filter */
+  mNodes.forEach(function(n) {
+    if (activeTypes[n.type] === false) return;
+    var s = worldToScreen(n.x, n.y);
+    var col = tColors[n.type] || '#888';
+    var isHl = n === mHighlight;
+    var r = Math.max(6, (isHl ? 10 : 7) * mScale);
+
+    /* outer ring */
+    mx.beginPath(); mx.arc(s.x, s.y, r, 0, Math.PI*2);
+    mx.strokeStyle = col; mx.lineWidth = isHl ? 2 : 1.5; mx.globalAlpha = isHl ? 1 : 0.9;
+    mx.stroke();
+    /* transparent fill */
+    mx.beginPath(); mx.arc(s.x, s.y, r, 0, Math.PI*2);
+    mx.fillStyle = col; mx.globalAlpha = isHl ? 0.25 : 0.12; mx.fill();
+    mx.globalAlpha = 1;
+
+    var fontSize = Math.round(Math.max(9, (isHl ? 12 : 10) * mScale));
+    mx.font = (isHl ? 'italic ' : '') + fontSize + 'px Cormorant Garamond,Georgia,serif';
+    mx.fillStyle = isHl ? '#1a1916' : '#6a6560';
+    mx.textAlign = 'center';
+    mx.fillText(n.label, s.x, s.y - r - 4);
+  });
+
+  mx.restore();
+}
+
+function showTooltip(n, e) {
+  var tt = document.getElementById('mapTooltip');
+  if (!tt) return;
+  if (!n) { tt.classList.remove('visible'); return; }
+  document.getElementById('tt-label').textContent = n.label;
+  document.getElementById('tt-type').textContent  = n.type;
+  document.getElementById('tt-desc').textContent  = n.desc || '';
+  var lnk = document.getElementById('tt-link');
+  if (n.url) { lnk.href=n.url; lnk.classList.add('has-url'); }
+  else { lnk.classList.remove('has-url'); }
+  /* position tooltip — ensure fully visible on screen */
+  tt.style.visibility = 'hidden';
+  tt.classList.add('visible');
+  var ttW = tt.offsetWidth || 220;
+  var ttH = tt.offsetHeight || 80;
+  var vw = window.innerWidth;
+  var vh = window.innerHeight;
+  var cx = e.clientX, cy = e.clientY;
+  var tx = cx + 16;
+  if (tx + ttW > vw - 8) tx = cx - ttW - 16;
+  if (tx < 8) tx = 8;
+  var ty = cy - 10;
+  if (ty + ttH > vh - 8) ty = cy - ttH - 10;
+  if (ty < 8) ty = 8;
+  tt.style.left = tx + 'px';
+  tt.style.top  = ty + 'px';
+  tt.style.visibility = '';
+}
+/* mobile tap: show tooltip on touchend */
+function showTooltipTouch(n, cx, cy) {
+  var tt = document.getElementById('mapTooltip');
+  if (!tt) return;
+  if (!n) { tt.classList.remove('visible'); return; }
+  document.getElementById('tt-label').textContent = n.label;
+  document.getElementById('tt-type').textContent  = n.type;
+  document.getElementById('tt-desc').textContent  = n.desc || '';
+  var lnk = document.getElementById('tt-link');
+  if (n.url) { lnk.href=n.url; lnk.classList.add('has-url'); } else { lnk.classList.remove('has-url'); }
+  tt.style.visibility = 'hidden';
+  tt.classList.add('visible');
+  var ttW = tt.offsetWidth || 220;
+  var ttH = tt.offsetHeight || 80;
+  var vw = window.innerWidth, vh = window.innerHeight;
+  var tx = Math.min(cx + 16, vw - ttW - 8);
+  if (tx < 8) tx = 8;
+  var ty = Math.min(cy - ttH - 16, vh - ttH - 8);
+  if (ty < 8) ty = cy + 16;
+  tt.style.left = tx + 'px';
+  tt.style.top  = ty + 'px';
+  tt.style.visibility = '';
+}
+function hideTooltip() {
+  var tt = document.getElementById('mapTooltip');
+  if (tt) tt.classList.remove('visible');
+}
+
+/* view toggle for research */
+function renderResList() {
+  var alphaNav  = document.getElementById('resAlphaNav');
+  var listItems = document.getElementById('resListItems');
+  if (!listItems) return;
+
+  var sorted = mNodes.slice().sort(function(a,b){ return a.label.localeCompare(b.label); });
+
+  var letters = {};
+  sorted.forEach(function(n){
+    var l = n.label[0].toUpperCase();
+    if (!letters[l]) letters[l] = [];
+    letters[l].push(n);
+  });
+
+  var allLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+  /* build sticky alphabet nav with all 26 letters */
+  if (alphaNav) {
+    alphaNav.innerHTML = '';
+    allLetters.forEach(function(l) {
+      var btn = document.createElement('button');
+      btn.className = 'alpha-nav-btn' + (letters[l] ? ' has-entries' : '');
+      btn.textContent = l;
+      if (letters[l]) {
+        btn.onclick = function() {
+          var section = document.getElementById('alpha-section-'+l);
+          if (!section) return;
+          /* open if closed */
+          if (section.classList.contains('closed')) {
+            section.classList.remove('closed');
+            var items = section.querySelector('.alpha-items');
+            if (items) { items.style.maxHeight = items.scrollHeight+'px'; setTimeout(function(){ items.style.maxHeight='none'; },360); }
+          }
+          /* scroll page-research — now overflow-y:auto in list view */
+          var pageEl = document.getElementById('page-research');
+          if (!pageEl) return;
+          var alphaH = alphaNav ? alphaNav.offsetHeight : 48;
+          var sectionRect = section.getBoundingClientRect();
+          var pageRect   = pageEl.getBoundingClientRect();
+          var target = pageEl.scrollTop + (sectionRect.top - pageRect.top) - alphaH - 8;
+          pageEl.scrollTo({ top: target, behavior: 'smooth' });
+        };
+      } else {
+        btn.style.opacity = '0.3';
+        btn.style.cursor = 'default';
+      }
+      alphaNav.appendChild(btn);
+    });
+  }
+
+  /* build collapsible letter sections */
+  listItems.innerHTML = '';
+  Object.keys(letters).sort().forEach(function(l) {
+    var section = document.createElement('div');
+    section.className = 'alpha-section';
+    section.id = 'alpha-section-'+l;
+
+    var heading = document.createElement('div');
+    heading.className = 'alpha-heading';
+    heading.innerHTML =
+      '<span class="alpha-letter">'+l+'</span>'+
+      '<span style="display:flex;align-items:center;gap:1.2rem">'+
+        '<span class="alpha-count">'+letters[l].length+' '+(letters[l].length===1?'entry':'entries')+'</span>'+
+        '<span class="alpha-toggle">&#9660;</span>'+
+      '</span>';
+    heading.onclick = function() {
+      section.classList.toggle('closed');
+      var items = section.querySelector('.alpha-items');
+      if (section.classList.contains('closed')) {
+        items.style.maxHeight = items.scrollHeight+'px';
+        requestAnimationFrame(function(){ items.style.maxHeight='0'; });
+      } else {
+        items.style.maxHeight = items.scrollHeight+'px';
+        setTimeout(function(){ items.style.maxHeight='none'; },360);
+      }
+    };
+    section.appendChild(heading);
+
+    var itemsWrap = document.createElement('div');
+    itemsWrap.className = 'alpha-items';
+    itemsWrap.style.maxHeight = 'none';
+
+    letters[l].forEach(function(n) {
+      var col = tColors[n.type] || '#888';
+      var row = document.createElement('div');
+      row.className = 'list-entry';
+      row.innerHTML =
+        '<span class="list-entry-name">'+n.label+'</span>'+
+        '<span class="list-entry-desc">'+(n.desc||'')+'</span>'+
+        '<span class="list-entry-type">'+
+          '<span class="list-entry-type-dot" style="background:'+col+'"></span>'+n.type+
+        '</span>';
+      row.onclick = function() { flyToNode(n.id); };
+      itemsWrap.appendChild(row);
+    });
+
+    section.appendChild(itemsWrap);
+    listItems.appendChild(section);
+  });
+}
+
+function setResView(v) {
+  var con  = document.getElementById('res-constellation');
+  var lst  = document.getElementById('res-list');
+  var tf   = document.getElementById('typeFilters');
+  var page = document.getElementById('page-research');
+  if (con) con.style.display = v==='constellation' ? 'block' : 'none';
+  if (lst) lst.style.display = v==='list'          ? 'block' : 'none';
+  if (tf)  tf.style.display  = v==='constellation' ? 'flex'  : 'none';
+  /* toggle page overflow so list can scroll */
+  if (page) page.style.overflowY = v==='list' ? 'auto' : 'hidden';
+  var bc = document.getElementById('btn-constellation');
+  var bl = document.getElementById('btn-list');
+  if (bc) bc.classList.toggle('active-view', v==='constellation');
+  if (bl) bl.classList.toggle('active-view', v==='list');
+  if (v==='constellation' && resReady) setTimeout(drawMap, 50);
+  if (v==='list') {
+    var li = document.getElementById('resListItems');
+    if (li) li.innerHTML = '';
+    renderResList();
+  }
+}
+
+/* fly to node when clicking list entry */
+function flyToNode(id) {
+  var n = mNodes.find(function(x){ return x.id===id; });
+  if (!n) return;
+  setResView('constellation');
+  mHighlight = n;
+  mOx = (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h'))||0) / 2;
+  mOy = mc.height / (window.devicePixelRatio||1) / 2;
+  mOx = mc.width  / (window.devicePixelRatio||1) / 2 - n.x * mScale;
+  mOy = mc.height / (window.devicePixelRatio||1) / 2 - n.y * mScale;
+  drawMap();
+}
+
+/* copy positions helper */
+function copyPositions() {
+  var out = mNodes.map(function(n){ return '{id:"'+n.id+'",x:'+Math.round(n.x)+',y:'+Math.round(n.y)+'}'; }).join(',\n');
+  navigator.clipboard.writeText(out).then(function(){ alert('Positions copied to clipboard'); });
+}
+
+/* ---- HOME SIGNATURE ----------------------------------------- */
+(function() {
+  var NS = 'http://www.w3.org/2000/svg';
+  var svg = document.getElementById('homeSig');
+  if (!svg) return;
+  var strokes = [
+    {d:'M 12,108 C 16,85 24,54 35,18',w:2.6},{d:'M 35,18 C 46,55 53,82 58,110',w:2.5},{d:'M 20,73 C 27,70 43,69 52,72',w:1.9},
+    {d:'M 74,100 C 73,79 73,57 74,28',w:2.4},{d:'M 74,28 C 88,24 102,36 102,57 C 102,77 96,98 78,102 C 76,102 74,102 74,102',w:2.2},
+    {d:'M 118,27 C 117,53 117,79 116,108',w:2.4},{d:'M 116,27 C 131,23 141,33 140,51 C 139,63 130,70 116,71',w:2.2},{d:'M 124,70 C 131,82 139,95 147,109',w:2.1},
+    {d:'M 161,43 C 167,41 173,42 176,43',w:1.9},{d:'M 168,42 C 167,59 166,79 165,100',w:2.3},{d:'M 158,100 C 163,99 168,101 173,100',w:1.9},
+    {d:'M 186,108 C 190,87 197,62 207,34',w:2.5},{d:'M 207,34 C 217,63 222,86 224,110',w:2.4},{d:'M 194,77 C 200,74 212,74 220,77',w:1.9},
+    {d:'M 238,22 C 238,50 237,78 236,110',w:2.4},{d:'M 237,23 C 246,54 256,81 264,110',w:2.2},{d:'M 263,33 C 263,58 262,82 261,110',w:2.4},
+    {d:'M 54,148 C 46,136 33,132 22,141 C 10,153 9,175 13,197 C 17,215 28,228 41,226 C 50,224 57,215 59,204',w:2.4},
+    {d:'M 78,158 C 72,158 64,166 63,180 C 62,196 68,218 80,224 C 92,230 104,222 107,208 C 110,194 106,174 98,164 C 92,158 84,156 78,158',w:2.3},
+    {d:'M 136,158 C 142,156 148,156 151,158',w:1.9},{d:'M 144,157 C 143,178 142,204 141,220 C 140,232 132,239 123,234 C 118,231 116,224 118,218',w:2.2},
+    {d:'M 174,160 C 168,160 160,168 159,182 C 158,198 164,220 176,226 C 188,232 200,224 203,210 C 206,196 202,174 194,164 C 188,158 180,158 174,160',w:2.3},
+    {d:'M 264,162 C 256,150 243,148 233,157 C 222,168 221,190 225,209 C 229,222 238,232 248,229 C 256,227 262,218 264,207',w:2.4},
+    {d:'M 278,238 C 282,213 291,180 302,150',w:2.5},{d:'M 302,150 C 313,181 319,211 322,240',w:2.4},{d:'M 286,198 C 292,195 307,194 317,197',w:1.9},
+    {d:'M 336,152 C 335,177 334,204 333,238',w:2.4},{d:'M 333,152 C 348,148 357,159 356,175 C 355,186 346,193 333,194',w:2.2},{d:'M 340,193 C 347,208 355,221 362,238',w:2.1},
+    {d:'M 376,152 C 375,178 374,205 375,218 C 377,233 387,240 396,237 C 405,234 410,223 410,210 C 410,196 410,174 410,152',w:2.3}
+  ];
+  var built = [];
+  strokes.forEach(function(s) {
+    var p = document.createElementNS(NS,'path');
+    p.setAttribute('d',s.d); p.setAttribute('fill','none');
+    p.setAttribute('stroke','#1a1916'); p.setAttribute('stroke-linecap','round');
+    p.setAttribute('stroke-linejoin','round'); p.setAttribute('stroke-width',s.w);
+    svg.appendChild(p);
+    var len = p.getTotalLength();
+    p.style.strokeDasharray = len; p.style.strokeDashoffset = len;
+    built.push({p:p, len:len});
+  });
+  function animateSig() {
+    built.forEach(function(b){ b.p.style.transition='none'; b.p.style.strokeDashoffset=b.len; });
+    var t = 500;
+    built.forEach(function(b, i) {
+      if (i === 17) t += 420;
+      var dur = Math.max(130, Math.min(520, b.len*2.8));
+      var jitter = Math.round((Math.random()-0.5)*28);
+      var gap = 20 + Math.round(Math.random()*14);
+      (function(el,d,delay){
+        setTimeout(function(){ el.style.transition='stroke-dashoffset '+d+'ms cubic-bezier(0.2,0,0.45,1)'; el.style.strokeDashoffset=0; }, delay);
+      })(b.p, dur+jitter, t);
+      t += Math.round((dur+jitter)*0.74) + gap;
+    });
+  }
+  setTimeout(animateSig, 300);
+  svg.addEventListener('click', function(){ setTimeout(animateSig,40); });
+})();
+
+/* ---- COPYRIGHT YEAR ----------------------------------------- */
+var cyrEl = document.getElementById('copyrightYear');
+if (cyrEl) cyrEl.textContent = new Date().getFullYear();
+
+/* ---- SEO: structured data ----------------------------------- */
+(function(){
+  var sd = document.createElement('script');
+  sd.type = 'application/ld+json';
+  sd.textContent = JSON.stringify({
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Adrian Cojocaru",
+    "jobTitle":"Visual Artist",
+    "url":"https://adriancojocaru.art",
+    "image":"https://adriancojocaru.art/images/bio.jpg",
+    "sameAs":[
+      "https://www.instagram.com/adriancojocaruu"
+    ],
+    "address":{
+      "@type":"PostalAddress",
+      "addressLocality":"Bucharest",
+      "addressCountry":"RO"
+    },
+    "description":"Adrian Cojocaru is a visual artist based in Romania, working with painting, drawing, installation and printmaking exploring urban coexistence.",
+    "knowsAbout":["Painting","Drawing","Installation art","Printmaking","Contemporary art"],
+    "hasOccupation":{
+      "@type":"Occupation",
+      "name":"Visual Artist",
+      "occupationLocation":{"@type":"Country","name":"Romania"}
+    },
+    "alumniOf":[
+      {"@type":"EducationalOrganization","name":"National University of Arts George Enescu","address":{"@type":"PostalAddress","addressLocality":"Iasi","addressCountry":"RO"}},
+      {"@type":"EducationalOrganization","name":"PXL-MAD School of Arts","address":{"@type":"PostalAddress","addressLocality":"Hasselt","addressCountry":"BE"}}
+    ],
+    "workExample":[
+      {"@type":"VisualArtwork","name":"Acts of in-between","artMedium":"Charcoal on canvas and oil on linen","dateCreated":"2024"},
+      {"@type":"VisualArtwork","name":"Il Pane è la Vita","artMedium":"Oil on canvas","dateCreated":"2022"}
+    ]
+  });
+  document.head.appendChild(sd);
+})();
+
+/* ---- INIT --------------------------------------------------- */
+showPage('home');
+
+</script>
+<footer style="text-align:center;padding:2rem;font-size:0.56rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--mid);border-top:1px solid var(--faint);font-family:var(--courier);display:none" id="siteFooter">
+  &copy; <span id="copyrightYear"></span> Adrian Cojocaru. All rights reserved.
+</footer>
+</body>
+</html>
