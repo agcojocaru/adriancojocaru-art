@@ -91,8 +91,8 @@ nav>*{pointer-events:auto}
 .page.active{display:block}
 
 /* HOME */
-#page-home{overflow:hidden;height:100vh}
-.home-layout{display:grid;grid-template-columns:1fr 65%;height:100vh}
+#page-home{overflow:hidden;height:100vh;height:100dvh}
+.home-layout{display:grid;grid-template-columns:1fr 65%;height:100vh;height:100dvh}
 .home-text-col{display:flex;flex-direction:column;justify-content:space-between;padding:5.5rem 3rem 3rem 2.5rem;position:relative}
 .home-year-stamp{display:none}
 .home-mark{width:44px;height:44px;margin-bottom:2rem;opacity:0.18;flex-shrink:0}
@@ -415,7 +415,7 @@ nav>*{pointer-events:auto}
   .mob-nav-sep{padding:0.6rem 1.4rem 0.2rem;font-size:0.52rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--faint)}
 
   /* -- HOME — Safari-safe full height -- */
-  .home-layout{display:flex;flex-direction:column-reverse;height:100vh;height:-webkit-fill-available}
+  .home-layout{display:flex;flex-direction:column-reverse;height:100vh;height:100dvh}
   .home-img-col{flex:1;min-height:0}
   .home-text-col{
     padding:1rem 1.4rem 1.4rem;
@@ -2409,13 +2409,14 @@ if (cyrEl) cyrEl.textContent = new Date().getFullYear();
 })();
 
 /* ---- iOS scroll-to-top (tap status bar) -------------------- */
-/* Pages are position:fixed so window scroll doesn't reach them.
-   When the user taps the status bar, iOS scrolls window to 0 —
-   we forward that to the active page div instead.              */
-window.addEventListener('scroll', function() {
-  if (window.scrollY === 0) {
+/* The pages are position:fixed so window never scrolls.
+   iOS fires a touchstart with a single touch near y=0 when the
+   user taps the status bar. We detect that and scroll the active
+   page div to the top.                                          */
+document.addEventListener('touchstart', function(e) {
+  if (e.touches.length === 1 && e.touches[0].clientY < 20) {
     var active = document.querySelector('.page.active');
-    if (active) active.scrollTop = 0;
+    if (active) active.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }, { passive: true });
 
