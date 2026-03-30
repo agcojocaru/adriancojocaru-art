@@ -50,8 +50,8 @@ function readImageFolder(srcDir, destDir) {
   });
   return allFiles
     .filter(f => imageExts.includes(path.extname(f).toLowerCase()))
-    .sort()
-    .reverse();
+	.sort(function(a, b) { return a.toLowerCase().localeCompare(b.toLowerCase()); })
+	.reverse();
 }
 
 // ─── Helper: caption from filename or .txt sidecar ───────────
