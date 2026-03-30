@@ -382,10 +382,12 @@ nav>*{pointer-events:auto}
   position:relative;
   z-index:1;
   padding:2rem 2rem 3rem 4rem;
-  columns:5;
-  column-gap:16px;
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
 }
-.mood-item{break-inside:avoid;margin-bottom:20px;cursor:default;position:relative;background:transparent;border-radius:0;z-index:1}
+.moodboard-col{flex:1;display:flex;flex-direction:column;gap:16px}
+.mood-item{cursor:default;position:relative;background:transparent}
 .mood-img-wrap{overflow:hidden;background:var(--faint)}
 .mood-img{width:100%;display:block}
 .mood-cap{display:block;font-family:var(--serif);font-style:italic;font-size:0.7rem;color:var(--mid);padding:0.4rem 0.2rem 0;line-height:1.4}
@@ -468,10 +470,10 @@ nav>*{pointer-events:auto}
   .contact-intro{font-size:1.2rem;margin-bottom:0.5rem}
   .newsletter-block{margin-top:2rem;padding-top:1.5rem}
 
-  .moodboard-wrap{columns:3;column-gap:10px;padding:1.2rem 1rem 2rem 1rem}
+  .moodboard-wrap{gap:10px;padding:1.2rem 1rem 2rem 1rem}
   .moodboard-journal-page{margin:0 0.5rem}
 }
-@media(max-width:480px){.works-grid-view{grid-template-columns:1fr}.moodboard-wrap{columns:2;padding-left:1rem}}
+@media(max-width:480px){.works-grid-view{grid-template-columns:1fr}.moodboard-wrap{gap:8px;padding-left:1rem}}
 
 </style>
 </head>
@@ -1042,7 +1044,7 @@ function showPage(id) {
   if (id === 'projects') { projActive=null; document.querySelector('#projBar .page-label').textContent='Projects'; initProjects(); }
   if (id === 'sketch')   { initSketch(); }
   if (id === 'research') { initResearch(); populateFilters(); renderResList(); setResView('constellation'); var tf=document.getElementById('typeFilters'); if(tf) tf.style.display='flex'; }
-  if (id === 'moodboard'){ updateMoodTimestamp(); }
+  if (id === 'moodboard'){ updateMoodTimestamp(); initMoodMasonry(); }
   if (id === 'drawn')    { updateDrawnTimestamp(); }
   var footer = document.getElementById('siteFooter');
   if (footer) footer.style.display = id === 'home' ? 'none' : 'block';
@@ -2441,7 +2443,48 @@ document.addEventListener('touchstart', function(e) {
   }
 }, { passive: true });
 
-/* ---- INIT --------------------------------------------------- */
+/* ---- DIARY MASONRY (left-to-right order) -------------------- */
+function initMoodMasonry() {
+  var wrap = document.querySelector('.moodboard-wrap');
+  if (!wrap) return;
+
+  /* collect all mood-items — already in date order from build.js */
+  var items = Array.from(wrap.querySelectorAll('.mood-item'));
+  if (!items.length) return;
+
+  /* decide column count based on viewport */
+  var w = wrap.offsetWidth;
+  var cols = w < 480 ? 2 : w < 768 ? 3 : 5;
+
+  /* clear and rebuild with column divs */
+  wrap.innerHTML = '';
+  var columns = [];
+  for (var i = 0; i < cols; i++) {
+    var col = document.createElement('div');
+    col.className = 'moodboard-col';
+    wrap.appendChild(col);
+    columns.push({ el: col, h: 0 });
+  }
+
+  /* place items left-to-right: pick shortest column each time */
+  items.forEach(function(item) {
+    var shortest = columns.reduce(function(a, b) { return a.h <= b.h ? a : b; });
+    shortest.el.appendChild(item);
+    /* estimate height from image natural ratio if loaded, else use 200 */
+    var img = item.querySelector('img');
+    var imgH = (img && img.naturalHeight && img.naturalWidth)
+      ? (img.naturalHeight / img.naturalWidth) * (wrap.offsetWidth / cols)
+      : 200;
+    shortest.h += imgH + 40; /* 40px for caption + gap */
+  });
+}
+
+/* re-run masonry on resize */
+window.addEventListener('resize', function() {
+  if (document.getElementById('page-moodboard').classList.contains('active')) {
+    initMoodMasonry();
+  }
+});
 showPage('home');
 
 </script>
