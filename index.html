@@ -813,13 +813,22 @@ Excerpt from the press release</p>
       </a>
       <div class="newsletter-block">
         <p class="newsletter-label">Mailing List</p>
-        <p class="newsletter-desc">For studio notes and updates on upcoming exhibitions:</p>
-        
-        <a href="https://adriancojocaru.substack.com/subscribe" target="_blank" rel="noopener"
-   style="display:inline-block;font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);border-bottom:1px solid var(--ink);padding-bottom:2px;transition:all 0.2s">
-  Subscribe on Substack →
-</a>
-        <p class="newsletter-note">Only when there's something worth sharing.</p>
+        <p class="newsletter-desc">Notes from the studio. News about new work and upcoming exhibitions.</p>
+        <form action="https://art.us21.list-manage.com/subscribe/post?u=e418937e69e5ef0c1dc220b40&amp;id=528f60ff16&amp;f_id=009899e6f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+          <!-- honeypot — do not remove -->
+          <div style="position:absolute;left:-5000px" aria-hidden="true">
+            <input type="text" name="b_e418937e69e5ef0c1dc220b40_528f60ff16" tabindex="-1" value="">
+          </div>
+          <div class="form-field">
+            <label class="form-label">Name</label>
+            <input class="form-input" type="text" name="FNAME" required>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Email</label>
+            <input class="form-input" type="email" name="EMAIL" required>
+          </div>
+          <button type="submit" name="subscribe" class="form-submit" style="margin-top:0.5rem">Subscribe →</button>
+        </form>
       </div>
     </div>
     <div class="contact-info-col">
@@ -1581,31 +1590,6 @@ function showArtwork(id) {
 
 /* ---- FORMS -------------------------------------------------- */
 function handleSubmit(e) { e.preventDefault(); alert('Message sent. Thank you.'); e.target.reset(); return false; }
-/* stamp the time when contact page loads so we can check submission speed */
-document.addEventListener('DOMContentLoaded', function() {
-  var t = document.getElementById('nl-time');
-  if (t) t.value = Date.now();
-});
-/* also stamp when the page becomes visible */
-document.addEventListener('visibilitychange', function() {
-  var t = document.getElementById('nl-time');
-  if (t && !t.value) t.value = Date.now();
-});
-(function(){ var t = document.getElementById('nl-time'); if (t) t.value = Date.now(); })();
-
-function handleNewsletter(e) {
-  e.preventDefault();
-  /* honeypot: hidden field should be empty */
-  var honeypot = e.target.querySelector('input[name="website"]');
-  if (honeypot && honeypot.value) return; /* bot filled it in — silently drop */
-  /* timing: real humans take at least 2 seconds */
-  var stamp = parseInt(e.target.querySelector('#nl-time') && e.target.querySelector('#nl-time').value, 10);
-  if (stamp && (Date.now() - stamp) < 2000) return; /* too fast — bot */
-  var btn = e.target.querySelector('.newsletter-btn');
-  btn.textContent = 'Subscribed';
-  e.target.querySelector('input[type="email"]').disabled = true;
-  btn.disabled = true;
-}
 
 /* ---- DRAWN WORKS TIMESTAMP ---------------------------------- */
 function updateDrawnTimestamp() {
@@ -2464,5 +2448,7 @@ showPage('home');
 <footer style="text-align:center;padding:2rem;font-size:0.56rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--mid);border-top:1px solid var(--faint);font-family:var(--courier);display:none" id="siteFooter">
   &copy; <span id="copyrightYear"></span> Adrian Cojocaru. All rights reserved.
 </footer>
+<script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+<script>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 </body>
 </html>
