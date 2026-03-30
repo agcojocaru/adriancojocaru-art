@@ -536,7 +536,7 @@ nav>*{pointer-events:auto}
         </div>
         <div class="home-newsletter-hint">
           <p class="home-newsletter-text">Letters from the studio</p>
-          <span class="home-newsletter-link" onclick="showPage('contact')">Subscribe →</span>
+          <a class="home-newsletter-link" href="https://adriancojocaru.substack.com/subscribe" target="_blank" rel="noopener">Subscribe →</a>
         </div>
       </div>
     </div>
@@ -813,14 +813,13 @@ Excerpt from the press release</p>
       </a>
       <div class="newsletter-block">
         <p class="newsletter-label">Mailing List</p>
-        <p class="newsletter-desc">To receive studio notes and updates for upcoming exhibitions, please write your email down below.</p>
-        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
-          <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
-          <input type="hidden" name="nl-time" id="nl-time">
-          <input class="newsletter-input" type="email" placeholder="your@email.com" required>
-          <button type="submit" class="newsletter-btn">Subscribe →</button>
-        </form>
-        <p class="newsletter-note">No spam. Unsubscribe anytime.</p>
+        <p class="newsletter-desc">For studio notes and updates on upcoming exhibitions:</p>
+        
+        <a href="https://adriancojocaru.substack.com/subscribe" target="_blank" rel="noopener"
+   style="display:inline-block;font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);border-bottom:1px solid var(--ink);padding-bottom:2px;transition:all 0.2s">
+  Subscribe on Substack →
+</a>
+        <p class="newsletter-note">Only when there's something worth sharing.</p>
       </div>
     </div>
     <div class="contact-info-col">
