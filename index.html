@@ -27,7 +27,7 @@
 <meta name="twitter:image" content="https://adriancojocaru.art/works/agency-of-a-liminal-space-2024.jpg">
 
 <!-- Google -->
-<meta name="google-site-verification" content="wcD2qx0IMo4vgrHzz0kKXUzIUmuGPH57fbYGCF5xnVQ" />
+<meta name="google-site-verification" content="4-FX5QP-52ENup0R3HGmqNAKgJrIjl00FcFSLbhE8NI" />
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -837,14 +837,61 @@ Excerpt from the press release</p>
       </div>
     </div>
     <div class="contact-info-col">
-      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact">
-        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
-        <div class="form-field"><label class="form-label">Name</label><input class="form-input" type="text" name="name" required></div>
-        <div class="form-field"><label class="form-label">Email</label><input class="form-input" type="email" name="email" required></div>
-        <div class="form-field"><label class="form-label">Message</label><textarea class="form-textarea" name="message" required></textarea></div>
-        <button type="submit" class="form-submit">Send message</button>
-      </form>
+    
+     <!-- Contact Form with Mailgun -->
+<form id="contact-form">
+  <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+  <div class="form-field"><label class="form-label">Name</label><input class="form-input" type="text" name="name" required></div>
+  <div class="form-field"><label class="form-label">Email</label><input class="form-input" type="email" name="email" required></div>
+  <div class="form-field"><label class="form-label">Message</label><textarea class="form-textarea" name="message" required></textarea></div>
+  <button type="submit" class="form-submit">Send message</button>
+  <div id="form-status" style="margin-top:1rem;font-size:0.7rem;line-height:1.6;display:none;padding:0.8rem;border-left:2px solid var(--faint)"></div>
+</form>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const form = e.target;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const statusDiv = document.getElementById('form-status');
+  
+  submitBtn.disabled = true;
+  const originalText = submitBtn.textContent;
+  submitBtn.textContent = 'Sending...';
+  
+  try {
+    const formData = new FormData(form);
+    
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      body: formData,
+    });
+    
+    const data = await response.json();
+    
+    if (response.ok) {
+      statusDiv.innerHTML = '<strong style="color: var(--ink);">✓ Success</strong><br>Thank you! Your message has been sent. I\'ll get back to you soon.';
+      statusDiv.style.borderLeftColor = 'var(--ink)';
+      statusDiv.style.display = 'block';
+      form.reset();
+    } else {
+      statusDiv.innerHTML = `<strong style="color: #cc0000;">✗ Error</strong><br>${data.error || 'Failed to send message. Please try again.'}`;
+      statusDiv.style.borderLeftColor = '#cc0000';
+      statusDiv.style.display = 'block';
+    }
+    
+  } catch (error) {
+    statusDiv.innerHTML = '<strong style="color: #cc0000;">✗ Error</strong><br>Network error. Please check your connection and try again.';
+    statusDiv.style.borderLeftColor = '#cc0000';
+    statusDiv.style.display = 'block';
+    console.error('Form submission error:', error);
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalText;
+  }
+});
+</script>
     </div>
   </div>
 </div>
