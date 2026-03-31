@@ -55,6 +55,5 @@
 /works/cheia-marilor-succese                            /#works     301
 /works/and-its-really-not-her-fault                     /#works     301
 
-# Catch-all for any other works or project URLs not listed above
-/works/*        /#works         301
-/projects/*     /#projects      301
+# NOTE: no catch-all for /works/* or /projects/* 
+# as those paths serve actual image files that must not be redirected
