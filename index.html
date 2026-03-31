@@ -811,7 +811,7 @@ Excerpt from the press release</p>
   <div class="contact-wrap">
     <div class="contact-info-col">
       <p class="contact-intro">Get in touch</p>
-      <p style="font-size:0.72rem;line-height:1.8;color:var(--mid);margin-bottom:0.6rem">For all further inquiries,<br><a href="mailto:studio@adriancojocaru.art" style="color:var(--ink);border-bottom:1px solid var(--faint);padding-bottom:1px;transition:all 0.2s">studio@adriancojocaru.art</a></p>
+      <p style="font-size:0.72rem;line-height:1.8;color:var(--mid);margin-bottom:0.6rem">For all further inquiries,<br><a href="/cdn-cgi/l/email-protection#05767170616c6a456461776c646b666a6f6a666477702b647771" style="color:var(--ink);border-bottom:1px solid var(--faint);padding-bottom:1px;transition:all 0.2s"><span class="__cf_email__" data-cfemail="a2d1d6d7c6cbcde2c3c6d0cbc3ccc1cdc8cdc1c3d0d78cc3d0d6">[email&#160;protected]</span></a></p>
       <a href="https://www.instagram.com/adriancojocaruu" target="_blank" rel="noopener"
          style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--mid);border-bottom:1px solid var(--faint);padding-bottom:2px;transition:all 0.2s;margin-top:1rem">
         Instagram ↗
@@ -1018,7 +1018,7 @@ Excerpt from the press release</p>
 
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
 /* BG PALETTE */
 document.body.classList.add(['bg-0','bg-1','bg-2','bg-3','bg-4'][Math.floor(Math.random()*5)]);
@@ -1040,7 +1040,7 @@ function showPage(id) {
   if (id === 'projects') { projActive=null; document.querySelector('#projBar .page-label').textContent='Projects'; initProjects(); }
   if (id === 'sketch')   { initSketch(); }
   if (id === 'research') { initResearch(); populateFilters(); renderResList(); setResView('constellation'); var tf=document.getElementById('typeFilters'); if(tf) tf.style.display='flex'; }
-  if (id === 'moodboard'){ moodItemsCache = null; updateMoodTimestamp(); initMoodMasonry(); }
+  if (id === 'moodboard'){ updateMoodTimestamp(); initMoodMasonry(); }
   if (id === 'drawn')    { updateDrawnTimestamp(); }
   var footer = document.getElementById('siteFooter');
   if (footer) footer.style.display = id === 'home' ? 'none' : 'block';
@@ -2493,21 +2493,13 @@ document.addEventListener('touchstart', function(e) {
 /* ---- DIARY MASONRY (left-to-right order) -------------------- */
 var moodItemsCache = null;
 
-function initMoodMasonry() {
+function layoutMasonry() {
   var wrap = document.querySelector('.moodboard-wrap');
-  if (!wrap) return;
+  if (!wrap || !moodItemsCache || !moodItemsCache.length) return;
 
-  /* collect items once and cache */
-  if (!moodItemsCache) {
-    moodItemsCache = Array.from(wrap.querySelectorAll('.mood-item'));
-  }
-  if (!moodItemsCache.length) return;
-
-  /* use window.innerWidth — reliable even when page is hidden */
   var vw = window.innerWidth;
   var cols = vw < 480 ? 2 : vw < 768 ? 3 : 5;
 
-  /* clear and rebuild columns */
   wrap.innerHTML = '';
   var columns = [];
   for (var i = 0; i < cols; i++) {
@@ -2517,10 +2509,8 @@ function initMoodMasonry() {
     columns.push({ el: col, h: 0 });
   }
 
-  /* column width for height estimation */
   var colW = wrap.offsetWidth > 0 ? wrap.offsetWidth / cols : (vw / cols);
 
-  /* place items left-to-right: pick shortest column each time */
   moodItemsCache.forEach(function(item) {
     var shortest = columns.reduce(function(a, b) { return a.h <= b.h ? a : b; });
     shortest.el.appendChild(item);
@@ -2532,12 +2522,42 @@ function initMoodMasonry() {
   });
 }
 
+function initMoodMasonry() {
+  var wrap = document.querySelector('.moodboard-wrap');
+  if (!wrap) return;
+
+  /* always re-collect from DOM on fresh navigation */
+  moodItemsCache = Array.from(wrap.querySelectorAll('.mood-item'));
+  if (!moodItemsCache.length) return;
+
+  /* collect all images and wait for them to load before laying out */
+  var imgs = moodItemsCache.map(function(item) { return item.querySelector('img'); }).filter(Boolean);
+  var loaded = 0;
+  var total = imgs.length;
+
+  if (total === 0) { layoutMasonry(); return; }
+
+  function onLoad() {
+    loaded++;
+    if (loaded >= total) layoutMasonry();
+  }
+
+  imgs.forEach(function(img) {
+    if (img.complete && img.naturalWidth) {
+      onLoad();
+    } else {
+      img.addEventListener('load', onLoad, { once: true });
+      img.addEventListener('error', onLoad, { once: true });
+    }
+  });
+}
+
 /* debounced resize — only fires 150ms after user stops dragging */
 var _masonryTimer = null;
 window.addEventListener('resize', function() {
   if (!document.getElementById('page-moodboard').classList.contains('active')) return;
   clearTimeout(_masonryTimer);
-  _masonryTimer = setTimeout(function() { initMoodMasonry(); }, 150);
+  _masonryTimer = setTimeout(function() { layoutMasonry(); }, 150);
 });
 /* read hash on load so direct links work e.g. adriancojocaru.art/#contact */
 (function() {
@@ -2551,7 +2571,4 @@ window.addEventListener('resize', function() {
 <footer style="text-align:center;padding:2rem;font-size:0.56rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--mid);border-top:1px solid var(--faint);font-family:var(--courier);display:none" id="siteFooter">
   &copy; <span id="copyrightYear"></span> Adrian Cojocaru. All rights reserved.
 </footer>
-<script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-<script>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-</body>
-</html>
+<script src="//s3.amazonaws.com/downloads.mailchimp.
