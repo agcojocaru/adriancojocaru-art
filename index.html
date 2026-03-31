@@ -26,6 +26,9 @@
 <meta name="twitter:description" content="Visual artist based in Romania. Painting, drawing, installation and printmaking.">
 <meta name="twitter:image" content="https://adriancojocaru.art/works/agency-of-a-liminal-space-2024.jpg">
 
+<!-- Google -->
+<meta name="google-site-verification" content="wcD2qx0IMo4vgrHzz0kKXUzIUmuGPH57fbYGCF5xnVQ" />
+
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
@@ -834,7 +837,7 @@ Excerpt from the press release</p>
       </div>
     </div>
     <div class="contact-info-col">
-      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="return handleSubmit(event)">
+      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="contact">
         <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
         <div class="form-field"><label class="form-label">Name</label><input class="form-input" type="text" name="name" required></div>
@@ -1048,6 +1051,11 @@ function showPage(id) {
   if (id === 'drawn')    { updateDrawnTimestamp(); }
   var footer = document.getElementById('siteFooter');
   if (footer) footer.style.display = id === 'home' ? 'none' : 'block';
+  /* update URL hash so page is shareable as a direct link */
+  var hash = id === 'home' ? '' : '#' + id;
+  if (window.location.hash !== hash) {
+    history.replaceState(null, '', window.location.pathname + hash);
+  }
 }
 
 function go(id) { showPage(id); closeExplore(); }
@@ -1591,7 +1599,7 @@ function showArtwork(id) {
 }
 
 /* ---- FORMS -------------------------------------------------- */
-function handleSubmit(e) { e.preventDefault(); alert('Message sent. Thank you.'); e.target.reset(); return false; }
+function handleSubmit(e) { /* form submits natively to Netlify */ }
 
 /* ---- DRAWN WORKS TIMESTAMP ---------------------------------- */
 function updateDrawnTimestamp() {
@@ -1932,26 +1940,72 @@ function populateFilters() {
 }
 
 var mNodeData = [
-  { id:'n1',  label:'Urban coexistence', type:'concept', x:0,   y:-80,  desc:'The central question of the practice - how bodies share space in the city.' },
-  { id:'n2',  label:'Bonnard',           type:'artist',  x:120, y:-40,  desc:'Pierre Bonnard. Colour, intimacy, the domestic interior as charged space.' },
-  { id:'n3',  label:'Bucharest',         type:'place',   x:-120,y:20,   desc:'The city as primary subject and studio.' },
-  { id:'n4',  label:'The Poetics of Space',type:'book',  x:60,  y:80,   desc:'Gaston Bachelard. On how we inhabit and imagine space.' },
-  { id:'n5',  label:'Linen',             type:'material',x:-60, y:-120, desc:'The primary support. Its texture becomes part of the underpaint.' },
-  { id:'n6',  label:'Bicycle',           type:'material',x:160, y:60,   desc:'The mode of navigation that generated the Riding series.' },
-  { id:'n7',  label:'Chantal Akerman',   type:'film',    x:-160,y:-60,  desc:'Jeanne Dielman. Duration, repetition, the labour of daily life.' },
-  { id:'n8',  label:'Underpaint',        type:'concept', x:30,  y:160,  desc:'The foundational layer. Always present even when invisible.' },
-  { id:'n9',  label:'Roland Barthes',    type:'essay',   x:-80, y:120,  desc:'Camera Lucida. The punctum. What a mark does to a viewer.' },
-  { id:'n10', label:'Hopper',            type:'artist',  x:200, y:-100, desc:'Edward Hopper. Light as psychological weight. The figure in urban space.' },
-  { id:'n11', label:'Istanbul',          type:'place',   x:-200,y:100,  desc:'A recurring reference for dense urban coexistence.' },
-  { id:'n12', label:'Oil stick',         type:'material',x:100, y:140,  desc:'Used for gestural marks directly on canvas.' },
-  { id:'n13', label:'Balthus',           type:'artist',  x:-100,y:-140, desc:'Stillness. Ambiguity. The charged quality of stopped time.' },
-  { id:'n14', label:'Bread',             type:'concept', x:240, y:20,   desc:'Central symbol in Il Pane e la Vita. Labour, daily life, shared nourishment.' },
-  { id:'n15', label:'Walter Benjamin',   type:'essay',   x:-240,y:-20,  desc:'The Arcades Project. The city as text to be read.' },
-  { id:'n16', label:'Naples',            type:'place',   x:140, y:-160, desc:'Density, colour, lives lived in public.' },
-  { id:'n17', label:'Velazquez',         type:'artist',  x:-140,y:160,  desc:'The body in space. How paint holds a presence.' },
-  { id:'n18', label:'Charcoal',          type:'material',x:280, y:-60,  desc:'Used for the drawn works. Immediate, erasable, gestural.' },
-  { id:'n19', label:'Threshold',         type:'concept', x:-280,y:60,   desc:'The in-between space. Doorways, windows, margins, pause points.' },
-  { id:'n20', label:'Cezanne',           type:'artist',  x:0,   y:-200, desc:'The structure beneath appearances. Multiple viewpoints in one plane.' }
+  /* ── PRACTICE — CORE CONCEPTS ─────────────────────────────── */
+  { id:'n1',  label:'Urban coexistence',    type:'concept',  x:0,    y:-80,  desc:'The central question of the practice — how bodies share space in the city.' },
+  { id:'n8',  label:'Underpaint',           type:'concept',  x:30,   y:160,  desc:'The foundational layer. Always present even when invisible. "I like to paint over the underpaint."' },
+  { id:'n19', label:'Threshold',            type:'concept',  x:-280, y:60,   desc:'The in-between space. Doorways, windows, margins, pause points.' },
+  { id:'n14', label:'Bread',                type:'concept',  x:240,  y:20,   desc:'Central symbol in Il Pane è la Vita. Labour, daily life, shared nourishment.' },
+
+  /* ── PRACTICE — MATERIALS ──────────────────────────────────── */
+  { id:'n5',  label:'Linen',                type:'material', x:-60,  y:-120, desc:'The primary support. Its texture becomes part of the underpaint.' },
+  { id:'n6',  label:'Bicycle',              type:'material', x:160,  y:60,   desc:'The mode of navigation that generated the Riding series.' },
+  { id:'n12', label:'Oil stick',            type:'material', x:100,  y:140,  desc:'Used for gestural marks directly on canvas.' },
+  { id:'n18', label:'Charcoal',             type:'material', x:280,  y:-60,  desc:'Used for the drawn works. Immediate, erasable, gestural.' },
+
+  /* ── ARTISTS ───────────────────────────────────────────────── */
+  { id:'n2',  label:'Bonnard',              type:'artist',   x:120,  y:-40,  desc:'Pierre Bonnard. Colour, intimacy, the domestic interior as charged space.' },
+  { id:'n10', label:'Hopper',               type:'artist',   x:200,  y:-100, desc:'Edward Hopper. Light as psychological weight. The figure in urban space.' },
+  { id:'n13', label:'Balthus',              type:'artist',   x:-100, y:-140, desc:'Stillness. Ambiguity. The charged quality of stopped time.' },
+  { id:'n17', label:'Velazquez',            type:'artist',   x:-140, y:160,  desc:'The body in space. How paint holds a presence.' },
+  { id:'n20', label:'Cezanne',              type:'artist',   x:0,    y:-200, desc:'The structure beneath appearances. Multiple viewpoints in one plane.' },
+
+  /* ── PLACES ────────────────────────────────────────────────── */
+  { id:'n3',  label:'Bucharest',            type:'place',    x:-120, y:20,   desc:'The city as primary subject and studio.' },
+  { id:'n11', label:'Istanbul',             type:'place',    x:-200, y:100,  desc:'A recurring reference for dense urban coexistence.' },
+  { id:'n16', label:'Naples',               type:'place',    x:140,  y:-160, desc:'Density, colour, lives lived in public.' },
+
+  /* ── BOOKS & ESSAYS — EXISTING ─────────────────────────────── */
+  { id:'n4',  label:'The Poetics of Space', type:'book',     x:60,   y:80,   desc:'Gaston Bachelard, 1958. On how we inhabit and imagine space — the house as the first world, the corner as refuge.' },
+  { id:'n9',  label:'Roland Barthes',       type:'essay',    x:-80,  y:120,  desc:'Camera Lucida (1980). The punctum. What a mark does to a viewer. Also: Sémiologie et Urbanisme (1967) — the city as sign system.' },
+  { id:'n15', label:'Walter Benjamin',      type:'essay',    x:-240, y:-20,  desc:'The Arcades Project. The city as text to be read. Also: Unpacking My Library (1931) — collecting as a mode of attention.' },
+  { id:'n7',  label:'Chantal Akerman',      type:'film',     x:-160, y:-60,  desc:'Jeanne Dielman (1975). Duration, repetition, the labour of daily life made visible through the camera\'s patience.' },
+
+  /* ── WALKING & THE CITY ─────────────────────────────────────── */
+  { id:'n21', label:'Walking as method',    type:'concept',  x:-320, y:-200, desc:'Baudelaire → Benjamin → Debord. The city entered on foot, without destination. Key text: Guy Debord, Theory of the Dérive (1956).' },
+  { id:'n22', label:'Françoise Choay',      type:'book',     x:-420, y:-140, desc:'L\'Urbanisme: Utopies et Réalités (1965). Urbanism as ideology — the progressive vs culturalist models. Pre-urbanism to applied planning.' },
+  { id:'n23', label:'Heidegger / dwelling', type:'essay',    x:-360, y:-300, desc:'Building Dwelling Thinking (1951). To build is to let dwell. Architecture as the fundamental form of human existence on earth.' },
+
+  /* ── SPACE & THE CITY — LEFEBVRE'S TRIAD ───────────────────── */
+  { id:'n24', label:'Perceived space',      type:'concept',  x:-160, y:240,  desc:'Lefebvre, La Production de l\'Espace (1974). Spatial practice — how each person moves through and reads the city via empirical, embodied experience.' },
+  { id:'n25', label:'Conceived space',      type:'concept',  x:-60,  y:300,  desc:'Lefebvre + Barthes. The city\'s language produced by specialists — geographers, planners, sociologists. Barthes: Sémiologie et Urbanisme (1967).' },
+  { id:'n26', label:'Lived space',          type:'concept',  x:-260, y:300,  desc:'Lefebvre, La Production de l\'Espace (1974). The symbolic life of the city — inhabited by artists, writers, philosophers who transform it from within.' },
+
+  /* ── POSTMODERNITY & THE URBAN ──────────────────────────────── */
+  { id:'n27', label:'David Lyon',           type:'book',     x:320,  y:200,  desc:'Postmodernity (1994). The social condition of the 21st century — new technologies and consumerism undermining modern certainties without replacing them.' },
+  { id:'n28', label:'Cities & surveillance',type:'concept',  x:420,  y:140,  desc:'David Lyon, Surveillance Society (2001). The city as intercultural hub — and as machine for social sorting through data. Who moves freely, who is tracked.' },
+  { id:'n29', label:'David Harvey',         type:'book',     x:360,  y:300,  desc:'The Condition of Postmodernity (1989). Time-space compression — capitalism annihilates space through time. Postmodern culture as product of flexible accumulation.' },
+
+  /* ── WHAT IS ART? ───────────────────────────────────────────── */
+  { id:'n30', label:'Danto — artworld',     type:'essay',    x:200,  y:-240, desc:'The Artworld (1964); The Transfiguration of the Commonplace (1981). Art requires a theoretical atmosphere. Warhol\'s Brillo Box: indiscernible objects, different status.' },
+  { id:'n31', label:'Dickie — institution', type:'essay',    x:320,  y:-180, desc:'Art and the Aesthetic: An Institutional Analysis (1974). Art is an artifact conferred candidate status by persons acting on behalf of the artworld institution.' },
+  { id:'n32', label:'Adorno — truth',       type:'essay',    x:260,  y:-320, desc:'Aesthetic Theory (1970, posth.). Art is autonomous and heteronomous. Truth content (Wahrheitsgehalt) lives in art\'s refusal of harmony and reconciliation.' },
+
+  /* ── REINTERPRETATION, ARCHIVE & ACCUMULATION ──────────────── */
+  { id:'n33', label:'Reinterpretation',     type:'concept',  x:-40,  y:-280, desc:'Eliot (1919) → Bloom (1973) → Bourriaud (2001). From surrender to tradition, to anxious misreading, to free use of existing cultural forms.' },
+  { id:'n34', label:'Archive',              type:'concept',  x:80,   y:-320, desc:'Jacques Derrida, Archive Fever (1995). The archive points to the future, not the past. Power decides what is included. Rooted in the Greek arkheion.' },
+  { id:'n35', label:'Accumulation',         type:'concept',  x:-80,  y:-320, desc:'Walter Benjamin, Unpacking My Library (1931). Collecting as a mode of attention — every object a portal to memory. Ownership as the deepest relation to things.' },
+  { id:'n36', label:'Relational Aesthetics',type:'book',     x:160,  y:240,  desc:'Nicolas Bourriaud, Esthétique relationnelle (1998). Art\'s substrate is intersubjectivity — being-together, the encounter, the collective elaboration of meaning.' },
+  { id:'n37', label:'Postproduction',       type:'book',     x:260,  y:180,  desc:'Nicolas Bourriaud, Postproduction (2001). Not "what can I make?" but "what can I do with what already exists?" The artist as semionaut, programmer of forms.' },
+
+  /* ── LABOR, REPETITION & ALIENATION ────────────────────────── */
+  { id:'n38', label:'Labor / Repetition',   type:'concept',  x:0,    y:280,  desc:'Hannah Arendt, The Human Condition (1958). Labor leaves nothing behind. Work builds the world. Action discloses who we are. Which one is painting?' },
+  { id:'n39', label:'Alienation',           type:'concept',  x:100,  y:320,  desc:'Karl Marx, Economic and Philosophic Manuscripts of 1844 (pub. 1932). The worker puts his life into the object — the object grows alien and hostile. Four forms.' },
+  { id:'n40', label:'Wit',                  type:'concept',  x:-100, y:-200, desc:'Lord Shaftesbury, Characteristics (1711). Wit as a mode of truth-telling — a way past social and intellectual defenses. Not decoration: vehicle for the unsayable.' },
+
+  /* ── SPACE, IDENTITY & DISPLACEMENT ────────────────────────── */
+  { id:'n41', label:'Displacement',         type:'concept',  x:100,  y:-180, desc:'Homi K. Bhabha, The Location of Culture (1994). The third space — where cultures collide and new identities form that belong fully to neither origin.' },
+  { id:'n42', label:'Liminal space',        type:'concept',  x:-200, y:-200, desc:'Van Gennep (1909) → Victor Turner (1967). The threshold between — betwixt and between. Not transitional: productively unresolved. The in-between as position.' },
+  { id:'n43', label:'Allegory',             type:'concept',  x:-300, y:-140, desc:'Walter Benjamin, The Origin of German Tragic Drama (1928). Allegory as the constitutive trope of modernity. Authority of power and the power of authority.' },
 ];
 
 /* ─── CONNECTIONS ──────────────────────────────────────────────
@@ -2444,24 +2498,23 @@ document.addEventListener('touchstart', function(e) {
 }, { passive: true });
 
 /* ---- DIARY MASONRY (left-to-right order) -------------------- */
-/* ---- DIARY MASONRY (left-to-right order) -------------------- */
 var moodItemsCache = null;
 
 function initMoodMasonry() {
   var wrap = document.querySelector('.moodboard-wrap');
   if (!wrap) return;
 
-  /* collect items once and cache — never re-collect from wrap after first run */
+  /* collect items once and cache */
   if (!moodItemsCache) {
     moodItemsCache = Array.from(wrap.querySelectorAll('.mood-item'));
   }
   if (!moodItemsCache.length) return;
 
-  /* decide column count based on viewport */
-  var w = wrap.offsetWidth;
-  var cols = w < 480 ? 2 : w < 768 ? 3 : 5;
+  /* use window.innerWidth — reliable even when page is hidden */
+  var vw = window.innerWidth;
+  var cols = vw < 480 ? 2 : vw < 768 ? 3 : 5;
 
-  /* clear and rebuild with column divs */
+  /* clear and rebuild columns */
   wrap.innerHTML = '';
   var columns = [];
   for (var i = 0; i < cols; i++) {
@@ -2471,25 +2524,35 @@ function initMoodMasonry() {
     columns.push({ el: col, h: 0 });
   }
 
+  /* column width for height estimation */
+  var colW = wrap.offsetWidth > 0 ? wrap.offsetWidth / cols : (vw / cols);
+
   /* place items left-to-right: pick shortest column each time */
   moodItemsCache.forEach(function(item) {
     var shortest = columns.reduce(function(a, b) { return a.h <= b.h ? a : b; });
     shortest.el.appendChild(item);
     var img = item.querySelector('img');
     var imgH = (img && img.naturalHeight && img.naturalWidth)
-      ? (img.naturalHeight / img.naturalWidth) * (wrap.offsetWidth / cols)
+      ? (img.naturalHeight / img.naturalWidth) * colW
       : 200;
     shortest.h += imgH + 40;
   });
 }
 
-/* re-run masonry on resize */
+/* debounced resize — only fires 150ms after user stops dragging */
+var _masonryTimer = null;
 window.addEventListener('resize', function() {
-  if (document.getElementById('page-moodboard').classList.contains('active')) {
-    initMoodMasonry();
-  }
+  if (!document.getElementById('page-moodboard').classList.contains('active')) return;
+  clearTimeout(_masonryTimer);
+  _masonryTimer = setTimeout(function() { initMoodMasonry(); }, 150);
 });
-showPage('home');
+/* read hash on load so direct links work e.g. adriancojocaru.art/#contact */
+(function() {
+  var validPages = ['home','works','projects','about','news','contact','moodboard','drawn','sketch','research'];
+  var hash = window.location.hash.replace('#','');
+  var startPage = (hash && validPages.indexOf(hash) !== -1) ? hash : 'home';
+  showPage(startPage);
+})();
 
 </script>
 <footer style="text-align:center;padding:2rem;font-size:0.56rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--mid);border-top:1px solid var(--faint);font-family:var(--courier);display:none" id="siteFooter">
