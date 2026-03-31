@@ -255,8 +255,8 @@ nav>*{pointer-events:auto}
 
 /* CONTACT */
 .contact-wrap{padding:3rem 2rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;max-width:860px}
-.contact-form-col{order:0}
-.contact-info-col{order:1}
+.contact-info-col{order:0}
+.contact-form-col{order:1}
 .contact-intro{font-family:var(--serif);font-size:1.5rem;font-weight:300;line-height:1.3;margin-bottom:0.8rem;font-style:normal}
 .contact-detail{font-size:0.7rem;line-height:2.6;color:var(--mid)}
 .contact-detail a:hover{color:var(--ink)}
@@ -468,8 +468,8 @@ nav>*{pointer-events:auto}
 
   /* -- CONTACT — form first, newsletter second on mobile -- */
   .contact-wrap{grid-template-columns:1fr;gap:2rem;padding:1.5rem 1.2rem 3rem}
-  .contact-form-col{order:1}
   .contact-info-col{order:0}
+  .contact-form-col{order:1}
   .contact-intro{font-size:1.2rem;margin-bottom:0.5rem}
   .newsletter-block{margin-top:2rem;padding-top:1.5rem}
 
@@ -809,14 +809,16 @@ Excerpt from the press release</p>
 <div id="page-contact" class="page">
   <div class="page-head"><span class="page-label">Contact</span></div>
   <div class="contact-wrap">
-    <div class="contact-form-col">
+    <div class="contact-info-col">
       <p class="contact-intro">Get in touch</p>
-      <p style="font-size:0.72rem;line-height:1.8;color:var(--mid);margin-bottom:1.4rem">For all further inquiries,<br>please use the contact form.</p>
+      <p style="font-size:0.72rem;line-height:1.8;color:var(--mid);margin-bottom:0.6rem">For all further inquiries,<br><a href="mailto:studio@adriancojocaru.art" style="color:var(--ink);border-bottom:1px solid var(--faint);padding-bottom:1px;transition:all 0.2s">studio@adriancojocaru.art</a></p>
       <a href="https://www.instagram.com/adriancojocaruu" target="_blank" rel="noopener"
-         style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--mid);border-bottom:1px solid var(--faint);padding-bottom:2px;transition:all 0.2s;margin-bottom:2rem">
+         style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--mid);border-bottom:1px solid var(--faint);padding-bottom:2px;transition:all 0.2s;margin-top:1rem">
         Instagram ↗
       </a>
-      <div class="newsletter-block">
+    </div>
+    <div class="contact-form-col">
+      <div class="newsletter-block" style="margin-top:0;border-top:none;padding-top:0">
         <p class="newsletter-label">Mailing List</p>
         <p class="newsletter-desc">Notes from the studio. News about new work and upcoming exhibitions.</p>
         <form action="https://art.us21.list-manage.com/subscribe/post?u=e418937e69e5ef0c1dc220b40&amp;id=528f60ff16&amp;f_id=009899e6f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
@@ -834,64 +836,8 @@ Excerpt from the press release</p>
           </div>
           <button type="submit" name="subscribe" class="form-submit" style="margin-top:0.5rem">Subscribe →</button>
         </form>
+        <p class="newsletter-note">Only when there's something worth sharing.</p>
       </div>
-    </div>
-    <div class="contact-info-col">
-    
-     <!-- Contact Form with Mailgun -->
-<form id="contact-form">
-  <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
-  <div class="form-field"><label class="form-label">Name</label><input class="form-input" type="text" name="name" required></div>
-  <div class="form-field"><label class="form-label">Email</label><input class="form-input" type="email" name="email" required></div>
-  <div class="form-field"><label class="form-label">Message</label><textarea class="form-textarea" name="message" required></textarea></div>
-  <button type="submit" class="form-submit">Send message</button>
-  <div id="form-status" style="margin-top:1rem;font-size:0.7rem;line-height:1.6;display:none;padding:0.8rem;border-left:2px solid var(--faint)"></div>
-</form>
-
-<script>
-document.getElementById('contact-form').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  
-  const form = e.target;
-  const submitBtn = form.querySelector('button[type="submit"]');
-  const statusDiv = document.getElementById('form-status');
-  
-  submitBtn.disabled = true;
-  const originalText = submitBtn.textContent;
-  submitBtn.textContent = 'Sending...';
-  
-  try {
-    const formData = new FormData(form);
-    
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      body: formData,
-    });
-    
-    const data = await response.json();
-    
-    if (response.ok) {
-      statusDiv.innerHTML = '<strong style="color: var(--ink);">✓ Success</strong><br>Thank you! Your message has been sent. I\'ll get back to you soon.';
-      statusDiv.style.borderLeftColor = 'var(--ink)';
-      statusDiv.style.display = 'block';
-      form.reset();
-    } else {
-      statusDiv.innerHTML = `<strong style="color: #cc0000;">✗ Error</strong><br>${data.error || 'Failed to send message. Please try again.'}`;
-      statusDiv.style.borderLeftColor = '#cc0000';
-      statusDiv.style.display = 'block';
-    }
-    
-  } catch (error) {
-    statusDiv.innerHTML = '<strong style="color: #cc0000;">✗ Error</strong><br>Network error. Please check your connection and try again.';
-    statusDiv.style.borderLeftColor = '#cc0000';
-    statusDiv.style.display = 'block';
-    console.error('Form submission error:', error);
-  } finally {
-    submitBtn.disabled = false;
-    submitBtn.textContent = originalText;
-  }
-});
-</script>
     </div>
   </div>
 </div>
