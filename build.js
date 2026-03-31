@@ -134,7 +134,7 @@ fs.writeFileSync(path.join(distDir, 'index.html'), html);
 
 // ─── Copy root-level assets ───────────────────────────────────
 // This includes robots.txt, sitemap.xml, and favicon files
-['robots.txt', 'sitemap.xml', 'favicon.ico', 'favicon.png', 'favicon.svg'].forEach(f => {
+['robots.txt', 'sitemap.xml', 'favicon.ico', 'favicon.png', 'favicon.svg', '_redirects'].forEach(f => {
   const src = path.join(__dirname, f);
   if (fs.existsSync(src)) {
     fs.copyFileSync(src, path.join(distDir, f));
@@ -147,5 +147,5 @@ console.log(`✓ Diary  — ${diaryImages.length} image(s)`);
 diaryImages.forEach(img => console.log(`  · ${img} → "${getCaption(img, diaryDir)}"`));
 console.log(`✓ Drawn  — ${drawnImages.length} image(s)`);
 drawnImages.forEach(img => console.log(`  · ${img} → "${getCaption(img, drawnDir)}"`));
-console.log(`✓ Static files copied (robots.txt, sitemap.xml, favicons)`);
+console.log(`✓ Static files copied (robots.txt, sitemap.xml, favicons, _redirects)`);
 console.log(`✓ Output written to dist/`);

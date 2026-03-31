@@ -1,0 +1,60 @@
+# Pages
+/works          /#works         301
+/projects       /#projects      301
+/about          /#about         301
+/news           /#news          301
+/contact        /#contact       301
+/diary          /#moodboard     301
+/moodboard      /#moodboard     301
+/drawn          /#drawn         301
+/sketchbook     /#sketch        301
+/sketch         /#sketch        301
+/research       /#research      301
+
+# Projects
+/projects/acts                  /#projects      301
+/projects/pane                  /#projects      301
+/projects/riding                /#projects      301
+/projects/acts-of-in-between    /#projects      301
+/projects/il-pane-e-la-vita     /#projects      301
+
+# Works — Acts of in-between series
+/works/agency-of-a-liminal-space                        /#works     301
+/works/the-italians-were-marvellous                     /#works     301
+/works/do-you-know-about-the-golden-rule                /#works     301
+/works/many-memories-from                               /#works     301
+/works/all-worked-as-a-team-so-im-safe                  /#works     301
+/works/going-anywhere-we-were-vulnerable                /#works     301
+/works/it-is-literally-a-feeling                        /#works     301
+/works/signature-boudoir                                /#works     301
+/works/everybody-knows-about-that-spot                  /#works     301
+/works/three-times-a-day                                /#works     301
+/works/second-reason-is-even-more-important             /#works     301
+/works/it-just-felt-right                               /#works     301
+/works/meal-variation-except-spinach                    /#works     301
+/works/where-everything-popped-off                      /#works     301
+
+# Works — Il Pane series
+/works/ciao-ciro                                        /#works     301
+/works/qui-dal-rinascimento                             /#works     301
+/works/mantengo-sempre-il-mio-couture                   /#works     301
+/works/tvb                                              /#works     301
+/works/la-rosticceria-piccola-cina                      /#works     301
+/works/crema-e-cioccolato                               /#works     301
+/works/forsi                                            /#works     301
+
+# Works — Selected
+/works/a-living-map-of-variable-time                    /#works     301
+/works/tasted-forbidden-fruit-and-everything-that-followed  /#works 301
+/works/the-milkmaid                                     /#works     301
+/works/a-la-fois-apparence-et-partie-de-la-realite      /#works     301
+/works/the-capital                                      /#works     301
+/works/like-an-undiscovered-illness                     /#works     301
+/works/sunday-service                                   /#works     301
+/works/the-situation-is-critical                        /#works     301
+/works/cheia-marilor-succese                            /#works     301
+/works/and-its-really-not-her-fault                     /#works     301
+
+# Catch-all for any other works or project URLs not listed above
+/works/*        /#works         301
+/projects/*     /#projects      301
