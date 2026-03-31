@@ -2526,33 +2526,16 @@ function initMoodMasonry() {
   var wrap = document.querySelector('.moodboard-wrap');
   if (!wrap) return;
 
-  /* always re-collect from DOM on fresh navigation */
+  /* collect items fresh from DOM */
   moodItemsCache = Array.from(wrap.querySelectorAll('.mood-item'));
   if (!moodItemsCache.length) return;
 
-  /* collect all images and wait for them to load before laying out */
-  var imgs = moodItemsCache.map(function(item) { return item.querySelector('img'); }).filter(Boolean);
-  var loaded = 0;
-  var total = imgs.length;
-
-  if (total === 0) { layoutMasonry(); return; }
-
-  function onLoad() {
-    loaded++;
-    if (loaded >= total) layoutMasonry();
-  }
-
-  imgs.forEach(function(img) {
-    if (img.complete && img.naturalWidth) {
-      onLoad();
-    } else {
-      img.addEventListener('load', onLoad, { once: true });
-      img.addEventListener('error', onLoad, { once: true });
-    }
-  });
+  /* run immediately — images already cached load instantly,
+     others use 200px estimate and reflow naturally as they arrive */
+  layoutMasonry();
 }
 
-/* debounced resize — only fires 150ms after user stops dragging */
+/* debounced resize */
 var _masonryTimer = null;
 window.addEventListener('resize', function() {
   if (!document.getElementById('page-moodboard').classList.contains('active')) return;
