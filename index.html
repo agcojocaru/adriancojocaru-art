@@ -1101,7 +1101,7 @@ function showPage(id) {
   /* update URL hash so page is shareable as a direct link */
   var hash = id === 'home' ? '' : '#' + id;
   if (window.location.hash !== hash) {
-    history.replaceState(null, '', window.location.pathname + hash);
+    history.replaceState(null, '', '/' + hash);
   }
 }
 

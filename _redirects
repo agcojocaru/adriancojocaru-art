@@ -1,15 +1,28 @@
 # Pages
 /works          /#works         301
+/works/         /#works         301
+/work           /#works         301
 /projects       /#projects      301
+/projects/      /#projects      301
+/project        /#projects      301
 /about          /#about         301
+/about/         /#about         301
 /news           /#news          301
+/news/          /#news          301
 /contact        /#contact       301
+/contact/       /#contact       301
 /diary          /#moodboard     301
+/diary/         /#moodboard     301
 /moodboard      /#moodboard     301
+/moodboard/     /#moodboard     301
 /drawn          /#drawn         301
+/drawn/         /#drawn         301
 /sketchbook     /#sketch        301
+/sketchbook/    /#sketch        301
 /sketch         /#sketch        301
+/sketch/        /#sketch        301
 /research       /#research      301
+/research/      /#research      301
 
 # Projects
 /projects/acts                  /#projects      301
