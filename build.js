@@ -1,7 +1,7 @@
 const fs   = require('fs');
 const path = require('path');
 
-const imageExts = ['.jpg', '.jpeg', '.png', '.webp', '.gif'];
+const imageExts = ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.json'];
 
 // ─── Directories ─────────────────────────────────────────────
 const distDir   = path.join(__dirname, 'dist');
@@ -42,9 +42,10 @@ function readImageFolder(srcDir, destDir) {
   if (!fs.existsSync(srcDir)) return [];
   if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
   const allFiles = fs.readdirSync(srcDir);
-  allFiles.forEach(f => {
+	allFiles.forEach(f => {
     const srcPath = path.join(srcDir, f);
-    if (!fs.statSync(srcPath).isDirectory()) {
+    const ext = path.extname(f).toLowerCase();
+    if (!fs.statSync(srcPath).isDirectory() && ext !== '.json') {
       fs.copyFileSync(srcPath, path.join(destDir, f));
     }
   });
@@ -86,14 +87,49 @@ function getDateAttr(filename) {
 // ─── Build DIARY blocks ───────────────────────────────────────
 const diaryImages = readImageFolder(diaryDir, diaryDist);
 
-const diaryBlocks = diaryImages.map(img => {
-  const caption  = getCaption(img, diaryDir);
-  const dateAttr = getDateAttr(img);
+function buildDiaryEntry(filename, srcDir) {
+  const ext = path.extname(filename).toLowerCase();
+  const dateAttr = getDateAttr(filename);
+
+  if (ext === '.json') {
+    const raw = JSON.parse(fs.readFileSync(path.join(srcDir, filename), 'utf8'));
+    const cap = raw.caption || '';
+
+    if (raw.type === 'youtube') {
+      return `    <div class="mood-item mood-item--video" ${dateAttr}>
+      <div class="mood-video-wrap">
+        <iframe src="https://www.youtube.com/embed/${raw.id}" frameborder="0" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="mood-cap">${cap}</div>
+    </div>`;
+    }
+
+    if (raw.type === 'note') {
+      return `    <div class="mood-item mood-item--note" ${dateAttr}>
+      <div class="mood-note">${raw.text}</div>
+      <div class="mood-cap">${cap}</div>
+    </div>`;
+    }
+
+    if (raw.type === 'link') {
+      return `    <div class="mood-item mood-item--link" ${dateAttr}>
+      <a class="mood-link-card" href="${raw.url}" target="_blank" rel="noopener">
+        <span class="mood-link-title">${raw.title}</span>
+        <span class="mood-link-arrow">↗</span>
+      </a>
+      <div class="mood-cap">${cap}</div>
+    </div>`;
+    }
+  }
+
+  const caption = getCaption(filename, srcDir);
   return `    <div class="mood-item" ${dateAttr}>
-      <img class="mood-img" src="diary/${img}" alt="${caption}" loading="lazy">
+      <img class="mood-img" src="diary/${filename}" alt="${caption}" loading="lazy">
       <div class="mood-cap">${caption}</div>
     </div>`;
-}).join('\n');
+}
+
+const diaryBlocks = diaryImages.map(img => buildDiaryEntry(img, diaryDir)).join('\n');
 
 const diaryHTML = diaryBlocks ||
   `    <div style="padding:3rem 2rem;font-family:'Cormorant Garamond',serif;font-style:italic;color:#8a867c;font-size:0.9rem">
