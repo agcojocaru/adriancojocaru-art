@@ -1,7 +1,7 @@
 const fs   = require('fs');
 const path = require('path');
 
-const imageExts = ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.json'];
+const imageExts = ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.json']; // .json included intentionally — diary/ folder uses JSON files for video/note/link entries (see buildDiaryEntry)
 
 // ─── Directories ─────────────────────────────────────────────
 const distDir   = path.join(__dirname, 'dist');
