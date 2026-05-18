@@ -29,7 +29,7 @@ function copyFolder(src, dest) {
 if (!fs.existsSync(distDir)) fs.mkdirSync(distDir);
 
 // ─── Copy all asset folders wholesale ────────────────────────
-['works', 'images', 'news', 'archive'].forEach(folder => {
+['works', 'images', 'news', 'archive', 'newsletter'].forEach(folder => {
   const src = path.join(__dirname, folder);
   if (fs.existsSync(src)) {
     copyFolder(src, path.join(distDir, folder));
