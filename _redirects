@@ -24,12 +24,16 @@
 /research       /#research      301
 /research/      /#research      301
 
+# Legacy info pages
+/info/long-biography/    /#about    301
+
 # Projects
 /projects/acts                  /#projects      301
 /projects/pane                  /#projects      301
 /projects/riding                /#projects      301
 /projects/acts-of-in-between    /#projects      301
 /projects/il-pane-e-la-vita     /#projects      301
+/project/il-pane-e-la-vita-text/    /#projects  301
 
 # Works — Acts of in-between series
 /works/agency-of-a-liminal-space                        /#works     301
@@ -67,6 +71,9 @@
 /works/the-situation-is-critical                        /#works     301
 /works/cheia-marilor-succese                            /#works     301
 /works/and-its-really-not-her-fault                     /#works     301
+
+# News — individual articles
+/news/and-its-really-not-her-fault/    /#news    301
 
 # NOTE: no catch-all for /works/* or /projects/* 
 # as those paths serve actual image files that must not be redirected
