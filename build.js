@@ -170,7 +170,7 @@ fs.writeFileSync(path.join(distDir, 'index.html'), html);
 
 // ─── Copy root-level assets ───────────────────────────────────
 // This includes robots.txt, sitemap.xml, and favicon files
-['robots.txt', 'sitemap.xml', 'favicon.ico', 'favicon.png', 'favicon.svg', '_redirects'].forEach(f => {
+['robots.txt', 'sitemap.xml', 'favicon.ico', 'favicon.png', 'favicon.svg', '_redirects', 'style.css', 'main.js'].forEach(f => {
   const src = path.join(__dirname, f);
   if (fs.existsSync(src)) {
     fs.copyFileSync(src, path.join(distDir, f));
