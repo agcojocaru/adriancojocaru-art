@@ -5,6 +5,7 @@ const imageExts = ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.json']; // .json 
 
 // ─── Directories ─────────────────────────────────────────────
 const distDir   = path.join(__dirname, 'dist');
+
 const diaryDir  = path.join(__dirname, 'diary');
 const drawnDir  = path.join(__dirname, 'drawn');
 const diaryDist = path.join(distDir, 'diary');
