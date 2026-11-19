@@ -43,24 +43,25 @@ function readImageFolder(srcDir, destDir) {
   if (!fs.existsSync(srcDir)) return [];
   if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
   const allFiles = fs.readdirSync(srcDir);
-	allFiles.forEach(f => {
+  allFiles.forEach(f => {
     const srcPath = path.join(srcDir, f);
     const ext = path.extname(f).toLowerCase();
-    if (!fs.statSync(srcPath).isDirectory() && ext !== '.json') {
+    if (!fs.statSync(srcPath).isDirectory() && ext !== '.json' && ext !== '.txt') {
       fs.copyFileSync(srcPath, path.join(destDir, f));
     }
   });
   return allFiles
     .filter(f => imageExts.includes(path.extname(f).toLowerCase()))
-	.sort(function(a, b) { return a.toLowerCase().localeCompare(b.toLowerCase()); })
-	.reverse();
+    .sort(function(a, b) { return a.toLowerCase().localeCompare(b.toLowerCase()); })
+    .reverse();
 }
 
 // ─── Helper: caption from filename or .txt sidecar ───────────
 function getCaption(filename, srcDir) {
   const base    = path.basename(filename, path.extname(filename));
   const txtFile = path.join(srcDir, base + '.txt');
-  if (fs.existsSync(txtFile)) return fs.readFileSync(txtFile, 'utf8').trim();
+  const hasTxt  = fs.existsSync(txtFile);
+  const txtText = hasTxt ? fs.readFileSync(txtFile, 'utf8').trim() : null;
 
   const parts  = base.split('-');
   const isDate = parts.length >= 3 && /^\d{4}$/.test(parts[0]);
@@ -68,12 +69,11 @@ function getCaption(filename, srcDir) {
     const [year, month, day, ...rest] = parts;
     const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     const monthName = months[parseInt(month, 10) - 1] || month;
-    const words = rest.join(' ');
-    return words
-      ? `${words}, ${parseInt(day, 10)} ${monthName} ${year}`
-      : `${parseInt(day, 10)} ${monthName} ${year}`;
+    const dateStr = `${parseInt(day, 10)} ${monthName} ${year}`;
+    const words = hasTxt ? txtText : rest.join(' ');
+    return words ? `${words}, ${dateStr}` : dateStr;
   }
-  return base.replace(/-/g, ' ');
+  return hasTxt ? txtText : base.replace(/-/g, ' ');
 }
 
 // ─── Helper: data-date attribute ─────────────────────────────
@@ -83,6 +83,15 @@ function getDateAttr(filename) {
   return (parts.length >= 3 && /^\d{4}$/.test(parts[0]))
     ? `data-date="${parts[0]}-${parts[1]}-${parts[2]}"`
     : '';
+}
+
+// ─── Helper: escape quotes & HTML chars in captions ──────────
+function escapeHTML(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
 }
 
 // ─── Build DIARY blocks ───────────────────────────────────────
@@ -123,7 +132,7 @@ function buildDiaryEntry(filename, srcDir) {
     }
   }
 
-  const caption = getCaption(filename, srcDir);
+  const caption = escapeHTML(getCaption(filename, srcDir));
   return `    <div class="mood-item" ${dateAttr}>
       <img class="mood-img" src="diary/${filename}" alt="${caption}" loading="lazy">
       <div class="mood-cap">${caption}</div>
@@ -141,7 +150,7 @@ const diaryHTML = diaryBlocks ||
 const drawnImages = readImageFolder(drawnDir, drawnDist);
 
 const drawnBlocks = drawnImages.map(img => {
-  const caption  = getCaption(img, drawnDir);
+  const caption  = escapeHTML(getCaption(img, drawnDir));
   const dateAttr = getDateAttr(img);
   return `    <div class="drawn-item" ${dateAttr}>
       <img class="drawn-img" src="drawn/${img}" alt="${caption}" loading="lazy">
